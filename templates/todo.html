@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo</title>
+    <link rel="stylesheet" href="/static/css/myvideo.css">
+<body>
+    <div class="center">
+        <h1>Todo</h1>
+        <form action="{{ url_for("todo.add") }}" method="post">
+            <input type="text" placeholder="let's do something" name="title">
+            <input type="submit" value="Add">提交</input>
+        </form>
+    </div>
+    <div>
+    <table class="center todo-table">
+        <thead  class="center">
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Time</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody  class="center">
+        {% for t in todos %}
+            <tr>
+                <td>{{ t.id }}</td>
+                <td>{{ t.title }}</td>
+                <td>{{ t.ct }}</td>
+                <td><a href={{ url_for("todo.delete", todo_id=t.id) }}>delete</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    <div class="center">
+        <video class="video center" poster="/static/read.png"  controls  controlsList="nodownload" oncontextmenu="return false">
+            <source src="{{ url_for('static', filename='Cyanide_and_Happiness/The_Sign.MP4') }}" type="video/mp4">
+            <source src="{{ url_for('static', filename='Cyanide_and_Happiness/The_Sign.WEBM') }}" type="video/webm">
+{#            <object data="{{ url_for('static', filename='Cyanide_and_Happiness/The_Sign.MP4') }}">#}
+{#                <embed src="{{ url_for('static', filename='Cyanide_and_Happiness/The_Sign.WEBM') }}" type="video/webm"/>#}
+{#            </object>#}
+        </video>
+    </div>
+</body>
+</html>

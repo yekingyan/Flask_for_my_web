@@ -1,0 +1,4869 @@
+18:27:19 path in all: data/Todo.txt
+18:28:22 path in all: data/Todo.txt
+18:30:14 path in all: data/Todo.txt
+18:30:14 f.read []
+18:32:17 path in all: data/Todo.txt
+18:32:17 f.read []
+18:39:46 path in all: data/Todo.txt
+18:39:46 f.read []
+18:40:21 path in all: data/Todo.txt
+18:40:21 f.read []
+18:40:28 path in all: data/Todo.txt
+18:40:28 f.read []
+18:40:28 path in all: data/Todo.txt
+18:40:28 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+18:40:28 kwargs:  {'id': 1} <class 'dict'>
+18:40:28 path in all: data/Todo.txt
+18:40:28 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+18:40:28 index in save < Todo
+id: (1)
+title: (a)
+completed: (False)
+ct: (1534070428)
+ut: (1534070428) 
+>
+
+18:45:22 path in all: data/Todo.txt
+18:45:22 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+18:45:29 path in all: data/Todo.txt
+18:45:29 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+18:49:42 path in all: data/Todo.txt
+18:49:42 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+18:49:47 path in all: data/Todo.txt
+18:49:47 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+18:49:47 path in all: data/Todo.txt
+18:49:47 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  }
+]
+18:49:47 kwargs:  {'id': 2} <class 'dict'>
+18:49:47 path in all: data/Todo.txt
+18:49:47 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  }
+]
+18:49:47 index in save < Todo
+id: (2)
+title: (䕩)
+completed: (False)
+ct: (1534070987)
+ut: (1534070987) 
+>
+
+18:51:27 path in all: data/Todo.txt
+18:51:27 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  }
+]
+18:51:36 path in all: data/Todo.txt
+18:51:36 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  }
+]
+18:51:36 path in all: data/Todo.txt
+18:51:36 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  }
+]
+18:51:36 kwargs:  {'id': 3} <class 'dict'>
+18:51:36 path in all: data/Todo.txt
+18:51:36 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  }
+]
+18:51:36 index in save < Todo
+id: (3)
+title: ( 要 枯枯)
+completed: (False)
+ct: (1534071096)
+ut: (1534071096) 
+>
+
+18:56:07 path in all: data/Todo.txt
+18:56:07 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  }
+]
+18:56:11 path in all: data/Todo.txt
+18:56:11 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  }
+]
+18:56:11 path in all: data/Todo.txt
+18:56:11 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  }
+]
+18:56:11 kwargs:  {'id': 4} <class 'dict'>
+18:56:12 path in all: data/Todo.txt
+18:56:12 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  }
+]
+18:57:59 path in all: data/Todo.txt
+18:57:59 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  }
+]
+18:58:01 path in all: data/Todo.txt
+18:58:01 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  }
+]
+18:58:01 path in all: data/Todo.txt
+18:58:01 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  }
+]
+18:58:01 kwargs:  {'id': 5} <class 'dict'>
+18:58:01 path in all: data/Todo.txt
+18:58:01 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  }
+]
+18:58:47 path in all: data/Todo.txt
+18:58:47 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  }
+]
+18:58:50 path in all: data/Todo.txt
+18:58:50 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  }
+]
+18:58:50 path in all: data/Todo.txt
+18:58:50 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  }
+]
+18:58:50 kwargs:  {'id': 6} <class 'dict'>
+18:58:50 path in all: data/Todo.txt
+18:58:50 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  }
+]
+18:59:50 path in all: data/Todo.txt
+18:59:50 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  }
+]
+18:59:55 path in all: data/Todo.txt
+18:59:55 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  }
+]
+18:59:55 path in all: data/Todo.txt
+18:59:55 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  }
+]
+18:59:55 kwargs:  {'id': 7} <class 'dict'>
+18:59:55 path in all: data/Todo.txt
+18:59:55 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  }
+]
+18:59:55 index in save < Todo
+id: (7)
+title: (再再学习)
+completed: (False)
+ct: (1534071595)
+ut: (1534071595) 
+>
+
+19:00:11 path in all: data/Todo.txt
+19:00:11 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  }
+]
+19:07:43 path in all: data/Todo.txt
+19:07:43 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  }
+]
+19:07:47 path in all: data/Todo.txt
+19:07:47 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  }
+]
+19:07:47 path in all: data/Todo.txt
+19:07:47 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  }
+]
+19:07:47 index in save 7
+19:07:47 path in all: data/Todo.txt
+19:07:47 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  }
+]
+19:07:51 path in all: data/Todo.txt
+19:07:51 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  }
+]
+19:07:51 path in all: data/Todo.txt
+19:07:51 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  }
+]
+19:07:51 index in save 8
+19:07:51 path in all: data/Todo.txt
+19:07:51 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  }
+]
+21:16:50 path in all: data/Todo.txt
+21:16:50 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  }
+]
+21:19:47 path in all: data/Todo.txt
+21:19:47 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  }
+]
+21:25:11 path in all: data/Todo.txt
+21:25:11 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  }
+]
+21:25:27 path in all: data/Todo.txt
+21:25:27 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  }
+]
+21:25:36 path in all: data/Todo.txt
+21:25:36 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  }
+]
+21:26:08 path in all: data/Todo.txt
+21:26:08 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  }
+]
+21:27:15 path in all: data/Todo.txt
+21:27:15 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  }
+]
+21:28:05 path in all: data/Todo.txt
+21:28:05 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  }
+]
+21:28:55 path in all: data/Todo.txt
+21:28:55 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  }
+]
+21:30:54 path in all: data/Todo.txt
+21:30:55 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  }
+]
+21:31:01 path in all: data/Todo.txt
+21:31:01 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  }
+]
+21:32:50 path in all: data/Todo.txt
+21:32:50 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  }
+]
+21:32:54 path in all: data/Todo.txt
+21:32:54 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  }
+]
+21:37:51 path in all: data/Todo.txt
+21:37:51 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  }
+]
+21:37:58 path in all: data/Todo.txt
+21:37:58 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  }
+]
+21:38:02 path in all: data/Todo.txt
+21:38:02 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  }
+]
+21:44:38 path in all: data/Todo.txt
+21:44:38 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  }
+]
+21:45:28 path in all: data/Todo.txt
+21:45:28 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  }
+]
+21:45:36 path in all: data/Todo.txt
+21:45:36 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  }
+]
+21:47:13 path in all: data/Todo.txt
+21:47:13 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  }
+]
+21:49:27 path in all: data/Todo.txt
+21:49:27 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  }
+]
+21:49:27 path in all: data/Todo.txt
+21:49:27 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  },
+  {
+    "id": 10,
+    "title": "学习1",
+    "completed": false,
+    "ct": 1534081767,
+    "ut": 1534081767
+  }
+]
+21:49:27 index in save 9
+21:49:27 path in all: data/Todo.txt
+21:49:27 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  },
+  {
+    "id": 10,
+    "title": "学习1",
+    "completed": false,
+    "ct": 1534081767,
+    "ut": 1534081767
+  }
+]
+21:51:20 path in all: data/Todo.txt
+21:51:20 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  },
+  {
+    "id": 10,
+    "title": "学习1",
+    "completed": false,
+    "ct": 1534081767,
+    "ut": 1534081767
+  }
+]
+21:51:52 debug,todoid--- 4
+21:51:52 path in all: data/Todo.txt
+21:51:52 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 4,
+    "title": "基",
+    "completed": false,
+    "ct": 1534071371,
+    "ut": 1534071371
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  },
+  {
+    "id": 10,
+    "title": "学习1",
+    "completed": false,
+    "ct": 1534081767,
+    "ut": 1534081767
+  }
+]
+21:51:52 path in all: data/Todo.txt
+21:51:52 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  },
+  {
+    "id": 10,
+    "title": "学习1",
+    "completed": false,
+    "ct": 1534081767,
+    "ut": 1534081767
+  }
+]
+21:51:55 debug,todoid--- 5
+21:51:55 path in all: data/Todo.txt
+21:51:55 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 5,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534071481,
+    "ut": 1534071481
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  },
+  {
+    "id": 10,
+    "title": "学习1",
+    "completed": false,
+    "ct": 1534081767,
+    "ut": 1534081767
+  }
+]
+21:51:55 path in all: data/Todo.txt
+21:51:55 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  },
+  {
+    "id": 10,
+    "title": "学习1",
+    "completed": false,
+    "ct": 1534081767,
+    "ut": 1534081767
+  }
+]
+21:51:58 debug,todoid--- 10
+21:51:58 path in all: data/Todo.txt
+21:51:58 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  },
+  {
+    "id": 10,
+    "title": "学习1",
+    "completed": false,
+    "ct": 1534081767,
+    "ut": 1534081767
+  }
+]
+21:51:58 path in all: data/Todo.txt
+21:51:58 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  }
+]
+21:52:00 debug,todoid--- 9
+21:52:00 path in all: data/Todo.txt
+21:52:00 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  },
+  {
+    "id": 9,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534072071,
+    "ut": 1534072071
+  }
+]
+21:52:00 path in all: data/Todo.txt
+21:52:00 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  }
+]
+21:52:01 debug,todoid--- 8
+21:52:01 path in all: data/Todo.txt
+21:52:01 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  },
+  {
+    "id": 8,
+    "title": "Sql语句",
+    "completed": false,
+    "ct": 1534072067,
+    "ut": 1534072067
+  }
+]
+21:52:01 path in all: data/Todo.txt
+21:52:01 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  }
+]
+21:52:02 debug,todoid--- 7
+21:52:02 path in all: data/Todo.txt
+21:52:02 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  },
+  {
+    "id": 7,
+    "title": "再再学习",
+    "completed": false,
+    "ct": 1534071595,
+    "ut": 1534071595
+  }
+]
+21:52:02 path in all: data/Todo.txt
+21:52:02 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  }
+]
+21:52:03 debug,todoid--- 6
+21:52:03 path in all: data/Todo.txt
+21:52:03 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  },
+  {
+    "id": 6,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534071530,
+    "ut": 1534071530
+  }
+]
+21:52:03 path in all: data/Todo.txt
+21:52:03 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  }
+]
+21:52:05 debug,todoid--- 3
+21:52:05 path in all: data/Todo.txt
+21:52:05 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  },
+  {
+    "id": 3,
+    "title": " 要 枯枯",
+    "completed": false,
+    "ct": 1534071096,
+    "ut": 1534071096
+  }
+]
+21:52:05 path in all: data/Todo.txt
+21:52:05 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  }
+]
+21:52:07 debug,todoid--- 2
+21:52:07 path in all: data/Todo.txt
+21:52:07 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "䕩",
+    "completed": false,
+    "ct": 1534070987,
+    "ut": 1534070987
+  }
+]
+21:52:07 path in all: data/Todo.txt
+21:52:07 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+21:52:55 path in all: data/Todo.txt
+21:52:55 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+21:52:57 path in all: data/Todo.txt
+21:52:57 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+21:53:03 path in all: data/Todo.txt
+21:53:03 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+21:53:05 path in all: data/Todo.txt
+21:53:05 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+21:55:32 path in all: data/Todo.txt
+21:55:32 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+21:58:13 path in all: data/Todo.txt
+21:58:13 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+21:59:44 path in all: data/Todo.txt
+21:59:44 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+21:59:58 path in all: data/Todo.txt
+21:59:58 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:05:34 path in all: data/Todo.txt
+22:05:34 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:05:36 path in all: data/Todo.txt
+22:05:36 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:05:52 path in all: data/Todo.txt
+22:05:52 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:05:55 path in all: data/Todo.txt
+22:05:55 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:06:54 path in all: data/Todo.txt
+22:06:54 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:07:41 path in all: data/Todo.txt
+22:07:41 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:07:46 path in all: data/Todo.txt
+22:07:46 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:08:17 path in all: data/Todo.txt
+22:08:17 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:08:46 path in all: data/Todo.txt
+22:08:46 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:08:57 path in all: data/Todo.txt
+22:08:57 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:10:13 path in all: data/Todo.txt
+22:10:13 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:10:26 path in all: data/Todo.txt
+22:10:26 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:11:13 path in all: data/Todo.txt
+22:11:13 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:11:34 path in all: data/Todo.txt
+22:11:34 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:12:05 path in all: data/Todo.txt
+22:12:05 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:12:12 path in all: data/Todo.txt
+22:12:12 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:12:28 path in all: data/Todo.txt
+22:12:28 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:12:49 path in all: data/Todo.txt
+22:12:49 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:13:29 path in all: data/Todo.txt
+22:13:29 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:13:33 path in all: data/Todo.txt
+22:13:33 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:13:37 path in all: data/Todo.txt
+22:13:37 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:13:39 path in all: data/Todo.txt
+22:13:39 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:13:41 path in all: data/Todo.txt
+22:13:41 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:13:43 path in all: data/Todo.txt
+22:13:43 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:13:47 path in all: data/Todo.txt
+22:13:47 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:17:35 path in all: data/Todo.txt
+22:17:35 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:17:57 path in all: data/Todo.txt
+22:17:57 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:18:02 path in all: data/Todo.txt
+22:18:02 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:18:23 path in all: data/Todo.txt
+22:18:23 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:18:40 path in all: data/Todo.txt
+22:18:40 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:18:42 path in all: data/Todo.txt
+22:18:42 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:19:05 path in all: data/Todo.txt
+22:19:05 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:19:24 path in all: data/Todo.txt
+22:19:24 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:19:50 path in all: data/Todo.txt
+22:19:50 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:19:57 path in all: data/Todo.txt
+22:19:57 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:20:00 path in all: data/Todo.txt
+22:20:00 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:20:02 path in all: data/Todo.txt
+22:20:02 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:20:04 path in all: data/Todo.txt
+22:20:04 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:20:08 path in all: data/Todo.txt
+22:20:08 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:20:12 path in all: data/Todo.txt
+22:20:12 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:23:34 path in all: data/Todo.txt
+22:23:34 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:24:46 path in all: data/Todo.txt
+22:24:46 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:24:50 path in all: data/Todo.txt
+22:24:50 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:24:54 path in all: data/Todo.txt
+22:24:54 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:24:58 path in all: data/Todo.txt
+22:24:58 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:25:00 path in all: data/Todo.txt
+22:25:00 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:25:01 path in all: data/Todo.txt
+22:25:01 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:25:04 path in all: data/Todo.txt
+22:25:04 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:26:41 path in all: data/Todo.txt
+22:26:41 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:29:49 path in all: data/Todo.txt
+22:29:49 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:29:52 path in all: data/Todo.txt
+22:29:52 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:29:58 path in all: data/Todo.txt
+22:29:58 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:30:00 path in all: data/Todo.txt
+22:30:00 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:30:45 path in all: data/Todo.txt
+22:30:45 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:30:59 path in all: data/Todo.txt
+22:30:59 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:31:15 path in all: data/Todo.txt
+22:31:15 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:31:23 path in all: data/Todo.txt
+22:31:23 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:31:28 path in all: data/Todo.txt
+22:31:28 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:33:11 path in all: data/Todo.txt
+22:33:11 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:33:29 path in all: data/Todo.txt
+22:33:29 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:33:47 path in all: data/Todo.txt
+22:33:47 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:38:14 path in all: data/Todo.txt
+22:38:14 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:38:35 path in all: data/Todo.txt
+22:38:35 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:39:17 path in all: data/Todo.txt
+22:39:17 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:39:25 path in all: data/Todo.txt
+22:39:25 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:42:23 path in all: data/Todo.txt
+22:42:23 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:43:22 path in all: data/Todo.txt
+22:43:22 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:43:58 path in all: data/Todo.txt
+22:43:58 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:46:11 path in all: data/Todo.txt
+22:46:11 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:47:28 path in all: data/Todo.txt
+22:47:28 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+22:55:58 path in all: data/Todo.txt
+22:55:58 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+23:06:22 path in all: data/Todo.txt
+23:06:22 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+23:06:37 path in all: data/Todo.txt
+23:06:37 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+23:20:20 path in all: data/Todo.txt
+23:20:20 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+23:33:07 path in all: data/Todo.txt
+23:33:07 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+23:46:36 path in all: data/Todo.txt
+23:46:36 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+23:47:49 path in all: data/Todo.txt
+23:47:49 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+23:47:52 path in all: data/Todo.txt
+23:47:52 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+23:48:26 path in all: data/Todo.txt
+23:48:26 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+23:49:56 path in all: data/Todo.txt
+23:49:56 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+23:51:20 path in all: data/Todo.txt
+23:51:20 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+23:51:27 path in all: data/Todo.txt
+23:51:27 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+23:51:28 path in all: data/Todo.txt
+23:51:28 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+23:51:49 path in all: data/Todo.txt
+23:51:49 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+23:54:07 path in all: data/Todo.txt
+23:54:07 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+23:54:42 path in all: data/Todo.txt
+23:54:42 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+23:54:44 path in all: data/Todo.txt
+23:54:45 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+23:54:45 path in all: data/Todo.txt
+23:54:45 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+23:54:54 path in all: data/Todo.txt
+23:54:54 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+23:54:55 path in all: data/Todo.txt
+23:54:55 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+23:54:57 path in all: data/Todo.txt
+23:54:57 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+23:54:59 path in all: data/Todo.txt
+23:54:59 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+23:55:35 path in all: data/Todo.txt
+23:55:35 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+23:55:36 path in all: data/Todo.txt
+23:55:36 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+23:55:37 path in all: data/Todo.txt
+23:55:37 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+23:56:31 path in all: data/Todo.txt
+23:56:31 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+23:56:32 path in all: data/Todo.txt
+23:56:32 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+23:58:24 path in all: data/Todo.txt
+23:58:24 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+23:58:25 path in all: data/Todo.txt
+23:58:25 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+13:47:43 path in all: data/Todo.txt
+13:47:43 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  }
+]
+13:47:43 path in all: data/Todo.txt
+13:47:43 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534139263,
+    "ut": 1534139263
+  }
+]
+13:47:43 index in save 1
+13:47:43 path in all: data/Todo.txt
+13:47:43 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534139263,
+    "ut": 1534139263
+  }
+]
+13:47:47 path in all: data/Todo.txt
+13:47:47 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534139263,
+    "ut": 1534139263
+  }
+]
+13:47:47 path in all: data/Todo.txt
+13:47:47 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534139263,
+    "ut": 1534139263
+  },
+  {
+    "id": 3,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534139267,
+    "ut": 1534139267
+  }
+]
+13:47:47 index in save 2
+13:47:48 path in all: data/Todo.txt
+13:47:48 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534139263,
+    "ut": 1534139263
+  },
+  {
+    "id": 3,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534139267,
+    "ut": 1534139267
+  }
+]
+17:28:48 path in all: data/Todo.txt
+17:28:48 f.read [
+  {
+    "id": 1,
+    "title": "a",
+    "completed": false,
+    "ct": 1534070428,
+    "ut": 1534070428
+  },
+  {
+    "id": 2,
+    "title": "学习",
+    "completed": false,
+    "ct": 1534139263,
+    "ut": 1534139263
+  },
+  {
+    "id": 3,
+    "title": "再学习",
+    "completed": false,
+    "ct": 1534139267,
+    "ut": 1534139267
+  }
+]
