@@ -1,7 +1,10 @@
 from flask import (
     Flask,
     request,
+    render_template,
 )
+from flask_bootstrap import Bootstrap
+
 
 # 同级目录routes文件夹下todo.py
 from routes.todo import main as todo
@@ -10,11 +13,11 @@ app = Flask(__name__)
 # 注册蓝图，url_prefix为每个main蓝图路由加上前缀
 app.register_blueprint(todo, url_prefix='/todo')
 
+bootstrap = Bootstrap(app)
 
 @app.route('/')
 def hello_world():
-    a = request.method
-    return '<h1>Hello World!</h1>'
+    return render_template('base.html')
 
 
 if __name__ == '__main__':

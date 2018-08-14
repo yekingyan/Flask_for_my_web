@@ -1,0 +1,98 @@
+{% extends "bootstrap/base.html" %}
+
+{% block meta %}
+    {{ super() }}
+    <meta charset="UTF-8">
+{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+{% endblock %}
+
+{% block html_attribs %} lang="zh"{% endblock %}
+
+{% block styles %}
+    {{ super() }}
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/navbar.css') }}">
+{% endblock %}
+
+{% block title %}{{ title }} | 烟灰烬{% endblock %}
+
+
+{#{% block navbar %}#}
+{#<!--navigation属性能够让使用辅助设备的用户明确知道这是一个导航区域-->#}
+{#<!--navbar-inverse类：导航栏反色-->#}
+{#<div class="navbar navbar-inverse" role="navigation">#}
+{#    <div class="container">#}
+{#        <div class="navbar-header">#}
+{#            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">#}
+{#                <span class="sr-only">Toggle navigation</span>#}
+{#                <span class="icon-bar"></span>#}
+{#                <span class="icon-bar"></span>#}
+{#                <span class="icon-bar"></span>#}
+{#            </button>#}
+{#            <a class="navbar-brand" href="/">首页</a>#}
+{#        </div>#}
+{#        <div class="navbar-collapse collapse">#}
+{#            <ul  class="nav navbar-nav">#}
+{#                <li><a href="/">视频</a></li>#}
+{#            </ul>#}
+{#        </div>#}
+{#        <div class="navbar-collapse collapse">#}
+{#            <ul  class="nav navbar-nav">#}
+{#                <li>#}
+{#                    <a href="/"><img src="/static/calculate.jpg">#}
+{#                        <div><p class="text-center">虎虎虎李要了<p></div>#}
+{#                    </a>#}
+{##}
+{#                </li>#}
+{#            </ul>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{#{% endblock %}#}
+
+{% block content %}
+
+    <div class="container-fluid">
+
+        <!--左边-->
+        <div class="position-fixed col-4 bg-primaryless" id="sidebar">
+            <div id="nav-top" style="margin-top: 30%"></div>
+            <div class="offset-4">
+                <img class="img-fluid rounded-circle log-img" src="/static/alpha.jpg" alt="yekingyan">
+            </div>
+            <div class="text-center ">
+                <div><h3 class="nav-top mt-5">烟灰烬</h3></div>
+                <div><p class="mt-1">这不是一个关于戒烟的网站</p></div>
+
+                <div>
+                    <a href="https://github.com/yekingyan"><img class="img-link"
+                                                                src="{{ url_for('static',filename='github.png') }}"
+                                                                alt="github"></a>
+                    <a href="https://blog.csdn.net/weixin_42105977"><img class="img-link"
+                                                                         src="{{ url_for('static',filename='CSDN.png') }}"
+                                                                         alt="csdn"></a>
+                </div>
+                <div><a href="">视频</a></div>
+                <div><a href="">文章</a></div>
+                <div><a href="">致敬</a></div>
+                <div>about</div>
+                <div class="footer">
+                    <div><a class="text-right">yanhuijinsss@outlook.com</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--右边-->
+    <div class="offset-5 bg-danger col-8">
+        <p>right side</p>
+    </div>
+    </div>
+
+{% endblock %}
+
+

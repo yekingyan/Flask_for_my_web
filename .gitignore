@@ -1,3 +1,7 @@
 
 .idea/workspace.xml
 .idea/workspace.xml
+*.pyc
+*.xml
+.idea/workspace.xml
+__pycache__/app.cpython-37.pyc

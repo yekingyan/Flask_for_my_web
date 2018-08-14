@@ -1,0 +1,34 @@
+.bg-primaryless{
+    background-color: #00E5EE;
+}
+
+/*#sidebar{*/
+    /*padding-top: 200px;*/
+/*}*/
+
+/*.leftSide {*/
+    /*padding-bottom: 200px;*/
+
+/*}*/
+
+.log-img {
+    max-width: 50%;
+    height: auto;
+}
+
+/*log上面留空白*/
+#nav-top {
+    border-top: 100px;
+}
+
+/* github 图标*/
+.img-link {
+    height: 50px;
+    width: auto;
+}
+
+/*在边栏*/
+.col-left {
+    width: 300px;
+    hight: auto;
+}
