@@ -17,7 +17,7 @@ bootstrap = Bootstrap(app)
 
 @app.route('/')
 def hello_world():
-    return render_template('base.html')
+    return render_template('base2.html')
 
 
 if __name__ == '__main__':
