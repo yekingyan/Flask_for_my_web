@@ -1,5 +1,6 @@
 import json
 from tools import log
+from models.user import get_cookie
 
 
 def save_for_json(data, path):

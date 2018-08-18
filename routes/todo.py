@@ -4,9 +4,15 @@ from flask import (
     redirect,
     request,
     url_for,
+    make_response,
 )
 from models.todo import Todo
 from tools import log
+from models.user import (
+    get_cookie,
+    salt,
+)
+
 
 # 创建蓝图,蓝图名为main
 main = Blueprint('todo', __name__)
@@ -15,7 +21,11 @@ main = Blueprint('todo', __name__)
 @main.route('/')
 def index():
     todo_list = Todo.all()
-    return render_template('todo.html', todos=todo_list)
+    template = render_template('todo.html', todos=todo_list)
+    r = make_response(template)
+    if get_cookie() is None:
+        r.set_cookie('cookie', salt())
+    return r
 
 
 @main.route('/add', methods=['post'])

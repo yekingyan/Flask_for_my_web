@@ -2,9 +2,14 @@ from flask import (
     Flask,
     request,
     render_template,
+    make_response,
+    session,
 )
 from flask_bootstrap import Bootstrap
-
+from models.user import (
+    salt,
+    get_cookie,
+)
 
 # 同级目录routes文件夹下todo.py
 from routes.todo import main as todo
@@ -15,9 +20,14 @@ app.register_blueprint(todo, url_prefix='/todo')
 
 bootstrap = Bootstrap(app)
 
+
 @app.route('/')
 def hello_world():
-    return render_template('base2.html')
+    template = render_template('base2.html')
+    r = make_response(template)
+    if get_cookie() is None:
+        r.set_cookie('cookie', salt())
+    return r
 
 
 if __name__ == '__main__':

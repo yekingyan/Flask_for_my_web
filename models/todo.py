@@ -1,5 +1,6 @@
 from models import Model
 import time
+from flask import request
 
 
 class Todo(Model):
@@ -10,6 +11,7 @@ class Todo(Model):
         # 创建时间，更新时间
         self.ct = int(time.time())
         self.ut = self.ct
+        self.cookie = request.cookies.get('cookie')
 
     @classmethod
     def new(cls, form):
@@ -39,7 +41,7 @@ class Todo(Model):
 
     @classmethod
     def complete(cls, id, completed=True):
-        """Todo.complete(1)删，False则恢愎"""
+        """"""
         t = cls.find(id)
         t.complete = completed
         t.save()
