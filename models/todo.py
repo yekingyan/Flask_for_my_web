@@ -2,6 +2,7 @@ from models import Model
 import time
 from flask import request
 from models.user import get_cookie
+from tools import strftime
 
 
 class Todo(Model):
@@ -48,7 +49,6 @@ class Todo(Model):
         t.save()
         return t
 
-
     @classmethod
     def all_by_cookie(cls):
         """从所有todo中返回属于请求cookie的数据"""
@@ -56,5 +56,16 @@ class Todo(Model):
         data_by_cookie = []
         for l in all_list:
             if l.cookie == get_cookie():
+                # 时间格式转换
+                l.ct = strftime(l.ct)
                 data_by_cookie.append(l)
         return data_by_cookie
+
+    @classmethod
+    def id_for_cookie(cls, todo_id):
+        """返回所在的id的cookie值"""
+        models = cls.all()
+        for m in models:
+            print(m)
+            if m.id == todo_id:
+                return m.cookie

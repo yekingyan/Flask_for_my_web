@@ -20,6 +20,8 @@ app.register_blueprint(todo, url_prefix='/todo')
 
 bootstrap = Bootstrap(app)
 
+app.secret_key = 'asdkjfhsiw@#sf64461dasf#$%'
+
 
 @app.route('/')
 def hello_world():

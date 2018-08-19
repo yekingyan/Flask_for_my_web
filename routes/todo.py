@@ -5,6 +5,7 @@ from flask import (
     request,
     url_for,
     make_response,
+    flash,
 )
 from models.todo import Todo
 from tools import log
@@ -38,6 +39,11 @@ def add():
 
 @main.route('/delete/<int:todo_id>')
 def delete(todo_id):
-    log("debug,todoid---", todo_id)
-    t = Todo.delete(todo_id)
+    log("tying delete id---", todo_id)
+    if Todo.id_for_cookie(todo_id) == get_cookie():
+        t = Todo.delete(todo_id)
+        log("deleted id:", todo_id)
+        flash("删除成功")
+    else:
+        flash("你要删除火星上面的东西吗")
     return redirect(url_for('.index'))

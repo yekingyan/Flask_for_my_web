@@ -12,6 +12,7 @@
             <input type="submit" value="Add">提交</input>
         </form>
     </div>
+    {{ str }}
     <div>
     <table class="center todo-table">
         <thead  class="center">
@@ -23,9 +24,9 @@
             </tr>
         </thead>
         <tbody  class="center">
-        {% for t in todos %}
+        {% for t in todos%}
             <tr>
-                <td>{{ t.id }}</td>
+                <td>{{ loop.index }}</td>
                 <td>{{ t.title }}</td>
                 <td>{{ t.ct }}</td>
                 <td><a href={{ url_for("todo.delete", todo_id=t.id) }}>delete</a></td>
@@ -34,14 +35,6 @@
         </tbody>
     </table>
     </div>
-    <div class="center">
-        <video class="video center" poster="/static/read.png"  controls  controlsList="nodownload" oncontextmenu="return false">
-            <source src="{{ url_for('static', filename='Cyanide_and_Happiness/The_Sign.MP4') }}" type="video/mp4">
-            <source src="{{ url_for('static', filename='Cyanide_and_Happiness/The_Sign.WEBM') }}" type="video/webm">
-{#            <object data="{{ url_for('static', filename='Cyanide_and_Happiness/The_Sign.MP4') }}">#}
-{#                <embed src="{{ url_for('static', filename='Cyanide_and_Happiness/The_Sign.WEBM') }}" type="video/webm"/>#}
-{#            </object>#}
-        </video>
-    </div>
+
 </body>
 </html>
