@@ -2,14 +2,9 @@
     background-color: #00E5EE;
 }
 
-/*#sidebar{*/
-    /*padding-top: 200px;*/
-/*}*/
-
-/*.leftSide {*/
-    /*padding-bottom: 200px;*/
-
-/*}*/
+.bg-dary {
+    background-color: #e9ecef;
+}
 
 .log-img {
     max-width: 50%;

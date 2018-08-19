@@ -66,6 +66,6 @@ class Todo(Model):
         """返回所在的id的cookie值"""
         models = cls.all()
         for m in models:
-            print(m)
+            # print(m)
             if m.id == todo_id:
                 return m.cookie

@@ -22,7 +22,7 @@ main = Blueprint('todo', __name__)
 @main.route('/')
 def index():
     todo_list = Todo.all_by_cookie()
-    template = render_template('todo.html', todos=todo_list)
+    template = render_template('todo.html', todos=todo_list, title='Todo')
     r = make_response(template)
     if get_cookie() is None:
         r.set_cookie('cookie', salt(), max_age=2419200)
@@ -33,7 +33,12 @@ def index():
 def add():
     form = request.form
     t = Todo.new(form)
-    t.save()
+    print(t.title)
+    if t.title is None:
+
+        flash("人生在世总是要干点什么的")
+    else:
+        t.save()
     return redirect(url_for('todo.index'))
 
 
