@@ -1,40 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>ToDo</title>
+{% extends "base2.html" %}
+
+
+{% block title %}ToDo{% endblock %}
+
+{% block head %}
+    {{ super() }}
     <link rel="stylesheet" href="/static/css/myvideo.css">
-<body>
+{% endblock %}
+
+
+{% block content %}
     <div class="center">
-        <h1>Todo</h1>
-        <form action="{{ url_for("todo.add") }}" method="post">
-            <input type="text" placeholder="let's do something" name="title">
-            <input type="submit" value="Add">提交</input>
+        <img class="img-50" src="/static/todo.jpg">
+        <footer class="blockquote-footer">Do anything
+            <cite title="Don't think too much">you want</cite>
+        </footer>
+    </div>
+    <div class="card-body mt-2 center" >
+        <form class="block-center" action={{ url_for("todo.add") }} method="post">
+            <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1"
+                   name="title">
+            <input class="btn btn-success border-left" type="submit" value="Do it!">
         </form>
     </div>
-    {{ str }}
     <div>
-    <table class="center todo-table">
-        <thead  class="center">
-            <tr>
-                <th>#</th>
-                <th>Title</th>
-                <th>Time</th>
-                <th>Action</th>
+        <table class="table table-hover table-striped">
+            <thead class="thead-dark">
+            <tr class="text-center">
+                <th> #</th>
+                <th> Title</th>
+                <th> Time</th>
+                <th> Action</th>
             </tr>
-        </thead>
-        <tbody  class="center">
-        {% for t in todos%}
-            <tr>
-                <td>{{ loop.index }}</td>
-                <td>{{ t.title }}</td>
-                <td>{{ t.ct }}</td>
-                <td><a href={{ url_for("todo.delete", todo_id=t.id) }}>delete</a></td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody class="text-center">
+            {% for t in todos %}
+                <tr class="table-warning">
+                    <td scope="row">{{ loop.index }}</td>
+                    <td>{{ t.title }}</td>
+                    <td>{{ t.ct }}</td>
+                    <td><a class="btn btn-danger" href={{ url_for("todo.delete", todo_id=t.id) }}>delete</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
     </div>
 
-</body>
-</html>
+{% endblock %}

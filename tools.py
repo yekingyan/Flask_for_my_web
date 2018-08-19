@@ -3,7 +3,7 @@ import time
 
 def strftime(ttint):
     """转time.time()格式为人类可读"""
-    format = '%m%d-%H:%M:%S'
+    format = '%Y%m%d-%H:%M:%S'
     value = time.localtime(int(ttint))
     dt = time.strftime(format, value)
     return dt
