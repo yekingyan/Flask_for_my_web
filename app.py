@@ -26,7 +26,7 @@ def hello_world():
     template = render_template('base2.html')
     r = make_response(template)
     if get_cookie() is None:
-        r.set_cookie('cookie', salt())
+        r.set_cookie('cookie', salt(), max_age=2419200)
     return r
 
 

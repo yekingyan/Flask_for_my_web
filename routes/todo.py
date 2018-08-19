@@ -20,11 +20,11 @@ main = Blueprint('todo', __name__)
 
 @main.route('/')
 def index():
-    todo_list = Todo.all()
+    todo_list = Todo.all_by_cookie()
     template = render_template('todo.html', todos=todo_list)
     r = make_response(template)
     if get_cookie() is None:
-        r.set_cookie('cookie', salt())
+        r.set_cookie('cookie', salt(), max_age=2419200)
     return r
 
 

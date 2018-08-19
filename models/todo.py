@@ -1,6 +1,7 @@
 from models import Model
 import time
 from flask import request
+from models.user import get_cookie
 
 
 class Todo(Model):
@@ -47,3 +48,13 @@ class Todo(Model):
         t.save()
         return t
 
+
+    @classmethod
+    def all_by_cookie(cls):
+        """从所有todo中返回属于请求cookie的数据"""
+        all_list = cls.all()
+        data_by_cookie = []
+        for l in all_list:
+            if l.cookie == get_cookie():
+                data_by_cookie.append(l)
+        return data_by_cookie

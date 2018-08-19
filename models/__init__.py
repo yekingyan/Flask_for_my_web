@@ -66,6 +66,7 @@ class Model(object):
         models = load_json(path)
         # 得到所有的得到所有的 models
         ms = [cls._new_form_dict(m) for m in models]
+        log("ms", type(ms), ms)
         return ms
 
     @classmethod
