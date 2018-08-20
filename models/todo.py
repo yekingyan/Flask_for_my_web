@@ -27,6 +27,11 @@ class Todo(Model):
         return t
 
     @classmethod
+    def new_without_save(cls, form):
+        t = cls(form)
+        return t
+
+    @classmethod
     def update(cls, id, form):
         """更新todo"""
         t = cls.find(id)
