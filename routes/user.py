@@ -6,6 +6,7 @@ from flask import (
     url_for,
     make_response,
     flash,
+    session,
 )
 from tools import log
 from models.user import User
@@ -22,9 +23,19 @@ def login():
 @main.route('/login/in', methods=['post'])
 def sign_in():
     form = request.form
-    username = form.get('username')
-    password = form.get('password')
-    pass
+    log('login form', form)
+    u = User.verify_user(form)
+    log('u', u)
+    if u is not None:
+        # 设置session
+        session['user_id'] = u.id
+        # session永不过期
+        session.permanent = True
+        flash("登陆成功")
+        return redirect(url_for('index'))
+    else:
+        flash("用户名或密码错误")
+        return redirect(url_for('user.login'))
 
 
 @main.route('/register')
@@ -37,7 +48,7 @@ def add_user():
     form = request.form
     # log(form)
     u = User.add_new_user(form)
-    log(u)
+    # log(u)
     if "重名" in str(u):
         flash("该用户名已经被注册")
     if "用户名或密码太短了" in str(u):
@@ -45,7 +56,7 @@ def add_user():
         flash("请确保昵称长度2位以上，以及密码长度2位以上")
     else:
         flash("注册成功")
-    return render_template('register.html')
+    return redirect(url_for('user.register'))
 
 
 if __name__ == '__main__':

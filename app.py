@@ -27,7 +27,7 @@ app.secret_key = 'asdkjfhsiw@#sf64461dasf#$%'
 
 
 @app.route('/')
-def hello_world():
+def index():
     template = render_template('index.html')
     r = make_response(template)
     if request.cookies.get('cookie') is None:

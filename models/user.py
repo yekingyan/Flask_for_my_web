@@ -27,7 +27,8 @@ def salt():
 def hashed_password_salt(pwd):
     """将密码加盐，返回hashed值"""
     ascii_pwd = pwd.encode('ascii')
-    ascii_salt = salt().encode('ascii')
+    salts = "h{GWUoQ12(@B5c+#1N7Rz0uq)SB;{i=k"
+    ascii_salt = salts.encode('ascii')
     hashed = hashlib.sha256(ascii_pwd + ascii_salt).hexdigest()
     return hashed
 
@@ -64,8 +65,9 @@ class User(Model):
     @classmethod
     def add_new_user(cls, form):
         """
-        将表单数据传入Todo类，
-        在__init__()变成类属性
+        增加新注册用户入数据库
+        如果有重名，返回字符串"重名"
+        如果用户名或密码格式不对，返回"用户名或密码太短了"
         """
         username = form.get('username')
         password = form.get('password')
@@ -89,6 +91,21 @@ class User(Model):
             u.save()
             return u
 
+    @classmethod
+    def verify_user(cls, form):
+        """验证用户名或密码是否一致"""
+        username = form.get('username')
+        password = form.get('password')
+        log("v u p", username, password)
+        u = cls.find_by(username=username)
+        log('uu', u)
+        if u.password == hashed_password_salt(password):
+            return u
+        else:
+            return None
+
 
 # if __name__ == '__main__':
-#     # print()
+    # print(hashed_password_salt('aaa'))
+    # print(salt())
+    #
