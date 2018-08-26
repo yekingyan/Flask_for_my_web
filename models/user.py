@@ -1,6 +1,10 @@
 import string
 import random
 from flask import request
+from models import Model
+import time
+import hashlib
+from tools import log
 
 
 def salt():
@@ -20,10 +24,71 @@ def salt():
     return salt16
 
 
-def get_cookie():
-    c = request.cookies.get('cookie')
-    return c
+def hashed_password_salt(pwd):
+    """将密码加盐，返回hashed值"""
+    ascii_pwd = pwd.encode('ascii')
+    ascii_salt = salt().encode('ascii')
+    hashed = hashlib.sha256(ascii_pwd + ascii_salt).hexdigest()
+    return hashed
 
 
-if __name__ == '__main__':
-    print(salt())
+class User(Model):
+    def __init__(self, form):
+        self.username = form.get('username')
+        self.password = form.get('password')
+        self.id = None
+        # 创建时间，更新时间
+        self.ct = int(time.time())
+        self.cookie = request.cookies.get('cookie')
+
+    @classmethod
+    def new(cls, form):
+        """
+        创建并保存一个user,保存于User.txt
+        :param form: user字典,如{'username':'bob', "password":'123'}
+        :return: todo实例
+        """
+        t = cls(form)
+        t.save()
+        return t
+
+    @classmethod
+    def new_without_save(cls, form):
+        """
+        将表单数据传入Todo类，
+        在__init__()变成类属性
+        """
+        t = cls(form)
+        return t
+
+    @classmethod
+    def add_new_user(cls, form):
+        """
+        将表单数据传入Todo类，
+        在__init__()变成类属性
+        """
+        username = form.get('username')
+        password = form.get('password')
+
+        # 验证是否有重名
+        alls = User.all()
+        for l in alls:
+            if l.username == username:
+                return '重名'
+
+        # 验证密码与用户名格式
+        if len(username) <= 2 or len(password) <= 2:
+            return "用户名或密码太短了"
+        else:
+            # 创建对象u，设置属性
+            u = User.new_without_save(form)
+            # log('before hashed', u.password)
+            u.password = hashed_password_salt(password)
+            # log('hashed', u.password)
+            # 保存入User.txt
+            u.save()
+            return u
+
+
+# if __name__ == '__main__':
+#     # print()

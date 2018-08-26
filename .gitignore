@@ -11,3 +11,6 @@ __pycache__/app.cpython-37.pyc
 *.pyc
 data/Todo.txt
 log.txt
+*.txt
+*.txt
+*.pyc

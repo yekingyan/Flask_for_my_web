@@ -8,7 +8,7 @@ class Todo(Model):
     def __init__(self, form):
         self.id = None
         self.title = form.get('title', '')
-        self.completed = False
+        self.complete = False
         # 创建时间，更新时间
         self.ct = int(time.time())
         self.ut = self.ct
@@ -17,7 +17,7 @@ class Todo(Model):
     @classmethod
     def new(cls, form):
         """
-        创建并保存一个todo
+        创建并保存一个todo,保存于Todo.txt
         :param form: todo字典,如{'title':'doing'}
         :return: todo实例
         """
@@ -27,6 +27,10 @@ class Todo(Model):
 
     @classmethod
     def new_without_save(cls, form):
+        """
+        将表单数据传入Todo类，
+        在__init__()变成类属性
+        """
         t = cls(form)
         return t
 

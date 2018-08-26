@@ -9,13 +9,17 @@ from flask_bootstrap import Bootstrap
 from models.user import (
     salt,
 )
-
+from routes.user import main as user
 # 同级目录routes文件夹下todo.py
 from routes.todo import main as todo
+
+
 # 实例化Flask
 app = Flask(__name__)
+
 # 注册蓝图，url_prefix为每个main蓝图路由加上前缀
 app.register_blueprint(todo, url_prefix='/todo')
+app.register_blueprint(user)
 
 bootstrap = Bootstrap(app)
 

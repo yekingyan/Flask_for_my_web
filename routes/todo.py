@@ -33,6 +33,7 @@ def add():
     form = request.form
     print(form)
     t = Todo.new_without_save(form)
+
     if t.title == ' ' or len(t.title) == 0:
         flash("人生在世总是要干点什么的")
     else:
