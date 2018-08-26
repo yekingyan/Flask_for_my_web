@@ -1,7 +1,6 @@
 from models import Model
 import time
 from flask import request
-from models.user import get_cookie
 from tools import strftime
 
 
@@ -60,7 +59,7 @@ class Todo(Model):
         all_list = cls.all()
         data_by_cookie = []
         for l in all_list:
-            if l.cookie == get_cookie():
+            if l.cookie == request.cookies.get('cookie'):
                 # 时间格式转换
                 l.ct = strftime(l.ct)
                 data_by_cookie.append(l)

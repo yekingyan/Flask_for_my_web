@@ -1,0 +1,13 @@
+{% extends "base2.html" %}
+
+{% block content %}
+        <div class="center">
+        <video class="video center" poster="/static/Cyanide_and_Happiness/read.png" controls controlsList="nodownload" oncontextmenu="return false">
+            <source src="{{ url_for('static', filename='Cyanide_and_Happiness/The_Sign.MP4') }}" type="video/mp4">
+            <source src="{{ url_for('static', filename='Cyanide_and_Happiness/The_Sign.WEBM') }}" type="video/webm">
+{#            <object data="{{ url_for('static', filename='Cyanide_and_Happiness/The_Sign.MP4') }}">#}
+{#                <embed src="{{ url_for('static', filename='Cyanide_and_Happiness/The_Sign.WEBM') }}" type="video/webm"/>#}
+{#            </object>#}
+        </video>
+    </div>
+{% endblock %}
