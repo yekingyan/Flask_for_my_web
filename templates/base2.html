@@ -19,7 +19,13 @@
     <link rel="stylesheet" href="{{ url_for('static',filename='css/navbar.css') }}">
 {% endblock %}
 
-{% block title %}{{ title }} | 烟灰烬{% endblock %}
+{% block title %}
+    {% if title %}
+        {{ title }} | 烟灰烬
+    {% else %}
+        烟灰烬
+    {% endif %}
+{% endblock %}
 
 
 {% block navbar %}
@@ -57,7 +63,10 @@
             <div class="form-inline">
             <ul class="navbar-nav mr-auto mt-2 mt-md-0">
                 <li class="nav-item">
-                    <a class="btn btn-info" href="#!">登陆</a>
+                    <a class="btn btn-info" href={{ url_for('user.login') }}>登陆</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-info" href={{ url_for('user.register') }}>注册</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0" _lpchecked="1">

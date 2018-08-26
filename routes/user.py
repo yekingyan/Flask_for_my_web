@@ -17,7 +17,7 @@ main = Blueprint('user', __name__)
 
 @main.route('/login')
 def login():
-    return render_template('login.html')
+    return render_template('login.html', title='login')
 
 
 @main.route('/login/in', methods=['post'])
@@ -40,7 +40,7 @@ def sign_in():
 
 @main.route('/register')
 def register():
-    return render_template('register.html')
+    return render_template('register.html', title='register')
 
 
 @main.route('/register/add', methods=['post'])
@@ -59,5 +59,5 @@ def add_user():
     return redirect(url_for('user.register'))
 
 
-if __name__ == '__main__':
-    print(type('是'))
+# if __name__ == '__main__':
+#     print(type('是'))
