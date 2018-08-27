@@ -38,10 +38,15 @@ def index():
     return r
 
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html')
+
+
 if __name__ == '__main__':
     config = dict(
         host="0.0.0.0",
         port=2000,
         debug=True,
     )
-    app.run(host="0.0.0.0", port=2000)
+    app.run(**config)

@@ -64,7 +64,7 @@ def delete(todo_id):
             Todo.delete(todo_id)
             log("deleted id:", todo_id)
         else:
-            flash("离线状态不能删除登陆状态所添加的数据")
+            flash("离线状态不能删除在登陆状态时所添加的数据")
     else:
         flash("你要删除火星上面的东西吗")
     return redirect(url_for('.index'))
