@@ -13,6 +13,7 @@ class Todo(Model):
         self.ct = int(time.time())
         self.ut = self.ct
         self.cookie = request.cookies.get('cookie')
+        self.user = None
 
     @classmethod
     def new(cls, form):

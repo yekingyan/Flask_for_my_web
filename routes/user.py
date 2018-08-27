@@ -12,7 +12,6 @@ from tools import log
 from models.user import (
     User,
     current_user,
-    multi_add_user,
     current_user_name,
 )
 
@@ -56,7 +55,7 @@ def register():
 
 @main.route('/register/add', methods=['post'])
 def add_user():
-    multi_add_user()
+    User.multi_add_user()
 
     form = request.form
     u = User.add_new_user(form)

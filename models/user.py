@@ -5,6 +5,7 @@ from models import Model
 import time
 import hashlib
 from tools import log
+from models.todo import Todo
 
 
 def salt():
@@ -24,15 +25,6 @@ def salt():
     return salt16
 
 
-def hashed_password_salt(pwd):
-    """将密码加盐，返回hashed值"""
-    ascii_pwd = pwd.encode('ascii')
-    salts = "h{GWUoQ12(@B5c+#1N7Rz0uq)SB;{i=k"
-    ascii_salt = salts.encode('ascii')
-    hashed = hashlib.sha256(ascii_pwd + ascii_salt).hexdigest()
-    return hashed
-
-
 def current_user():
     """通过session的user_id返回用户对象"""
     user_id = session.get('user_id')
@@ -41,6 +33,7 @@ def current_user():
 
 
 def current_user_name():
+    """获取当前用户的用户名"""
     u = current_user()
     if u is not None:
         username = u.username
@@ -49,12 +42,18 @@ def current_user_name():
     return username
 
 
-def multi_add_user():
-    """通过cookie追踪用户是重复注册,写入log.txt"""
+def user_in_todo(user):
+    """
+    传入用户对象
+    为todo加入当前登陆用户属性
+    """
     cookie = request.cookies.get('cookie')
-    old_u = User.find_by(cookie=cookie)
-    if old_u is not None:
-        log(f"{old_u.username}在重复注册")
+    todos = Todo.find_all(cookie=cookie)
+    log('user in todo', todos)
+    if len(todos) >= 1:
+        for t in todos:
+            t.user = user.username
+            t.save()
 
 
 class User(Model):
@@ -86,6 +85,15 @@ class User(Model):
         t = cls(form)
         return t
 
+    @staticmethod
+    def hashed_password_salt(pwd):
+        """将密码加盐，返回hashed值"""
+        ascii_pwd = pwd.encode('ascii')
+        salts = "h{GWUoQ12(@B5c+#1N7Rz0uq)SB;{i=k"
+        ascii_salt = salts.encode('ascii')
+        hashed = hashlib.sha256(ascii_pwd + ascii_salt).hexdigest()
+        return hashed
+
     @classmethod
     def add_new_user(cls, form):
         """
@@ -109,10 +117,12 @@ class User(Model):
             # 创建对象u，设置属性
             u = User.new_without_save(form)
             # log('before hashed', u.password)
-            u.password = hashed_password_salt(password)
+            u.password = User.hashed_password_salt(password)
             # log('hashed', u.password)
             # 保存入User.txt
             u.save()
+            # 注册成功将之前的访客数据加入用户标记
+            user_in_todo(u)
             return u
 
     @classmethod
@@ -123,10 +133,18 @@ class User(Model):
         # log("v u p", username, password)
         u = cls.find_by(username=username)
         # log('uu', u)
-        if u is not None and u.password == hashed_password_salt(password):
+        if u is not None and u.password == User.hashed_password_salt(password):
             return u
         else:
             return None
+
+    @staticmethod
+    def multi_add_user():
+        """通过cookie追踪用户是重复注册,写入log.txt"""
+        cookie = request.cookies.get('cookie')
+        old_u = User.find_by(cookie=cookie)
+        if old_u is not None:
+            log(f"{old_u.username}在重复注册")
 
 # if __name__ == '__main__':
 # print(hashed_password_salt('aaa'))
