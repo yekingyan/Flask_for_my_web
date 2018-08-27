@@ -2,11 +2,19 @@
 
 {% block content %}
 
-    <div>
-        <form method="post" action={{ url_for('user.sign_in') }}>
-            <input type="text" name="username" placeholder="请输入昵称">
-            <input type="password" name="password" placeholder="请输入密码">
-            <button>登陆</button>
-        </form>
-    </div>
+    {% if not username %}
+        <div>
+            <form method="post" action={{ url_for('user.sign_in') }}>
+                <input type="text" name="username" placeholder="请输入昵称">
+                <input type="password" name="password" placeholder="请输入密码">
+                <button>登陆</button>
+            </form>
+        </div>
+    {% else %}
+        <div class="text-center">
+            <h1>你好! {{ username }}</h1>
+        </div>
+
+    {% endif %}
+
 {% endblock %}

@@ -9,7 +9,12 @@ from flask import (
     session,
 )
 from tools import log
-from models.user import User
+from models.user import (
+    User,
+    current_user,
+    multi_add_user,
+    current_user_name,
+)
 
 # 创建蓝图,蓝图名为main
 main = Blueprint('user', __name__)
@@ -17,15 +22,20 @@ main = Blueprint('user', __name__)
 
 @main.route('/login')
 def login():
-    return render_template('login.html', title='login')
+    user = current_user()
+    if user is not None:
+        username = user.username
+    else:
+        username = None
+    return render_template('login.html', title='login', username=username)
 
 
 @main.route('/login/in', methods=['post'])
 def sign_in():
     form = request.form
-    log('login form', form)
+    # log('login form', form)
     u = User.verify_user(form)
-    log('u', u)
+    # log('u', u)
     if u is not None:
         # 设置session
         session['user_id'] = u.id
@@ -40,15 +50,16 @@ def sign_in():
 
 @main.route('/register')
 def register():
-    return render_template('register.html', title='register')
+    username = current_user_name()
+    return render_template('register.html', title='register', username=username)
 
 
 @main.route('/register/add', methods=['post'])
 def add_user():
+    multi_add_user()
+
     form = request.form
-    # log(form)
     u = User.add_new_user(form)
-    # log(u)
     if "重名" in str(u):
         flash("该用户名已经被注册")
     if "用户名或密码太短了" in str(u):
@@ -56,7 +67,21 @@ def add_user():
         flash("请确保昵称长度2位以上，以及密码长度2位以上")
     else:
         flash("注册成功")
+        log("add_user", u.id, ':', u.username)
+        # 自动登陆
+        session['user_id'] = u.id
+        # session永不过期
+        session.permanent = True
+        return redirect(url_for('index'))
     return redirect(url_for('user.register'))
+
+
+@main.route('/logout')
+def logout():
+    if session.get('user_id') is not None:
+        p = session.pop('user_id')
+        log("sign-out", p)
+    return redirect(url_for('index'))
 
 
 # if __name__ == '__main__':

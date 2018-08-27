@@ -8,6 +8,8 @@ from flask import (
 from flask_bootstrap import Bootstrap
 from models.user import (
     salt,
+    current_user,
+    current_user_name,
 )
 from routes.user import main as user
 # 同级目录routes文件夹下todo.py
@@ -28,7 +30,8 @@ app.secret_key = 'asdkjfhsiw@#sf64461dasf#$%'
 
 @app.route('/')
 def index():
-    template = render_template('index.html')
+    username = current_user_name()
+    template = render_template('index.html', username=username)
     r = make_response(template)
     if request.cookies.get('cookie') is None:
         r.set_cookie('cookie', salt(), max_age=2419200)

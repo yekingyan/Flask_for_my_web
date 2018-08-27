@@ -11,6 +11,7 @@ from models.todo import Todo
 from tools import log
 from models.user import (
     salt,
+    current_user_name,
 )
 
 
@@ -21,7 +22,8 @@ main = Blueprint('todo', __name__)
 @main.route('/')
 def index():
     todo_list = Todo.all_by_cookie()
-    template = render_template('todo.html', todos=todo_list, title='Todo')
+    username = current_user_name()
+    template = render_template('todo.html', todos=todo_list, title='Todo', username=username)
     r = make_response(template)
     if request.cookies.get('cookie') is None:
         r.set_cookie('cookie', salt(), max_age=2419200)

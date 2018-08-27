@@ -26,7 +26,7 @@ def load_json(path):
 
     with open(path, 'r', encoding='utf-8') as f:
         s_json = f.read()
-        log("f.read", s_json)
+        # log("f.read", s_json)
         s = json.loads(s_json)
         return s
 
@@ -65,11 +65,11 @@ class Model(object):
         """
         # 将该类对象data加载到models变量
         path = cls.db_path()
-        log("path in all:", path)
+        # log("path in all:", path)
         models = load_json(path)
         # 得到所有的得到所有的 models
         ms = [cls._new_form_dict(m) for m in models]
-        log("ms", type(ms), ms)
+        # log("ms", type(ms), ms)
         return ms
 
     @classmethod
@@ -79,7 +79,7 @@ class Model(object):
         :return: 含属性值的对象m的列表
         """
         ms = []
-        log('kwargs:', kwargs, type(kwargs))
+        # log('kwargs:', kwargs, type(kwargs))
 
         # 只适用于传入一个键值对数据
         k, v = '', ''
@@ -99,7 +99,7 @@ class Model(object):
         kwargs是只有一个元素的dict
         u = User.find_by(username='sb')
         """
-        log('kwargs: ', kwargs, type(kwargs))
+        # log('kwargs: ', kwargs, type(kwargs))
         k, v = '', ''
         for key, value in kwargs.items():
             k, v = key, value

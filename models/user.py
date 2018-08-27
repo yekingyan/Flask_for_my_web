@@ -1,6 +1,6 @@
 import string
 import random
-from flask import request
+from flask import request, session
 from models import Model
 import time
 import hashlib
@@ -31,6 +31,30 @@ def hashed_password_salt(pwd):
     ascii_salt = salts.encode('ascii')
     hashed = hashlib.sha256(ascii_pwd + ascii_salt).hexdigest()
     return hashed
+
+
+def current_user():
+    """通过session的user_id返回用户对象"""
+    user_id = session.get('user_id')
+    user = User.find_by(id=user_id)
+    return user
+
+
+def current_user_name():
+    u = current_user()
+    if u is not None:
+        username = u.username
+    else:
+        username = None
+    return username
+
+
+def multi_add_user():
+    """通过cookie追踪用户是重复注册,写入log.txt"""
+    cookie = request.cookies.get('cookie')
+    old_u = User.find_by(cookie=cookie)
+    if old_u is not None:
+        log(f"{old_u.username}在重复注册")
 
 
 class User(Model):
@@ -96,16 +120,15 @@ class User(Model):
         """验证用户名或密码是否一致"""
         username = form.get('username')
         password = form.get('password')
-        log("v u p", username, password)
+        # log("v u p", username, password)
         u = cls.find_by(username=username)
-        log('uu', u)
-        if u.password == hashed_password_salt(password):
+        # log('uu', u)
+        if u is not None and u.password == hashed_password_salt(password):
             return u
         else:
             return None
 
-
 # if __name__ == '__main__':
-    # print(hashed_password_salt('aaa'))
-    # print(salt())
-    #
+# print(hashed_password_salt('aaa'))
+# print(salt())
+#
