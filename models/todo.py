@@ -120,6 +120,14 @@ class Todo(Model):
                 data_by_cookie.append(l)
         return data_by_cookie
 
+    # @classmethod
+    # def id_for_user(cls, username):
+    #     """返回所在的id的cookie值"""
+    #     models = cls.all()
+    #     for m in models:
+    #         # print(m)
+    #         if m.username == username:
+    #             return m.username
 
 # if __name__ == '__main__':
 #     print('text')

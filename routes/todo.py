@@ -52,10 +52,19 @@ def add():
 @main.route('/delete/<int:todo_id>')
 def delete(todo_id):
     log("tying delete id---", todo_id)
-    if Todo.id_for_cookie(todo_id) == request.cookies.get('cookie'):
-        t = Todo.delete(todo_id)
-        log("deleted id:", todo_id)
-        # flash("删除成功")
+    u_name = current_user_name()
+    t = Todo.find_by(id=todo_id)
+    # 用户身份删除
+    if u_name is not None and t.user == u_name:
+        Todo.delete(todo_id)
+    # 游客身份删除
+    elif t.cookie == request.cookies.get('cookie'):
+        # 游客不能删除已注册给用户的数据
+        if t.user is None:
+            Todo.delete(todo_id)
+            log("deleted id:", todo_id)
+        else:
+            flash("离线状态不能删除登陆状态所添加的数据")
     else:
         flash("你要删除火星上面的东西吗")
     return redirect(url_for('.index'))
