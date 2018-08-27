@@ -21,7 +21,13 @@ main = Blueprint('todo', __name__)
 
 @main.route('/')
 def index():
-    todo_list = Todo.all_by_cookie()
+    # 游客数据用cookie。
+    if current_user_name() is None:
+        todo_list = Todo.all_by_cookie()
+    # 用户数据优于session，用户优先
+    else:
+        todo_list = Todo.all_by_user()
+
     username = current_user_name()
     template = render_template('todo.html', todos=todo_list, title='Todo', username=username)
     r = make_response(template)

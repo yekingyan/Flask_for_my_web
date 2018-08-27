@@ -91,7 +91,6 @@ class Todo(Model):
                 return m.cookie
 
     @staticmethod
-    # todo
     def user_in_todo(user):
         """
         传入用户对象
@@ -108,6 +107,19 @@ class Todo(Model):
                     t.user = user.username
                     t.save()
 
+    @classmethod
+    def all_by_user(cls):
+        """从所有todo中返回属于请求cookie的数据"""
+        all_list = cls.all()
+        data_by_cookie = []
 
-if __name__ == '__main__':
-    print('text')
+        for l in all_list:
+            if l.user == current_user_name():
+                # 时间格式转换
+                l.ct = strftime(l.ct)
+                data_by_cookie.append(l)
+        return data_by_cookie
+
+
+# if __name__ == '__main__':
+#     print('text')
