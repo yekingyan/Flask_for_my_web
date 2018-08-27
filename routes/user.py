@@ -14,6 +14,7 @@ from models.user import (
     current_user,
     current_user_name,
 )
+from models.todo import Todo
 
 # 创建蓝图,蓝图名为main
 main = Blueprint('user', __name__)
@@ -71,6 +72,9 @@ def add_user():
         session['user_id'] = u.id
         # session永不过期
         session.permanent = True
+
+        # 注册成功将之前todo的访客数据加入用户标记
+        Todo.user_in_todo(u)
         return redirect(url_for('index'))
     return redirect(url_for('user.register'))
 

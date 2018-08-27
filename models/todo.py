@@ -1,7 +1,13 @@
 from models import Model
 import time
 from flask import request
-from tools import strftime
+from tools import (
+    strftime,
+    log,
+)
+from models.user import (
+    current_user_name,
+)
 
 
 class Todo(Model):
@@ -33,6 +39,11 @@ class Todo(Model):
         在__init__()变成类属性
         """
         t = cls(form)
+
+        # 加入加户标记
+        username = current_user_name()
+        t.user = username
+
         return t
 
     @classmethod
@@ -78,3 +89,25 @@ class Todo(Model):
             # print(m)
             if m.id == todo_id:
                 return m.cookie
+
+    @staticmethod
+    # todo
+    def user_in_todo(user):
+        """
+        传入用户对象
+        为todo加入当前登陆用户属性
+        """
+        cookie = request.cookies.get('cookie')
+        todos = Todo.find_all(cookie=cookie)
+        log('user in todo', todos)
+        if len(todos) >= 1:
+            for t in todos:
+                # 只有t.user为空时才能加入，
+                # 避免重复注册导致数据迁移
+                if t.user is None:
+                    t.user = user.username
+                    t.save()
+
+
+if __name__ == '__main__':
+    print('text')

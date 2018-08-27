@@ -5,7 +5,6 @@ from models import Model
 import time
 import hashlib
 from tools import log
-from models.todo import Todo
 
 
 def salt():
@@ -42,21 +41,7 @@ def current_user_name():
     return username
 
 
-def user_in_todo(user):
-    """
-    传入用户对象
-    为todo加入当前登陆用户属性
-    """
-    cookie = request.cookies.get('cookie')
-    todos = Todo.find_all(cookie=cookie)
-    log('user in todo', todos)
-    if len(todos) >= 1:
-        for t in todos:
-            # 只有t.user为空时才能加入，
-            # 避免重复注册导致数据迁移
-            if t.user is None:
-                t.user = user.username
-                t.save()
+
 
 
 class User(Model):
@@ -124,8 +109,6 @@ class User(Model):
             # log('hashed', u.password)
             # 保存入User.txt
             u.save()
-            # 注册成功将之前的访客数据加入用户标记
-            user_in_todo(u)
             return u
 
     @classmethod
