@@ -52,8 +52,11 @@ def user_in_todo(user):
     log('user in todo', todos)
     if len(todos) >= 1:
         for t in todos:
-            t.user = user.username
-            t.save()
+            # 只有t.user为空时才能加入，
+            # 避免重复注册导致数据迁移
+            if t.user is None:
+                t.user = user.username
+                t.save()
 
 
 class User(Model):
