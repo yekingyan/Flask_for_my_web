@@ -14,3 +14,29 @@ import app
 # gunicorn 就要这个变量
 # 变量值必须是Flask实例
 application =app.app
+
+
+
+"""
+web.conf 配置文件 以.conf结尾
+[program:web]
+command=/usr/bin/gunicorn wsgi --bind 0.0.0.0:80 --pid /tmp/web.pid
+directory=/home/xiao_web13/yhj
+autostart=true
+autorestart=true
+
+建立一个软连接
+ln -s /home/web/yhj/conf/web.conf /etc/supervisor/conf.d/web.conf
+
+
+web.nginx 配置文件 监听80，反向到5000
+server {
+    listen 80;
+    location / {
+        proxy_pass http://localhost:5000;
+    }
+}
+
+建立一个软连接 nginx不强制以.nginx结尾
+ln -s /home/web/yhj/conf/web.nginx /etc/nginx/sites-enabled/web
+"""
