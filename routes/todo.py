@@ -58,7 +58,7 @@ def delete(todo_id):
     if u_name is not None and t.user == u_name:
         Todo.delete(todo_id)
     # 游客身份删除
-    elif t.cookie == request.cookies.get('cookie'):
+    elif t is not None and t.cookie == request.cookies.get('cookie'):
         # 游客不能删除已注册给用户的数据
         if t.user is None:
             Todo.delete(todo_id)
