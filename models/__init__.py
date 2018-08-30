@@ -2,6 +2,7 @@ import json
 from tools import log
 import os
 
+
 def save_for_json(data, path):
     """
     保存数据为json格式,写入文件

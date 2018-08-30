@@ -8,9 +8,10 @@ from tools import (
 from models.user import (
     current_user_name,
 )
+from models.mongodb import MongoDB
 
 
-class Todo(Model):
+class Todo(MongoDB, Model):
     def __init__(self, form):
         self.id = None
         self.title = form.get('title', '')
