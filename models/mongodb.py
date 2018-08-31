@@ -90,7 +90,7 @@ class MongoDB(object):
                 if m.id == self.id:
                     index = i
                     break
-            log("index in save", index)
+            # log("index in save", index)
             models[index] = self
         for m in models:
             db[self.class_name()].save(m.__dict__)
@@ -103,12 +103,12 @@ class MongoDB(object):
         """
         mongo_data = db[cls.__name__].find(kwargs)
         list_ = list(mongo_data)
-        print('mongo', list_)
+        # print('mongo', list_)
         m = cls({})
         for dict_ in list_:
             for k, v in dict_.items():
                 setattr(m, k, v)
-        print('mongo m', m)
+        # print('mongo m', m)
         return m
 
     @classmethod
