@@ -5,6 +5,7 @@ from models import Model
 import time
 import hashlib
 from tools import log
+from models.mongodb import MongoDB
 
 
 def salt():
@@ -41,7 +42,7 @@ def current_user_name():
     return username
 
 
-class User(Model):
+class User(MongoDB, Model):
     def __init__(self, form):
         self.username = form.get('username')
         self.password = form.get('password')
