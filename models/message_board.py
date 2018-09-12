@@ -66,12 +66,12 @@ class MessageBoard(MongoDB, Model):
     @classmethod
     def delete(cls, id):
         print('delete', id)
-        m = MongoDB.find_by(id=int(id))
+        m = cls.find_by(id=int(id))
         if current_user_name() == m.user:
             m.delete = True
             m.save()
             log(f'{m.user}\n删除了\n{m.content}')
-        elif request.cookies.get('cookie') == m.cookie:
+        elif request.cookies.get('cookie') == m.cookie and m.user is None:
             m.delete = True
             m.save()
             log(f'{m.cookie}\n删除了\n{m.content}')

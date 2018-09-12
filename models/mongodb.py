@@ -103,7 +103,7 @@ class MongoDB(object):
         """
         mongo_data = db[cls.__name__].find(kwargs)
         list_ = list(mongo_data)
-        print('mongo', list_)
+        # print('mongo', list_)
         # print(kwargs)
         m = cls({})
         for dict_ in list_:
