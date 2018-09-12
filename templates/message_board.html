@@ -1,0 +1,35 @@
+{% extends "base2.html" %}
+
+
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href="/static/css/myvideo.css">
+{% endblock %}
+
+
+{% block content %}
+    <div>
+        {% for m in message %}
+            {% if m.user %}
+                <p>{{ m.user }}说：</p>
+            {% else %}
+                <p>{{ m.message_user }}</p>
+            {% endif %}
+            <span class="d-none">{{ m.id }}</span>
+            <p>{{ m.content }}</p>
+            <p>{{ m.ct }}</p><a href={{ url_for("message.delete", id=m.id) }} >删除</a><br>
+
+
+        {% endfor %}
+    </div>
+
+    <div>
+        <form  action={{ url_for("message.add") }} method="post">
+            <input type="text" placeholder="说点什么吧" name="content"><br>
+            {%  if not username %}
+                昵称：<input type="text" placeholder="给自己一个好听的花名" name="user"><br>
+            {% endif %}
+            <input type="submit" value="发送">
+        </form>
+    </div>
+{% endblock %}d

@@ -47,11 +47,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#!">视频</a>
                 </li>
-                <li class="nav-item {% if request.endpoint == 'todo.index' %}active{% endif %}"">
+                <li class="nav-item {% if request.endpoint == 'todo.index' %}active{% endif %}">
                     <a class="nav-link" href={{ url_for("todo.index") }}>Todo</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#!">聊天室</a>
+                <li class="nav-item {% if request.endpoint == 'message.index' %}active{% endif %}">
+                    <a class="nav-link" href={{ url_for('message.index') }}>聊天室</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#!">Google</a>
