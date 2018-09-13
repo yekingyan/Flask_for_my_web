@@ -34,6 +34,10 @@ def add():
     form = request.form
     print(form)
     m = MessageBoard.new_without_save(form)
+    # 第一次之后就不用输临时用户名，则m.message为空,此时要指定旧数据中的用户名给它
+    m.message_user = MessageBoard.find_by(cookie=request.cookies.get('cookie')).message_user
+    m.save()
+    # 用于第一次输入临时用户名找到是否存在cookie，有值就表名用户名重复了
     check_cookie = MessageBoard.find_by(message_user=m.message_user).cookie
 
     all_user = MessageBoard.all_user()
