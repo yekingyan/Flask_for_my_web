@@ -13,11 +13,14 @@
             {% if m.user %}
                 <p>{{ m.user }}说：</p>
             {% else %}
-                <p>{{ m.message_user }}</p>
+                <p>{{ m.message_user }}说：</p>
             {% endif %}
             <span class="d-none">{{ m.id }}</span>
             <p>{{ m.content }}</p>
-            <p>{{ m.ct }}</p><a href={{ url_for("message.delete", id=m.id) }} >删除</a><br>
+            <p>{{ m.ct }}</p>
+            {% if m.cookie == request.cookies.get('cookie') or m.user == username %}
+                <a href={{ url_for("message.delete", id=m.id) }} >删除</a>
+            {% endif %}<br>
 
 
         {% endfor %}
@@ -26,10 +29,10 @@
     <div>
         <form  action={{ url_for("message.add") }} method="post">
             <input type="text" placeholder="说点什么吧" name="content"><br>
-            {%  if not username %}
+            {%  if not username and not guest %}
                 昵称：<input type="text" placeholder="给自己一个好听的花名" name="user"><br>
             {% endif %}
-            <input type="submit" value="发送">
+            {{ guest }}<input type="submit" value="发送">
         </form>
     </div>
 {% endblock %}

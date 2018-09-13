@@ -70,10 +70,10 @@ class MessageBoard(MongoDB, Model):
         if current_user_name() == m.user:
             m.delete = True
             m.save()
-            log(f'{m.user}\n删除了\n{m.content}')
+            log(f'{m.user} 删除了\n{m.content}')
         elif request.cookies.get('cookie') == m.cookie and m.user is None:
             m.delete = True
             m.save()
-            log(f'{m.cookie}\n删除了\n{m.content}')
+            log(f'{m.cookie} 删除了\n{m.content}')
         else:
             flash("你不能删除别人的内容，或你的身份已经过期")
