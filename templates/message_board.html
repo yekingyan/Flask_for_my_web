@@ -18,7 +18,7 @@
             <span class="d-none">{{ m.id }}</span>
             <p>{{ m.content }}</p>
             <p>{{ m.ct }}</p>
-            {% if m.cookie == request.cookies.get('cookie') or m.user == username %}
+            {% if m.cookie == request.cookies.get('cookie') or m.user == username and m.user is not none %}
                 <a href={{ url_for("message.delete", id=m.id) }} >删除</a>
             {% endif %}<br>
 

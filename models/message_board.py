@@ -67,11 +67,15 @@ class MessageBoard(MongoDB, Model):
     def delete(cls, id):
         print('delete', id)
         m = cls.find_by(id=int(id))
-        if current_user_name() == m.user:
+        if current_user_name() == m.user and current_user_name() is not None:
+            # print("wtffffffffff", current_user_name(), m.user)
             m.delete = True
             m.save()
             log(f'{m.user} 删除了\n{m.content}')
         elif request.cookies.get('cookie') == m.cookie and m.user is None:
+            # # _________________________
+            # print(request.cookies.get('cookie'))
+            # print(m.cookie)
             m.delete = True
             m.save()
             log(f'{m.cookie} 删除了\n{m.content}')
