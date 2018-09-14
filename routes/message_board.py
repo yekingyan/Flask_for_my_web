@@ -5,7 +5,6 @@ from flask import (
     redirect,
     url_for,
     flash,
-    session,
 )
 from models.message_board import MessageBoard
 from models.user import current_user_name
@@ -19,7 +18,6 @@ def index():
     all_message = MessageBoard.all_message()
     cookie = request.cookies.get('cookie')
     guest = MessageBoard.find_by(cookie=cookie).message_user
-    print((guest,))
     return render_template(
         'message_board.html',
         title="留言板",

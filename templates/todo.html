@@ -4,6 +4,29 @@
 {% block head %}
     {{ super() }}
     <link rel="stylesheet" href="/static/css/myvideo.css">
+    <!--ajax-->
+    <script type=text/javascript>
+        $(function () {
+            // 选择用于操作的元素，并绑定事件,如果返回false将取消请求href中的url
+            $('#submit').bind('click', function () {
+                //$.getJSON(url, data, func)
+                //发送一个 GET 请求给 url
+                //data 对象的内容将以查询参数的形式发送
+                //一旦数据抵达，data将以返回值作为参数执行给定的函数
+                $.getJSON($SCRIPT_ROOT + '/todo/add', {
+                    title: $('input[name="title"]').val(),
+                    {#b: $('input[name="b"]').val()#}
+                }, function (data) {
+                    // 在页面显示内容
+                    {#$("#result").text(data.result);#}
+                    var tbody = document.querySelector('tbody');
+                    var ids = document.querySelectorAll('[scope="row"]');
+                    tbody.insertAdjacentHTML('beforeend',`<tr class="table-warning"><td scope="row">${ids.length+1}</td><td>${data.title}</td><td>${data.ct}</td><td><a class="btn btn-danger" href='/todo/delete/${data.id}'>delete</a></td></tr>`);
+                });
+                return false;
+            });
+        });
+    </script>
 {% endblock %}
 
 
@@ -17,11 +40,11 @@
         </footer>
     </div>
     <div class="card-body mt-2 center">
-        <form class="block-center" action={{ url_for("todo.add") }} method="post">
+        <form class="block-center" action={{ url_for("todo.add") }} > {# method="post" #}
             <input type="text" class="form-control" placeholder="let's do something" aria-label=""
                    aria-describedby="basic-addon1"
                    name="title">
-            <input class="btn btn-success border-left" type="submit" value="Do it!">
+            <input id="submit" class="btn btn-success border-left" type="submit" value="Do it!">
         </form>
     </div>
     <div>

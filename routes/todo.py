@@ -6,9 +6,13 @@ from flask import (
     url_for,
     make_response,
     flash,
+    jsonify,
 )
 from models.todo import Todo
-from tools import log
+from tools import (
+    log,
+    strftime,
+)
 from models.user import (
     salt,
     current_user_name,
@@ -36,9 +40,12 @@ def index():
     return r
 
 
-@main.route('/add', methods=['post'])
+@main.route('/add', methods=['get', 'post'])
 def add():
-    form = request.form
+    if request.method == 'POST':
+        form = request.form
+    else:
+        form = request.args
     print(form)
     t = Todo.new_without_save(form)
 
@@ -46,7 +53,12 @@ def add():
         flash("人生在世总是要干点什么的")
     else:
         t.save()
-    return redirect(url_for('todo.index'))
+    # return redirect(url_for('todo.index'))
+    return jsonify({
+        "id": t.id,
+        "ct": strftime(t.ct),
+        "title": t.title,
+    })
 
 
 @main.route('/delete/<int:todo_id>')
