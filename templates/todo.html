@@ -7,6 +7,7 @@
     <!--ajax-->
     <script type=text/javascript>
         $(function () {
+            //增加
             // 选择用于操作的元素，并绑定事件,如果返回false将取消请求href中的url
             $('#submit').bind('click', function () {
                 //$.getJSON(url, data, func)
@@ -18,13 +19,36 @@
                     {#b: $('input[name="b"]').val()#}
                 }, function (data) {
                     // 在页面显示内容
-                    {#$("#result").text(data.result);#}
                     var tbody = document.querySelector('tbody');
                     var ids = document.querySelectorAll('[scope="row"]');
-                    tbody.insertAdjacentHTML('beforeend',`<tr class="table-warning"><td scope="row">${ids.length+1}</td><td>${data.title}</td><td>${data.ct}</td><td><a class="btn btn-danger" href='/todo/delete/${data.id}'>delete</a></td></tr>`);
+                    tbody.insertAdjacentHTML('beforeend', `
+                        <tr class="table-warning">
+                        <td class="d-none">${data.id}</td>
+                        <td scope="row">${ids.length + 1}</td>
+                        <td>${data.title}</td><td>${data.ct}</td>
+                        <td><a id ='${data.id}' class="btn btn-danger" href='/todo/delete/${data.id}'>delete</a></td>
+                        </tr>`
+                    );
                 });
                 return false;
             });
+
+        });
+
+        $(function () {
+            //删除
+            $('.btn-danger').bind('click', function (event) {
+                $.getJSON($SCRIPT_ROOT + `/todo/delete/${$(event.target).attr("id")}`, '',
+                    function (dada) {
+                        // 在页面显示
+                        const del = $(`#${$(event.target).attr("id")}`).parent().parent();
+                        // console.log(data.id);
+                        del.remove();
+                        return false
+                    });
+                return false
+            });
+            return false
         });
     </script>
 {% endblock %}
@@ -40,7 +64,7 @@
         </footer>
     </div>
     <div class="card-body mt-2 center">
-        <form class="block-center" action={{ url_for("todo.add") }} > {# method="post" #}
+        <form class="block-center" action={{ url_for("todo.add") }}> {# method="post" #}
             <input type="text" class="form-control" placeholder="let's do something" aria-label=""
                    aria-describedby="basic-addon1"
                    name="title">
@@ -60,14 +84,17 @@
             <tbody class="text-center">
             {% for t in todos %}
                 <tr class="table-warning">
+                    <td class="d-none">{{ t.id }}</td>
                     <td scope="row">{{ loop.index }}</td>
                     <td>{{ t.title }}</td>
                     <td>{{ t.ct }}</td>
-                    <td><a class="btn btn-danger" href={{ url_for("todo.delete", todo_id=t.id) }}>delete</a></td>
+                    <td><a id="{{ t.id }}" class="btn btn-danger"
+                           href={{ url_for("todo.delete", todo_id=t.id) }}>delete</a></td>
                 </tr>
             {% endfor %}
             </tbody>
         </table>
+
     </div>
 
 {% endblock %}
