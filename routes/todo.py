@@ -40,12 +40,12 @@ def index():
     return r
 
 
-@main.route('/add', methods=['get', 'post'])
+@main.route('/add', methods=['post'])
 def add():
-    if request.method == 'POST':
-        form = request.form
-    else:
-        form = request.args
+    if request.method == 'POST' or request.method == 'post':
+        form = request.json
+        if form is None:
+            form = request.form
     print(form)
     t = Todo.new_without_save(form)
 
