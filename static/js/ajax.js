@@ -55,12 +55,34 @@ var todoTemplate = function (todo) {
     return t;
 };
 
+
 //添加一个todo到html中
 var insertTodo = function (todo) {
     var todoCell = todoTemplate(todo);
     var todoList = e('tbody');
     todoList.insertAdjacentHTML('beforeend', todoCell)
 }
+
+// flash
+var flashTemplate = function (todo) {
+    var flash = todo.flash;
+    var t = `
+        <div class="alert alert-dismissible fade show alert-info" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+            <strong>${flash}</strong>
+        </div>
+    `;
+    return t
+}
+
+var insertFlash = function (todo) {
+    var nav = e('nav');
+    var flash = flashTemplate(todo);
+    nav.insertAdjacentHTML('afterend', flash)
+};
+
 
 //绑定添加事件
 var bindEventTodoAdd = function () {
@@ -75,8 +97,13 @@ var bindEventTodoAdd = function () {
         apiTodoAdd(form, function (r) {
             // 收到返回的数据, 插入到页面中
             var todo = JSON.parse(r);
-            insertTodo(todo);
-            log("成功新增：",todo.id,todo.title)
+            if (todo.status === 200) {
+                insertTodo(todo);
+                log("成功新增：", todo.id, todo.title)
+            }
+            else {
+                insertFlash(todo)
+            }
         });
     });
 };
@@ -117,9 +144,15 @@ var bindEvenTodoDelete2 = function () {
             // log(id);
             id = id.slice(5);
             apiTodoDelete(id, function (r) {
-                tr.remove();
-                var todo = JSON.parse(r)
-                log('成功删除：', todo.id, todo.title)
+                // tr.remove();
+                var todo = JSON.parse(r);
+                if (todo.status === 200) {
+                    tr.remove();
+                    log('成功删除：', todo.id, todo.title)
+                }
+                else {
+                    insertFlash(todo)
+                }
             })
         }
     })

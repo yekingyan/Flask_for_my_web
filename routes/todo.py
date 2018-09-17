@@ -50,7 +50,8 @@ def add():
     t = Todo.new_without_save(form)
 
     if t.title == ' ' or len(t.title) == 0:
-        flash("人生在世总是要干点什么的")
+        # flash("人生在世总是要干点什么的")
+        return jsonify({'flash': "人生在世总是要干点什么的"})
     else:
         t.save()
     # return redirect(url_for('todo.index'))
@@ -58,6 +59,7 @@ def add():
         "id": t.id,
         "ct": strftime(t.ct),
         "title": t.title,
+        "status": 200,
     })
 
 
@@ -76,12 +78,11 @@ def delete(todo_id):
             Todo.delete(todo_id)
             log("deleted id:", todo_id)
         else:
-            flash("离线状态不能删除在登陆状态时所添加的数据")
-            return redirect(url_for('.index'))
+            return jsonify({"flash": "离线状态不能删除在登陆状态时所添加的数据"})
     else:
-        flash("你要删除火星上面的东西吗")
-        return redirect(url_for('.index'))
+        return jsonify({"flash": "你要删除火星上面的东西吗"})
     return jsonify({
         'id': t.id,
         'title': t.title,
+        'status': 200,
     })
