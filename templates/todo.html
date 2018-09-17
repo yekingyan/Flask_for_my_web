@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/static/css/myvideo.css">
 
     <!--ajax-->
-    <script src="/static/js/ajax.js"></script>
+{#    <script src="/static/js/ajax.js"></script>#}
 {% endblock %}
 
 
@@ -44,13 +44,14 @@
                     <td scope="row">{{ loop.index }}</td>
                     <td>{{ t.title }}</td>
                     <td>{{ t.ct }}</td>
-                    <td><a id="{{ t.id }}" class="btn btn-danger"
-                           href={{ url_for("todo.delete", todo_id=t.id) }}>delete</a></td>
+                    <td><a id="todo-{{ t.id }}" class="btn btn-danger"
+{#                            href={{ url_for("todo.delete", todo_id=t.id) }}>delete</a></td>#}
+                            href='#'>delete</a></td>
                 </tr>
             {% endfor %}
             </tbody>
         </table>
 
     </div>
-
+    <script src="/static/js/ajax.js"></script>
 {% endblock %}

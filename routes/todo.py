@@ -77,6 +77,11 @@ def delete(todo_id):
             log("deleted id:", todo_id)
         else:
             flash("离线状态不能删除在登陆状态时所添加的数据")
+            return redirect(url_for('.index'))
     else:
         flash("你要删除火星上面的东西吗")
-    return redirect(url_for('.index'))
+        return redirect(url_for('.index'))
+    return jsonify({
+        'id': t.id,
+        'title': t.title,
+    })

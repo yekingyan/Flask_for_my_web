@@ -1,16 +1,16 @@
-var log = function() {
+var log = function () {
     console.log.apply(console, arguments)
 };
 
 // 简化选择器
-var e = function(sel) {
+var e = function (sel) {
     return document.querySelector(sel)
 };
 
 /*
  ajax 函数
 */
-var ajax = function(method, path, data, responseCallback) {
+var ajax = function (method, path, data, responseCallback) {
     // 创建 XMLHttpRequest 对象
     var r = new XMLHttpRequest();
     // 设置请求方法和请求地址，第三个参数，是否使用异步
@@ -18,9 +18,9 @@ var ajax = function(method, path, data, responseCallback) {
     // 设置请求的头
     r.setRequestHeader('Content-Type', 'application/json');
     // 注册响应函数，获捉事件变化
-    r.onreadystatechange = function() {
+    r.onreadystatechange = function () {
         // readyState为4的时候是一个响应，表求请求已经收到了服务器的响应
-        if(r.readyState === 4) {
+        if (r.readyState === 4) {
             responseCallback(r.response)
             // {ct: "20180916-16:27:31", id: 18, title: "test ajax"}
         }
@@ -31,14 +31,14 @@ var ajax = function(method, path, data, responseCallback) {
     r.send(data)
 };
 
-// 增加一个 todo
-var apiTodoAdd = function(form, callback) {
+// 增加一个todo到服务器
+var apiTodoAdd = function (form, responseCallback) {
     var path = '/todo/add';
-    ajax('POST', path, form, callback)
+    ajax('POST', path, form, responseCallback)
 };
 
 // 插入的模板
-var todoTemplate = function(todo) {
+var todoTemplate = function (todo) {
     var title = todo.title;
     var id = todo.id;
     var ct = todo.ct;
@@ -49,43 +49,90 @@ var todoTemplate = function(todo) {
         <td class="d-none">${id}</td>
         <td scope="row">${index}</td>
         <td>${title}</td><td>${ct}</td>
-        <td><a id ="${id}" class="btn btn-danger" href="#">delete</a></td>
+        <td><a id ="todo-${id}" class="btn btn-danger" href="#">delete</a></td>
         </tr>
     `;
     return t;
 };
 
-//添加一个todo
-var insertTodo = function(todo) {
+//添加一个todo到html中
+var insertTodo = function (todo) {
     var todoCell = todoTemplate(todo);
     var todoList = e('tbody');
     todoList.insertAdjacentHTML('beforeend', todoCell)
 }
 
 //绑定添加事件
-var bindEventTodoAdd = function() {
+var bindEventTodoAdd = function () {
     var b = e('#submit');
-    b.addEventListener('click', function(){
+    b.addEventListener('click', function () {
         var input = e('input[name="title"]');
         var title = input.value;
-        log('click add', title);
+        // log('click add', title);
         var form = {
             'title': title,
         };
-        apiTodoAdd(form, function(r) {
+        apiTodoAdd(form, function (r) {
             // 收到返回的数据, 插入到页面中
             var todo = JSON.parse(r);
             insertTodo(todo);
+            log("成功新增：",todo.id,todo.title)
         });
     });
 };
 
-// main
-var run = function() {
-    bindEventTodoAdd();
+// 删除一个todo到服务器
+var apiTodoDelete = function (id, responseCallback) {
+    var url = '/todo/delete/';
+    ajax('get', url + id, null, responseCallback)
+};
+
+// 新增的不能删除，可能是循环问题，亦可能是没有监听父节点的问题
+var bindEvenTodoDelete = function () {
+    var deletes = document.querySelectorAll('.btn-danger');
+    for (var i = 0; i < deletes.length; i++) {
+        deletes[i].addEventListener('click', function (event) {
+            self = event.target;
+            var id = self.getAttribute("id");
+            // console.log(id);
+            id = id.slice(5);
+            apiTodoDelete(id, function (r) {
+                tr = self.parentElement.parentElement;
+                tr.remove();
+                log('成功删除：', r.response)
+            })
+        })
+    }
+    ;
 };
 
 
-window.onload = function(){
+var bindEvenTodoDelete2 = function () {
+    deletes = e('tbody');
+    deletes.addEventListener('click', function (event) {
+        var self = event.target;
+        if (self.classList.contains('btn-danger')) {
+            var tr = self.parentElement.parentElement;
+            var id = self.getAttribute("id");
+            // log(id);
+            id = id.slice(5);
+            apiTodoDelete(id, function (r) {
+                tr.remove();
+                var todo = JSON.parse(r)
+                log('成功删除：', todo.id, todo.title)
+            })
+        }
+    })
+};
+
+
+// main
+var run = function () {
+    bindEventTodoAdd();
+    bindEvenTodoDelete2();
+};
+
+
+window.onload = function () {
     run()
 };
