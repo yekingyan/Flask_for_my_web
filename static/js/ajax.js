@@ -43,7 +43,7 @@ var todoTemplate = function (todo) {
     var id = todo.id;
     var ct = todo.ct;
     var ids = document.querySelectorAll('[scope="row"]');
-    var index = ids.length + 1
+    var index = ids.length + 1;
     var t = `
         <tr class="table-warning">
         <td class="d-none">${id}</td>

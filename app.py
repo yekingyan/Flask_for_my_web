@@ -3,18 +3,17 @@ from flask import (
     request,
     render_template,
     make_response,
-    session,
 )
 from flask_bootstrap import Bootstrap
 from models.user import (
     salt,
-    current_user,
     current_user_name,
 )
 from routes.user import main as user
 # 同级目录routes文件夹下todo.py
 from routes.todo import main as todo
 from routes.message_board import main as message
+from flask_socketio import SocketIO
 
 # 实例化Flask
 app = Flask(__name__)
@@ -25,7 +24,7 @@ app.register_blueprint(user)
 app.register_blueprint(message, url_prefix='/message')
 
 bootstrap = Bootstrap(app)
-
+socketio = SocketIO(app)
 app.secret_key = 'asdkjfhsiw@#sf64461dasf#$%'
 
 
@@ -47,7 +46,7 @@ def page_not_found(e):
 if __name__ == '__main__':
     config = dict(
         host="0.0.0.0",
-        port=2000,
+        port=5000,
         debug=True,
     )
-    app.run(**config)
+    socketio.run(app, **config)

@@ -4,35 +4,46 @@
 {% block head %}
     {{ super() }}
     <link rel="stylesheet" href="/static/css/myvideo.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
 {% endblock %}
 
 
 {% block content %}
-    <div>
-        {% for m in message %}
-            {% if m.user %}
-                <p>{{ m.user }}说：</p>
-            {% else %}
-                <p>{{ m.message_user }}说：</p>
-            {% endif %}
-            <span class="d-none">{{ m.id }}</span>
-            <p>{{ m.content }}</p>
-            <p>{{ m.ct }}</p>
-            {% if m.cookie == request.cookies.get('cookie') or m.user == username and m.user is not none %}
-                <a href={{ url_for("message.delete", id=m.id) }} >删除</a>
-            {% endif %}<br>
+    <div class="container col-6 offset-3">
+        <div>
+            {% for m in message %}
+                {% if m.user %}
+                    <p class="d-inline">
+                        <span class="text-black-50">{{ m.ct[6:-3] }}</span>
+                        <span class="ml-2 font-weight-bold">{{ m.user }}<span class="text-white bg-info ml-1">&nbsp说&nbsp</span></span>
+                    </p>
+                {% else %}
+                    <p class="d-inline">
+                        <span class="text-black-50">{{ m.ct[6:-3] }}</span>
+                        <span class="ml-2 font-weight-bold">{{ m.message_user }}<span class="text-white bg-info ml-1">&nbsp说&nbsp</span></span>
+                    </p>
+                {% endif %}
+                <span class="d-none">{{ m.id }}</span>
+                <span class="list-group-item-action list-group-item-success d-inline-flex mb-2">
+                    {{ m.content }}
+                    {% if m.cookie == request.cookies.get('cookie') or m.user == username and m.user is not none %}
+                    <a class="fa fa-times mt-1 text-danger" href={{ url_for("message.delete", id=m.id) }}></a>
+                {% endif %}<br>
+                </span>
 
 
-        {% endfor %}
-    </div>
 
-    <div>
-        <form  action={{ url_for("message.add") }} method="post">
-            <input type="text" placeholder="说点什么吧" name="content"><br>
-            {%  if not username and not guest %}
-                昵称：<input type="text" placeholder="给自己一个好听的花名" name="user"><br>
-            {% endif %}
-            {{ guest }}<input type="submit" value="发送">
-        </form>
+            {% endfor %}
+        </div>
+
+        <div>
+            <form action={{ url_for("message.add") }} method="post">
+                <input type="text" placeholder="说点什么吧" name="content"><br>
+                {% if not username and not guest %}
+                    昵称：<input type="text" placeholder="给自己一个好听的花名" name="user"><br>
+                {% endif %}
+                {{ guest }}<input type="submit" value="发送">
+            </form>
+        </div>
     </div>
 {% endblock %}

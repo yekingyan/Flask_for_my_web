@@ -40,7 +40,6 @@ class Todo(MongoDB, Model):
         在__init__()变成类属性
         """
         t = cls(form)
-
         # 加入加户标记
         username = current_user_name()
         t.user = username
