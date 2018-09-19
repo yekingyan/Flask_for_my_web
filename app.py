@@ -50,6 +50,12 @@ def connected_msg(msg):
     emit('server_response', {'data': msg['data']})
 
 
+@socketio.on('client_event')
+def connected_msg(msg):
+    print("来自客户端的：", msg)
+    emit('new_message', {'data': msg['data']})
+
+
 if __name__ == '__main__':
     config = dict(
         host="0.0.0.0",
