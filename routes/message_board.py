@@ -9,6 +9,7 @@ from flask import (
 from models.message_board import MessageBoard
 from models.user import current_user_name
 
+
 main = Blueprint('message', __name__)
 
 
@@ -51,7 +52,7 @@ def add():
             and check_cookie != request.cookies.get('cookie') \
             and m.message_user in all_user \
             and m.user is None:
-            flash("好名字都被别人取了，再想一个昵称吧")
+        flash("好名字都被别人取了，再想一个昵称吧")
     # 首页会自动设cookie
     elif check_cookie is '' or check_cookie is None:
         return redirect(url_for('index'))
@@ -64,3 +65,5 @@ def add():
 def delete(id):
     MessageBoard.delete(id)
     return redirect(url_for(".index"))
+
+
