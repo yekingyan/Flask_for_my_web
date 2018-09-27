@@ -6,7 +6,10 @@ from flask import (
     url_for,
     flash,
 )
-from models.message_board import MessageBoard
+from models.message_board import (
+    MessageBoard,
+    guest,
+)
 from models.user import current_user_name
 
 
@@ -32,14 +35,8 @@ def index():
 @main.route('/add', methods=['post'])
 def add():
     form = request.form
-    m = MessageBoard.new_without_save(form)
-    # 第一次之后就不用输临时用户名，则m.message为空,此时要指定旧数据中的用户名给它
-    if m.message_user is '':
-        m.message_user = MessageBoard.find_by(cookie=request.cookies.get('cookie')).message_user
-        m.save()
-    # 用于第一次输入临时用户名找到是否存在cookie，有值就表名用户名重复了
-    check_cookie = MessageBoard.find_by(message_user=m.message_user).cookie
-
+    print(form, "testttt")
+    m, check_cookie = guest(form)
     all_user = MessageBoard.all_user()
     # 判断内容是否空白
     if m.content == ' ' or len(m.content) == 0:
@@ -67,3 +64,52 @@ def delete(id):
     return redirect(url_for(".index"))
 
 
+from flask_socketio import SocketIO, emit
+socketio = SocketIO()
+
+
+# 纪录连接状态
+@socketio.on('connect_event', namespace='/chat')
+def connected_msg(msg):
+    print("来自客户端的：", msg)
+    emit('server_response', {'data': msg['data']})
+
+
+# 聊天信息的接收与响应
+@socketio.on('client_event', namespace='/chat')
+def connected_msg(form):
+    print("来自客户端的：", form)
+    m, check_cookie = guest(form)
+    all_user = MessageBoard.all_user()
+    # 判断内容是否空白
+    if m.content == ' ' or len(m.content) == 0:
+        emit('flash_message', {'flash': "你说得很空白无力"})
+    # 排除重名
+    elif m.message_user is '' and m.user is None:
+        emit('flash_message', {'flash': "给自己一个好听的昵称吧"})
+    # 查看cookie是否匹配
+    elif (check_cookie is not '' or check_cookie is not None) \
+            and check_cookie != request.cookies.get('cookie') \
+            and m.message_user in all_user \
+            and m.user is None:
+        emit('flash_message', {'flash': "好名字都被别人取了，再想一个昵称吧"})
+    # 首页会自动设cookie
+    elif check_cookie is '' or check_cookie is None:
+        return redirect(url_for('index'))
+    else:
+        m.save()
+    # return redirect(url_for('.index'))
+        # 是否显示删除按纽
+        username, del_button = current_user_name(), False
+        if m.cookie == request.cookies.get('cookie') or m.user == username and m.user is not None:
+            del_button = True
+        emit('new_message', {
+            'user': m.user,
+            'message_user': m.message_user,
+            'id': m.id,
+            'ct': m.ct,
+            'content': m.content,
+            'del_button': del_button,
+        },
+             broadcast=True,
+             )

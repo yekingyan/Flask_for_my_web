@@ -12,17 +12,17 @@
 
 {% block content %}
     <div class="container col-6 offset-3">
-        <div>
+        <div id='message'>
             {% for m in message %}
                 {% if m.user %}
                     <p class="d-inline">
                         <span class="text-black-50">{{ m.ct[6:-3] }}</span>
-                        <span class="ml-2 font-weight-bold">{{ m.user }}<span class="text-white bg-info ml-1">&nbsp说&nbsp</span></span>
+                        <span class="ml-2 font-weight-bold"><span title="user">{{ m.user }}</span><span class="text-white bg-info ml-1">&nbsp说&nbsp</span></span>
                     </p>
                 {% else %}
                     <p class="d-inline">
                         <span class="text-black-50">{{ m.ct[6:-3] }}</span>
-                        <span class="ml-2 font-weight-bold">{{ m.message_user }}<span class="text-white bg-info ml-1">&nbsp说&nbsp</span></span>
+                        <span class="ml-2 font-weight-bold"><span title="user">{{ m.message_user }}</span><span class="text-white bg-info ml-1">&nbsp说&nbsp</span></span>
                     </p>
                 {% endif %}
                 <span class="d-none">{{ m.id }}</span>
@@ -34,13 +34,12 @@
                 </span>
 
 
-
             {% endfor %}
         </div>
 
         <div>
-            <form action={{ url_for("message.add") }} method="post">
-                <input type="text" placeholder="说点什么吧" name="content"><br>
+            <form action="#" method="post"><!--url_for("message.add")-->
+                <input id="msg_input" type="text" placeholder="说点什么吧" name="content"><br>
                 {% if not username and not guest %}
                     昵称：<input type="text" placeholder="给自己一个好听的花名" name="user"><br>
                 {% endif %}

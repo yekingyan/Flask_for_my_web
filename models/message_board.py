@@ -81,3 +81,16 @@ class MessageBoard(MongoDB, Model):
             log(f'{m.cookie} 删除了\n{m.content}')
         else:
             flash("你不能删除别人的内容，或你的身份已经过期")
+
+
+def guest(form):
+    m = MessageBoard.new_without_save(form)
+    # 第一次之后就不用输临时用户名，则m.message为空,此时要指定旧数据中的用户名给它
+    if m.message_user is '':
+        m.message_user = MessageBoard.find_by(cookie=request.cookies.get('cookie')).message_user
+    # print(m.content, type(m.content), len(m.content))
+    # if m.content != ' ' and len(m.content) != 0:
+    #     m.save()
+    # 用于第一次输入临时用户名找到是否存在cookie，有值就表名用户名重复了
+    check_cookie = MessageBoard.find_by(message_user=m.message_user).cookie
+    return m, check_cookie
