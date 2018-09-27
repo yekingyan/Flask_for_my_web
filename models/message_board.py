@@ -81,7 +81,8 @@ class MessageBoard(MongoDB, Model):
             log(f'{m.cookie} 删除了\n{m.content}')
         else:
             flash("你不能删除别人的内容，或你的身份已经过期")
-
+            return {'flash': '你不能删除别人的内容，或你的身份已经过期'}
+        return m
 
 def guest(form):
     m = MessageBoard.new_without_save(form)

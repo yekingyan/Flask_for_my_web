@@ -75,11 +75,11 @@ var messageTemplate = function (msg) {
     // message内容及删除按纽
     var t2 = `
         <span class="d-none">${id}</span>
-                <span class="list-group-item-action list-group-item-success d-inline-flex mb-2">
+                <span id= "del-${id}" class="list-group-item-action list-group-item-success d-inline-flex mb-2">
                     ${content}
                     
                 
-    `
+    `;
     var d_button = function () {
         var del;
         if (del_button === true){
@@ -95,7 +95,7 @@ var messageTemplate = function (msg) {
     `
         }
         return del
-    }
+    };
 
     var t = function () {
         var temp;
@@ -123,7 +123,7 @@ var insertMesage = function (msg) {
 };
 
 
-//meesage的插入事件绑定
+//message的插入事件绑定
 var accept_message = function () {
     socket.on('new_message', function (msg) {
         console.log("accept:", msg);
@@ -131,6 +131,31 @@ var accept_message = function () {
     });
 };
 
+// 请求删除 message
+var request_remove_message = function (msg) {
+    var dels = $('a.text-danger');
+    for(var i = 0; i < dels.length; i++){
+        dels[i].addEventListener('click', function (event) {
+            var self = event.target;
+            var logg = self.getAttribute('href');
+            var id = logg.slice(16);
+            console.log("尝试删除：",id);
+            socket.emit('delete_msg',{'id': id});
+            event.preventDefault();
+            return false;
+        })
+    }
+};
+
+// 删除事件监听
+var delete_message = function () {
+    socket.on('remove',function (msg) {
+        log("delete:",msg);
+        var id = msg.id;
+        $(`#del-${id}`).remove();
+
+    })
+};
 
 // flash的模板
 var flashTemplate = function (msg) {
@@ -174,6 +199,8 @@ var main = function () {
         accept_message();
         flash_message();
         scroll_bottom();
+        request_remove_message();
+        delete_message();
     });
 };
 main();

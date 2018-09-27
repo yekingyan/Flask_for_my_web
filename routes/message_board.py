@@ -113,3 +113,14 @@ def connected_msg(form):
         },
              broadcast=True,
              )
+
+
+@socketio.on('delete_msg', namespace='/chat')
+def delete_msg(msg):
+    # print("尝试删除", msg)
+    m_id = msg['id']
+    m = MessageBoard.delete(m_id)
+    if type(m) == dict:
+        emit('flash', m)
+    else:
+        emit('remove', {'id': m.id}, broadcast=True)

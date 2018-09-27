@@ -26,7 +26,7 @@
                     </p>
                 {% endif %}
                 <span class="d-none">{{ m.id }}</span>
-                <span class="list-group-item-action list-group-item-success d-inline-flex mb-2">
+                <span  id= "del-{{ m.id }}" class="list-group-item-action list-group-item-success d-inline-flex mb-2">
                     {{ m.content }}
                     {% if m.cookie == request.cookies.get('cookie') or m.user == username and m.user is not none %}
                     <a class="fa fa-times mt-1 text-danger" href={{ url_for("message.delete", id=m.id) }}></a>
