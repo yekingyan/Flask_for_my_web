@@ -31,8 +31,8 @@ var send_message_from_input = function () {
 // message最新一条信息的所属用户
 var messageLastUser = function () {
     var users = document.querySelectorAll('span[title="user"]');
-    var lastUser = (users[users.length-1]).valueOf().textContent;
-    return lastUser
+    var lastUser = (users[users.length-1]).valueOf();
+    return lastUser.textContent
 };
 
 
@@ -101,13 +101,15 @@ var messageTemplate = function (msg) {
         var temp;
         if(messageLastUser() === user){
             temp = t2 + d_button();
+        }else if(messageLastUser() === message_user){
+            temp = t2 + d_button();
         }else {
             temp = t1() + t2 + d_button();
         }
         return temp
     };
 
-
+    log(`页面中最后用户：${messageLastUser()}。当前用户：${user}`);
     return t()
 };
 
