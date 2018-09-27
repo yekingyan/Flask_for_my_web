@@ -15,3 +15,8 @@
 .img-50 {
     height: 50%;
 }
+
+.flow {
+    height: 600px;
+    overflow: auto;
+}

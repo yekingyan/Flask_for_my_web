@@ -116,9 +116,10 @@ var messageTemplate = function (msg) {
 
 //message的插入
 var insertMesage = function (msg) {
-    var nav = document.querySelector('#message');
+    var messages = document.querySelector('#message');
     var message = messageTemplate(msg);
-    nav.insertAdjacentHTML('beforeend', message)
+    messages.insertAdjacentHTML('beforeend', message);
+    messages.scrollTop = messages.scrollHeight;
 };
 
 
@@ -160,12 +161,19 @@ var flash_message = function () {
     })
 };
 
+// 保持在滚动条底部
+var scroll_bottom = function () {
+    var messages = document.querySelector('#message');
+    messages.scrollTop = messages.scrollHeight;
+};
+
 
 var main = function () {
     $(document).ready(function () {
         send_message_from_input();
         accept_message();
         flash_message();
+        scroll_bottom();
     });
 };
 main();
