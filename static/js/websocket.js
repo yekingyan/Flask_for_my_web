@@ -18,9 +18,9 @@ var load_all_msg = function () {
         for (var i = 0; i<Object.keys(json).length; i++) {
             log('in',i);
             json[i]['ct'] = json[i]['ut'];
-            log(json[i]['ut']);
+            // log(json[i]['ut']);
             insertMesage(json[i]);
-            delete_message();
+            request_remove_message();
         }
     });
 };
@@ -120,7 +120,7 @@ var messageTemplate = function (msg) {
         } else if (messageLastUser() === message_user) {
             temp = t2 + d_button();
         } else {
-            temp = t1() + t2 + d_button();
+            temp =`<div class="cell-${id} cell">` + t1() + t2 + d_button() + '</div>';
         }
         return temp
     };
@@ -134,7 +134,19 @@ var messageTemplate = function (msg) {
 var insertMesage = function (msg) {
     var messages = document.querySelector('#message');
     var message = messageTemplate(msg);
-    messages.insertAdjacentHTML('beforeend', message);
+    if(messageLastUser()===msg.user){
+        let cells = document.querySelectorAll('div.cell');
+        let div = (cells[cells.length - 1]);
+        div.insertAdjacentHTML('beforeend', message);
+
+    }else if(messageLastUser()===msg.message_user){
+        let cells = document.querySelectorAll('div.cell');
+        let div = (cells[cells.length - 1]);
+        div.insertAdjacentHTML('beforeend', message);
+    }else {
+        messages.insertAdjacentHTML('beforeend', message);
+    }
+
     messages.scrollTop = messages.scrollHeight;
 };
 
@@ -214,10 +226,10 @@ var main = function () {
         load_all_msg();
         send_message_from_input();
         accept_message();
-        flash_message();
         request_remove_message();
         delete_message();
         scroll_bottom();
+        flash_message();
     });
 };
 main();

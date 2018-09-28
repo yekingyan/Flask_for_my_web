@@ -130,6 +130,6 @@ def delete_msg(msg):
     m_id = msg['id']
     m = MessageBoard.delete(m_id)
     if type(m) == dict:
-        emit('flash', m)
+        emit('flash_message', m)
     else:
         emit('remove', {'id': m.id}, broadcast=True)
