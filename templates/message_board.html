@@ -13,28 +13,28 @@
 {% block content %}
     <div class="container col-md-6 offset-md-3">
         <div id='message' class="flow">
-            {% for m in message %}
-                {% if m.user %}
-                    <p class="d-inline">
-                        <span class="text-black-50">{{ m.ct[6:-3] }}</span>
-                        <span class="ml-2 font-weight-bold"><span title="user">{{ m.user }}</span><span class="text-white bg-info ml-1">&nbsp说&nbsp</span></span>
-                    </p>
-                {% else %}
-                    <p class="d-inline">
-                        <span class="text-black-50">{{ m.ct[6:-3] }}</span>
-                        <span class="ml-2 font-weight-bold"><span title="user">{{ m.message_user }}</span><span class="text-white bg-info ml-1">&nbsp说&nbsp</span></span>
-                    </p>
-                {% endif %}
-                <span class="d-none">{{ m.id }}</span>
-                <span  id= "del-{{ m.id }}" class="list-group-item-action list-group-item-success d-inline-flex mb-2">
-                    {{ m.content }}
-                    {% if m.cookie == request.cookies.get('cookie') or m.user == username and m.user is not none %}
-                    <a class="fa fa-times mt-1 text-danger" href={{ url_for("message.delete", id=m.id) }}></a>
-                {% endif %}<br>
-                </span>
-
-
-            {% endfor %}
+{#            {% for m in message %}#}
+{#                {% if m.user %}#}
+{#                    <p class="d-inline">#}
+{#                        <span class="text-black-50">{{ m.ct[6:-3] }}</span>#}
+{#                        <span class="ml-2 font-weight-bold"><span title="user">{{ m.user }}</span><span class="text-white bg-info ml-1">&nbsp说&nbsp</span></span>#}
+{#                    </p>#}
+{#                {% else %}#}
+{#                    <p class="d-inline">#}
+{#                        <span class="text-black-50">{{ m.ct[6:-3] }}</span>#}
+{#                        <span class="ml-2 font-weight-bold"><span title="user">{{ m.message_user }}</span><span class="text-white bg-info ml-1">&nbsp说&nbsp</span></span>#}
+{#                    </p>#}
+{#                {% endif %}#}
+{#                <span class="d-none">{{ m.id }}</span>#}
+{#                <span  id= "del-{{ m.id }}" class="list-group-item-action list-group-item-success d-inline-flex mb-2">#}
+{#                    {{ m.content }}#}
+{#                    {% if m.cookie == request.cookies.get('cookie') or m.user == username and m.user is not none %}#}
+{#                    <a class="fa fa-times mt-1 text-danger" href={{ url_for("message.delete", id=m.id) }}></a>#}
+{#                {% endif %}<br>#}
+{#                </span>#}
+{##}
+{##}
+{#            {% endfor %}#}
         </div>
 
         <div>

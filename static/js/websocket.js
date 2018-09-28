@@ -5,16 +5,30 @@ var log = function () {
 // 连接的实例
 var socket = io.connect('http://' + document.domain + ':' + location.port + '/chat');
 
-
+// 触发连接
 socket.on('connect', function () {
-    console.log('connect');
-    socket.emit('connect_event', {data: 'I\'m connected!'});
+    console.log('try to connect server');
+    socket.emit('connect_event', {'data': 'I\'m connected!'});
 });
 
+// 加载全部msg
+var load_all_msg = function () {
+    socket.on('server_response', function (msg) {
+        var json = msg.data;
+        for (var len in json)
+            // console.log(typeof(json));
+            log(json.length);
+        for (var i = 0; i < len; i++) {
+            // log('in',i);
+            json[i]['ct'] = json[i]['ut'];
+            log(json[i]);
+            insertMesage(json[i]);
+        }
 
-socket.on('server_response', function (msg) {
-    console.log(msg);
-});
+
+    });
+};
+
 
 // 发送输入框的内容
 var send_message_from_input = function () {
@@ -31,8 +45,13 @@ var send_message_from_input = function () {
 // message最新一条信息的所属用户
 var messageLastUser = function () {
     var users = document.querySelectorAll('span[title="user"]');
-    var lastUser = (users[users.length-1]).valueOf();
-    return lastUser.textContent
+    if (users.length === 0) {
+        return ''
+    } else {
+        var name = (users[users.length - 1]).valueOf();
+        return name.textContent
+    }
+
 };
 
 
@@ -42,7 +61,7 @@ var messageTemplate = function (msg) {
         user = msg.user,
         message_user = msg.message_user,
         time = new Date(Number(msg.ct.toString() + '000')),
-        ct = time.getDate()+'-'+time.getHours()+':'+time.getMinutes(),
+        ct = time.getDate() + '-' + time.getHours() + ':' + time.getMinutes(),
         id = msg.id,
         content = msg.content,
         del_button = msg.del_button;
@@ -50,7 +69,7 @@ var messageTemplate = function (msg) {
     // 用户栏
     var t1 = function () {
         var temp;
-        if (user === null){
+        if (user === null) {
             temp = `
                 <div>
                     <p class="d-inline">
@@ -60,7 +79,7 @@ var messageTemplate = function (msg) {
 
                 </div>
         `
-        }else {
+        } else {
             temp = `
                  <div>
                     <p class="d-inline">
@@ -82,13 +101,13 @@ var messageTemplate = function (msg) {
     `;
     var d_button = function () {
         var del;
-        if (del_button === true){
+        if (del_button === true) {
             del = `
                 <a class="fa fa-times mt-1 text-danger" href="/message/delete/${id}"></a>
                 <br>
                 </span>
     `
-        }else {
+        } else {
             del = `
                 <br>
                 </span>
@@ -99,11 +118,11 @@ var messageTemplate = function (msg) {
 
     var t = function () {
         var temp;
-        if(messageLastUser() === user){
+        if (messageLastUser() === user) {
             temp = t2 + d_button();
-        }else if(messageLastUser() === message_user){
+        } else if (messageLastUser() === message_user) {
             temp = t2 + d_button();
-        }else {
+        } else {
             temp = t1() + t2 + d_button();
         }
         return temp
@@ -134,13 +153,13 @@ var accept_message = function () {
 // 请求删除 message
 var request_remove_message = function (msg) {
     var dels = $('a.text-danger');
-    for(var i = 0; i < dels.length; i++){
+    for (var i = 0; i < dels.length; i++) {
         dels[i].addEventListener('click', function (event) {
             var self = event.target;
             var logg = self.getAttribute('href');
             var id = logg.slice(16);
-            console.log("尝试删除：",id);
-            socket.emit('delete_msg',{'id': id});
+            console.log("尝试删除：", id);
+            socket.emit('delete_msg', {'id': id});
             event.preventDefault();
             return false;
         })
@@ -149,8 +168,8 @@ var request_remove_message = function (msg) {
 
 // 删除事件监听
 var delete_message = function () {
-    socket.on('remove',function (msg) {
-        log("delete:",msg);
+    socket.on('remove', function (msg) {
+        log("delete:", msg);
         var id = msg.id;
         $(`#del-${id}`).remove();
 
@@ -195,12 +214,13 @@ var scroll_bottom = function () {
 
 var main = function () {
     $(document).ready(function () {
+        load_all_msg();
         send_message_from_input();
         accept_message();
         flash_message();
-        scroll_bottom();
         request_remove_message();
         delete_message();
+        scroll_bottom();
     });
 };
 main();

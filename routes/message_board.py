@@ -5,6 +5,7 @@ from flask import (
     redirect,
     url_for,
     flash,
+    jsonify,
 )
 from models.message_board import (
     MessageBoard,
@@ -12,6 +13,7 @@ from models.message_board import (
 )
 from models.user import current_user_name
 
+import json
 
 main = Blueprint('message', __name__)
 
@@ -72,7 +74,14 @@ socketio = SocketIO()
 @socketio.on('connect_event', namespace='/chat')
 def connected_msg(msg):
     print("来自客户端的：", msg)
-    emit('server_response', {'data': msg['data']})
+    all_message = MessageBoard.all_message()
+    dict_ = {}
+    [dict_.update({n: m.__dict__}) for n, m in enumerate(all_message)]
+    for d in dict_.values():
+        del d['cookie'], d["_id"], d['delete']
+    # print(dict_)
+    # print(json.dumps(dict_))
+    emit('server_response', {'data': dict_})
 
 
 # 聊天信息的接收与响应
