@@ -5,15 +5,12 @@ from flask import (
     redirect,
     url_for,
     flash,
-    jsonify,
 )
 from models.message_board import (
     MessageBoard,
     guest,
 )
 from models.user import current_user_name
-
-import json
 
 main = Blueprint('message', __name__)
 
@@ -108,17 +105,12 @@ def connected_msg(form):
     else:
         m.save()
     # return redirect(url_for('.index'))
-        # 是否显示删除按纽 fixme
-        username, del_button = current_user_name(), False
-        if m.cookie == request.cookies.get('cookie') or m.user == username and m.user is not None:
-            del_button = True
         emit('new_message', {
             'user': m.user,
             'message_user': m.message_user,
             'id': m.id,
             'ct': m.ct,
             'content': m.content,
-            'del_button': del_button,# fixme
         },
              broadcast=True,
              )

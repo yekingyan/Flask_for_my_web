@@ -13,38 +13,42 @@
 {% block content %}
     <div class="container col-md-6 offset-md-3">
         <div id='message' class="flow">
-{#            {% for m in message %}#}
-{#                {% if m.user %}#}
-{#                    <p class="d-inline">#}
-{#                        <span class="text-black-50">{{ m.ct[6:-3] }}</span>#}
-{#                        <span class="ml-2 font-weight-bold"><span title="user">{{ m.user }}</span><span class="text-white bg-info ml-1">&nbsp说&nbsp</span></span>#}
-{#                    </p>#}
-{#                {% else %}#}
-{#                    <p class="d-inline">#}
-{#                        <span class="text-black-50">{{ m.ct[6:-3] }}</span>#}
-{#                        <span class="ml-2 font-weight-bold"><span title="user">{{ m.message_user }}</span><span class="text-white bg-info ml-1">&nbsp说&nbsp</span></span>#}
-{#                    </p>#}
-{#                {% endif %}#}
-{#                <span class="d-none">{{ m.id }}</span>#}
-{#                <span  id= "del-{{ m.id }}" class="list-group-item-action list-group-item-success d-inline-flex mb-2">#}
-{#                    {{ m.content }}#}
-{#                    {% if m.cookie == request.cookies.get('cookie') or m.user == username and m.user is not none %}#}
-{#                    <a class="fa fa-times mt-1 text-danger" href={{ url_for("message.delete", id=m.id) }}></a>#}
-{#                {% endif %}<br>#}
-{#                </span>#}
-{##}
-{##}
-{#            {% endfor %}#}
+            {#            {% for m in message %}#}
+            {#                {% if m.user %}#}
+            {#                    <p class="d-inline">#}
+            {#                        <span class="text-black-50">{{ m.ct[6:-3] }}</span>#}
+            {#                        <span class="ml-2 font-weight-bold"><span title="user">{{ m.user }}</span><span class="text-white bg-info ml-1">&nbsp说&nbsp</span></span>#}
+            {#                    </p>#}
+            {#                {% else %}#}
+            {#                    <p class="d-inline">#}
+            {#                        <span class="text-black-50">{{ m.ct[6:-3] }}</span>#}
+            {#                        <span class="ml-2 font-weight-bold"><span title="user">{{ m.message_user }}</span><span class="text-white bg-info ml-1">&nbsp说&nbsp</span></span>#}
+            {#                    </p>#}
+            {#                {% endif %}#}
+            {#                <span class="d-none">{{ m.id }}</span>#}
+            {#                <span  id= "del-{{ m.id }}" class="list-group-item-action list-group-item-success d-inline-flex mb-2">#}
+            {#                    {{ m.content }}#}
+            {#                    {% if m.cookie == request.cookies.get('cookie') or m.user == username and m.user is not none %}#}
+            {#                    <a class="fa fa-times mt-1 text-danger" href={{ url_for("message.delete", id=m.id) }}></a>#}
+            {#                {% endif %}<br>#}
+            {#                </span>#}
+            {##}
+            {##}
+            {#            {% endfor %}#}
         </div>
 
         <div>
-            <form action="#" method="post"><!--url_for("message.add")-->
-                <input id="msg_input" type="text" placeholder="说点什么吧" name="content"><br>
+            <form action="#"><!--method="post" url_for("message.add")-->
+                <input id="msg_input" class="form-control" style="border: solid #9cd8f7" type="text" placeholder="说点什么吧" name="content" onkeypress="EnterPress(event)"
+                       onkeydown="EnterPress()"><br>
                 {% if not username and not guest %}
-                    昵称：<input type="text" placeholder="给自己一个好听的花名" name="user"><br>
+                    <div class="input-group">
+                    <p class="mt-2">昵称：</p><input class="form-control" type="text" placeholder="给自己一个好听的花名" name="user"><input id="submit" class="btn btn-success" type="button" value="发送"><br>
+                </div>
                 {% endif %}
-                <span id="message_user">{{ guest }}</span><input id="submit" type="button" value="发送">
-
+                <div class="d-none">
+                    <span id="message_user">{{ guest }}</span>
+                </div>
             </form>
         </div>
     </div>

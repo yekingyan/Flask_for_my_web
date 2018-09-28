@@ -15,8 +15,8 @@ socket.on('connect', function () {
 var load_all_msg = function () {
     socket.on('server_response', function (msg) {
         var json = msg.data;
-        for (var i = 0; i<Object.keys(json).length; i++) {
-            log('in',i);
+        for (var i = 0; i < Object.keys(json).length; i++) {
+            log('in', i);
             json[i]['ct'] = json[i]['ut'];
             // log(json[i]['ut']);
             insertMesage(json[i]);
@@ -36,6 +36,22 @@ var send_message_from_input = function () {
         });
         // return false;
     });
+};
+
+// 发送输入框的内容，回车键
+var send_message_form_enter = function () {
+    $('#msg_input').keydown(function (e) {
+        var e = e || window.event;
+    if (e.keyCode === 13) {
+        log('submit:', $('#msg_input').val());
+        socket.emit('client_event', {
+            'content': $('#msg_input').val(),
+            'user': $('input[name="user"]').val()
+        });
+        event.returnValue = false;
+    }
+    });
+    return false;
 };
 
 // message最新一条信息的所属用户
@@ -59,8 +75,7 @@ var messageTemplate = function (msg) {
         time = new Date(Number(msg.ct.toString() + '000')),
         ct = time.getDate() + '-' + time.getHours() + ':' + time.getMinutes(),
         id = msg.id,
-        content = msg.content,
-        del_button = msg.del_button;
+        content = msg.content;
     //log("转的时间",time);
     // 用户栏
     var t1 = function () {
@@ -97,23 +112,22 @@ var messageTemplate = function (msg) {
     var d_button = function () {
         var
             del,
-            username=$('#user').text(),
-            message_user_name=$('#message_user').text()
+            username = $('#user').text(),
+            message_user_name = $('#message_user').text()
         ;
-        // log(del_button);
-        if (username===user) {
+        if (username === user) {
             del = `
                 <a class="fa fa-times mt-1 text-danger" href="/message/delete/${id}"></a>
                 <br>
                 </span>
     `
-        } else if(message_user_name===message_user){
+        } else if (message_user_name === message_user) {
             del = `
                 <a class="fa fa-times mt-1 text-danger" href="/message/delete/${id}"></a>
                 <br>
                 </span>
     `
-        }else{
+        } else {
             del = `
                 <br>
                 </span>
@@ -129,7 +143,7 @@ var messageTemplate = function (msg) {
         } else if (messageLastUser() === message_user) {
             temp = t2 + d_button();
         } else {
-            temp =`<div class="cell-${id} cell">` + t1() + t2 + d_button() + '</div>';
+            temp = `<div class="cell-${id} cell">` + t1() + t2 + d_button() + '</div>';
         }
         return temp
     };
@@ -143,16 +157,16 @@ var messageTemplate = function (msg) {
 var insertMesage = function (msg) {
     var messages = document.querySelector('#message');
     var message = messageTemplate(msg);
-    if(messageLastUser()===msg.user){
+    if (messageLastUser() === msg.user) {
         let cells = document.querySelectorAll('div.cell');
         let div = (cells[cells.length - 1]);
         div.insertAdjacentHTML('beforeend', message);
 
-    }else if(messageLastUser()===msg.message_user){
+    } else if (messageLastUser() === msg.message_user) {
         let cells = document.querySelectorAll('div.cell');
         let div = (cells[cells.length - 1]);
         div.insertAdjacentHTML('beforeend', message);
-    }else {
+    } else {
         messages.insertAdjacentHTML('beforeend', message);
     }
 
@@ -191,10 +205,10 @@ var delete_message = function () {
         var id = msg.id;
         var child = $(`#del-${id}`);
         var childs = child.parent().children();
-        log('cl',childs.length);
-        if (childs.length <= 2){
+        log('cl', childs.length);
+        if (childs.length <= 2) {
             child.parent().remove();
-        }else {
+        } else {
             child.remove();
         }
 
@@ -242,6 +256,7 @@ var main = function () {
     $(document).ready(function () {
         load_all_msg();
         send_message_from_input();
+        send_message_form_enter();
         accept_message();
         request_remove_message();
         delete_message();
