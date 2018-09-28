@@ -89,7 +89,6 @@ var messageTemplate = function (msg) {
     };
     // message内容及删除按纽
     var t2 = `
-        <span class="d-none">${id}</span>
                 <span id= "del-${id}" class="list-group-item-action list-group-item-success d-inline-flex mb-2">
                     ${content}
                     
@@ -180,7 +179,15 @@ var delete_message = function () {
     socket.on('remove', function (msg) {
         log("delete:", msg);
         var id = msg.id;
-        $(`#del-${id}`).remove();
+        var child = $(`#del-${id}`);
+        var childs = child.parent().children();
+        log('cl',childs.length);
+        if (childs.length <= 2){
+            child.parent().remove();
+        }else {
+            child.remove();
+        }
+
         // return false;
     })
 };
