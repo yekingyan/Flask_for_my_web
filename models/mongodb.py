@@ -123,6 +123,7 @@ class MongoDB(object):
         return obj
 
 
+
 if __name__ == '__main__':
     db = client['flask_web']
     query = {
@@ -134,7 +135,4 @@ if __name__ == '__main__':
         "cookie": "HgAbUo0ZxmJchuI5",
         "user": None,
     }
-    lq = (db.Todo.find())
-    for d in lq:
-        print(d)
-    # print(list(lq))
+    db.MessageBoard.delete_many({'delete': True})

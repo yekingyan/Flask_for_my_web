@@ -79,7 +79,7 @@ def connected_msg(msg):
     [dict_.update({n: m.__dict__}) for n, m in enumerate(all_message)]
     for d in dict_.values():
         del d['cookie'], d["_id"], d['delete']
-    # print(dict_)
+    # print(len(all_message))
     # print(json.dumps(dict_))
     emit('server_response', {'data': dict_})
 
@@ -108,7 +108,7 @@ def connected_msg(form):
     else:
         m.save()
     # return redirect(url_for('.index'))
-        # 是否显示删除按纽
+        # 是否显示删除按纽 fixme
         username, del_button = current_user_name(), False
         if m.cookie == request.cookies.get('cookie') or m.user == username and m.user is not None:
             del_button = True
@@ -118,7 +118,7 @@ def connected_msg(form):
             'id': m.id,
             'ct': m.ct,
             'content': m.content,
-            'del_button': del_button,
+            'del_button': del_button,# fixme
         },
              broadcast=True,
              )
@@ -126,7 +126,7 @@ def connected_msg(form):
 
 @socketio.on('delete_msg', namespace='/chat')
 def delete_msg(msg):
-    # print("尝试删除", msg)
+    print("尝试删除", msg)
     m_id = msg['id']
     m = MessageBoard.delete(m_id)
     if type(m) == dict:

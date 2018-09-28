@@ -15,17 +15,13 @@ socket.on('connect', function () {
 var load_all_msg = function () {
     socket.on('server_response', function (msg) {
         var json = msg.data;
-        for (var len in json)
-            // console.log(typeof(json));
-            log(json.length);
-        for (var i = 0; i < len; i++) {
-            // log('in',i);
+        for (var i = 0; i<Object.keys(json).length; i++) {
+            log('in',i);
             json[i]['ct'] = json[i]['ut'];
-            log(json[i]);
+            log(json[i]['ut']);
             insertMesage(json[i]);
+            delete_message();
         }
-
-
     });
 };
 
@@ -101,7 +97,8 @@ var messageTemplate = function (msg) {
     `;
     var d_button = function () {
         var del;
-        if (del_button === true) {
+        // log(del_button);
+        if (del_button === undefined) {
             del = `
                 <a class="fa fa-times mt-1 text-danger" href="/message/delete/${id}"></a>
                 <br>
@@ -128,7 +125,7 @@ var messageTemplate = function (msg) {
         return temp
     };
 
-    log(`页面中最后用户：${messageLastUser()}。当前用户：${user}`);
+    // log(`页面中最后用户：${messageLastUser()}。当前用户：${user}`);
     return t()
 };
 
@@ -172,7 +169,7 @@ var delete_message = function () {
         log("delete:", msg);
         var id = msg.id;
         $(`#del-${id}`).remove();
-
+        // return false;
     })
 };
 
