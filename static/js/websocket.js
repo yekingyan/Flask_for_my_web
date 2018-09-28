@@ -95,15 +95,25 @@ var messageTemplate = function (msg) {
                 
     `;
     var d_button = function () {
-        var del;
+        var
+            del,
+            username=$('#user').text(),
+            message_user_name=$('#message_user').text()
+        ;
         // log(del_button);
-        if (del_button === undefined) {
+        if (username===user) {
             del = `
                 <a class="fa fa-times mt-1 text-danger" href="/message/delete/${id}"></a>
                 <br>
                 </span>
     `
-        } else {
+        } else if(message_user_name===message_user){
+            del = `
+                <a class="fa fa-times mt-1 text-danger" href="/message/delete/${id}"></a>
+                <br>
+                </span>
+    `
+        }else{
             del = `
                 <br>
                 </span>

@@ -43,7 +43,8 @@
                 {% if not username and not guest %}
                     昵称：<input type="text" placeholder="给自己一个好听的花名" name="user"><br>
                 {% endif %}
-                {{ guest }}<input id="submit" type="button" value="发送">
+                <span id="message_user">{{ guest }}</span><input id="submit" type="button" value="发送">
+
             </form>
         </div>
     </div>
