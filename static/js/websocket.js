@@ -61,7 +61,7 @@ var send_message_form_enter = function () {
 var messageLastUser = function () {
     var users = document.querySelectorAll('span[title="user"]');
     if (users.length === 0) {
-        return ''
+        return 'what the fuck'
     } else {
         var name = (users[users.length - 1]).valueOf();
         return name.textContent
