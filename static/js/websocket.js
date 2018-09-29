@@ -16,7 +16,7 @@ var load_all_msg = function () {
     socket.on('server_response', function (msg) {
         var json = msg.data;
         for (var i = 0; i < Object.keys(json).length; i++) {
-            log('in', i);
+            log("初次加载");
             json[i]['ct'] = json[i]['ut'];
             // log(json[i]['ut']);
             insertMesage(json[i]);
