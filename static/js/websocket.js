@@ -6,7 +6,7 @@ var log = function () {
 var socket = io.connect('http://' + document.domain + ':' + location.port + '/chat');
 
 // 触发连接
-var frist_connect = function{
+var first_connect = function(){
     socket.on('connect', function () {
         console.log('try to connect server');
         socket.emit('connect_event', {'data': 'I\'m connected!'});
@@ -276,7 +276,7 @@ var reload = function () {
 
 var main = function () {
     $(document).ready(function () {
-        frist_connect();
+        first_connect();
         load_all_msg();
         send_message_from_input();
         send_message_form_enter();

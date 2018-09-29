@@ -39,17 +39,28 @@
 
         <div>
             <form action="#"><!--method="post" url_for("message.add")-->
+                {% if not username and guest %}
+                    <span class="fa fa-user-secret font-weight-bold ml-2" id="message_user">  {{ guest }}</span>
+                {% endif %}
+
+                {% if username %}
+                    <span class="fa fa-user-secret font-weight-bold ml-2" id="message_user"></span>
+                {% endif %}
+            
                 <span class="float-right" style='color:#666666'>限 140 个字符  已输入 <span style="color:#CC0000"><span id="info_limit">0</span></span> 个字</span>
                 <textarea id="msg_input" class="form-control" style="border: solid #9cd8f7;height:65px;" type="text" placeholder="说点什么吧" name="content" onkeypress="EnterPress(event)"
                        onkeydown="EnterPress()"></textarea>
+
 		        {% if not username and not guest %}
                     <div class="input-group">
-                    <p class="mt-2">昵称：</p><input class="form-control" type="text" placeholder="给自己一个好听的花名" name="user"><input id="submit" class="btn btn-success" type="button" value="发送"><br>
-                </div>
+                        <p class="mt-2">昵称：</p><input class="form-control" type="text" placeholder="给自己一个好听的花名" name="user">
+                        <input id="submit" class="btn btn-success" type="button" value="发送"><br>
+                    </div>
                 {% endif %}
-                <div class="d-none">
-                    <span id="message_user">{{ guest }}</span>
-                </div>
+
+                {% if username or guest %}
+                    <input id="submit" class="btn btn-success float-right" type="button" value="发送">
+                {% endif %}
             </form>
         </div>
     </div>
