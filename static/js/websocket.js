@@ -6,10 +6,13 @@ var log = function () {
 var socket = io.connect('http://' + document.domain + ':' + location.port + '/chat');
 
 // 触发连接
-socket.on('connect', function () {
-    console.log('try to connect server');
-    socket.emit('connect_event', {'data': 'I\'m connected!'});
-});
+var frist_connect = function{
+    socket.on('connect', function () {
+        console.log('try to connect server');
+        socket.emit('connect_event', {'data': 'I\'m connected!'});
+    });
+};
+
 
 // 加载全部msg
 var load_all_msg = function () {
@@ -42,14 +45,14 @@ var send_message_from_input = function () {
 var send_message_form_enter = function () {
     $('#msg_input').keydown(function (e) {
         var e = e || window.event;
-    if (e.keyCode === 13) {
-        log('submit:', $('#msg_input').val());
-        socket.emit('client_event', {
-            'content': $('#msg_input').val(),
-            'user': $('input[name="user"]').val()
-        });
-        event.returnValue = false;
-    }
+        if (e.keyCode === 13) {
+            log('submit:', $('#msg_input').val());
+            socket.emit('client_event', {
+                'content': $('#msg_input').val(),
+                'user': $('input[name="user"]').val()
+            });
+            event.returnValue = false;
+        }
     });
     return false;
 };
@@ -251,9 +254,29 @@ var scroll_bottom = function () {
     messages.scrollTop = messages.scrollHeight;
 };
 
+// 重载数据
+var reload = function () {
+    // 时间控制
+    function* sleep(ms) {
+        yield new Promise(function (resolve, reject) {
+            setTimeout(resolve, ms);
+        })
+    }
+
+    // 重发请求
+    sleep(1000).next().value.then(() => {
+        var cell = $(".cell");
+        if (cell.length === 0) {
+            socket.emit('connect_event', {'data': 'I\'m connected!'});
+            log('reload msg')
+        }
+    })
+};
+
 
 var main = function () {
     $(document).ready(function () {
+        frist_connect();
         load_all_msg();
         send_message_from_input();
         send_message_form_enter();
@@ -262,6 +285,7 @@ var main = function () {
         delete_message();
         scroll_bottom();
         flash_message();
+        reload();
     });
 };
 main();
