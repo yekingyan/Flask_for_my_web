@@ -1,6 +1,6 @@
 import string
 import random
-from flask import request, session
+from flask import request, session, make_response
 from models import Model
 import time
 import hashlib
@@ -40,6 +40,13 @@ def current_user_name():
     else:
         username = None
     return username
+
+
+def set_salt_cookie(template):
+    r = make_response(template)
+    if request.cookies.get('cookie') is None:
+        r.set_cookie('cookie', salt(), max_age=2419200)
+    return r
 
 
 class User(MongoDB, Model):

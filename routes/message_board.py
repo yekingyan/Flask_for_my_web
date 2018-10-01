@@ -10,7 +10,10 @@ from models.message_board import (
     MessageBoard,
     guest,
 )
-from models.user import current_user_name
+from models.user import (
+    current_user_name,
+    set_salt_cookie,
+)
 from tools import log
 from flask_socketio import SocketIO, emit
 
@@ -25,7 +28,7 @@ def index():
     all_message = MessageBoard.all_message()
     cookie = request.cookies.get('cookie')
     guest = MessageBoard.find_by(cookie=cookie).message_user
-    return render_template(
+    template = render_template(
         'message_board.html',
         title="留言板",
         username=username,
@@ -33,6 +36,8 @@ def index():
         guest=guest,
         none=None,
     )
+    r = set_salt_cookie(template)
+    return r
 
 
 @main.route('/add', methods=['post'])
@@ -53,9 +58,6 @@ def add():
             and m.message_user in all_user \
             and m.user is None:
         flash("好名字都被别人取了，再想一个昵称吧")
-    # 首页会自动设cookie
-    elif check_cookie is '' or check_cookie is None:
-        return redirect(url_for('index'))
     else:
         m.save()
         log('save', form)
@@ -100,11 +102,9 @@ def connected_msg(form):
             and m.message_user in all_user \
             and m.user is None:
         emit('flash_message', {'flash': "好名字都被别人取了，再想一个昵称吧"})
-    # 首页会自动设cookie
-    elif check_cookie is '' or check_cookie is None:
-        return redirect(url_for('index'))
     else:
         m.save()
+        print('save')
     # return redirect(url_for('.index'))
         emit('new_message', {
             'user': m.user,

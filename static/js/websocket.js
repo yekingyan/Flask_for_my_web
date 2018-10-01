@@ -178,13 +178,42 @@ var insertMesage = function (msg) {
 };
 
 
+// 去掉输入档下方的用户名栏
+var after_input_user_commit = function (msg) {
+    var input_user = $('input[name="user"]');
+    log('in fix');
+    log(msg.message_user ,'?', input_user.val())
+    if (msg.message_user === input_user.val()) {
+        log('inside');
+        //去除
+        $('.input-group').remove();
+        //加入
+        var textarea = $('textarea');
+        textarea[0].insertAdjacentHTML(
+            'afterend', `
+            <input id="submit" class="btn btn-success float-right" 
+            type="button" value="发送">
+                `);
+        ($('form')[1]).insertAdjacentHTML(
+            'afterbegin', `
+            <span class="fa fa-user-secret font-weight-bold ml-2" id="message_user">
+                ${msg.message_user}
+            </span>
+        `);
+    }
+};
+
+
 //message的插入事件绑定
 var accept_message = function () {
     socket.on('new_message', function (msg) {
         console.log("accept:", msg);
-        insertMesage(msg)
+        insertMesage(msg);
+        after_input_user_commit(msg);
     });
 };
+
+
 
 // 请求删除 message
 var request_remove_message = function (msg) {
@@ -272,7 +301,7 @@ var reload = function () {
         log("检测cell");
         // count = count+1;
         if (cell.length === 0) {
-            ($('#message').children()).remove();
+            // ($('#message').children()).remove();
             socket.emit('connect_event', {'data': 'I\'m connected!'});
             log('reload msg')
         }

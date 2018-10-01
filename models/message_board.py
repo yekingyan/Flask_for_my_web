@@ -84,6 +84,7 @@ class MessageBoard(MongoDB, Model):
             return {'flash': '你不能删除别人的内容，或你的身份已经过期'}
         return m
 
+
 def guest(form):
     m = MessageBoard.new_without_save(form)
     # 第一次之后就不用输临时用户名，则m.message为空,此时要指定旧数据中的用户名给它

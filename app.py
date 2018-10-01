@@ -9,12 +9,13 @@ from flask_bootstrap import Bootstrap
 from models.user import (
     salt,
     current_user_name,
+    set_salt_cookie,
 )
 from routes.user import main as user
 # 同级目录routes文件夹下todo.py
 from routes.todo import main as todo
 from routes.message_board import main as message, socketio
-# from flask_socketio import SocketIO, emit
+
 
 # 实例化Flask
 app = Flask(__name__)
@@ -25,7 +26,6 @@ app.register_blueprint(user)
 app.register_blueprint(message, url_prefix='/message')
 
 bootstrap = Bootstrap(app)
-# socketio = SocketIO()
 socketio.init_app(app)
 app.secret_key = 'asdkjfhsiw@#sf64461dasf#$%'
 
@@ -34,9 +34,7 @@ app.secret_key = 'asdkjfhsiw@#sf64461dasf#$%'
 def index():
     username = current_user_name()
     template = render_template('index.html', username=username)
-    r = make_response(template)
-    if request.cookies.get('cookie') is None:
-        r.set_cookie('cookie', salt(), max_age=2419200)
+    r = set_salt_cookie(template)
     return r
 
 
@@ -44,9 +42,7 @@ def index():
 def set_cookie():
     print('first')
     url = redirect(request.url)
-    r = make_response(url)
-    if request.cookies.get('cookie') is None:
-        r.set_cookie('cookie', salt(), max_age=2419200)
+    r = set_salt_cookie(url)
     return r
 
 
