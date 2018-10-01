@@ -30,7 +30,7 @@ def index():
     guest = MessageBoard.find_by(cookie=cookie).message_user
     template = render_template(
         'message_board.html',
-        title="留言板",
+        title="聊天室",
         username=username,
         message=all_message,
         guest=guest,

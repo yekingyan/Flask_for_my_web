@@ -108,7 +108,7 @@ var messageTemplate = function (msg) {
     };
     // message内容及删除按纽
     var t2 = `
-                <span id= "del-${id}" class="list-group-item-action list-group-item-success d-inline-flex mb-2">
+                <div id= "del-${id}" class="list-group-item-action list-group-item-success d-inline-flex mb-2">
                     ${content}
                     
                 
@@ -117,24 +117,21 @@ var messageTemplate = function (msg) {
         var
             del,
             username = $('#user').text(),
-            message_user_name = $('#message_user').text().replace(/[\s*]/gm,'')
+            message_user_name = $('#message_user').text().replace(/[\s*]/gm, '')
         ;
         if (username === user && message_user !== '') {
             del = `
-                <a class="fa fa-times mt-1 text-danger" href="/message/delete/${id}"></a>
-                <br>
-                </span>
+                <a id= "del-a-${id}" class="fa fa-times mt-1 text-danger" href="/message/delete/${id}"></a>
+                </div>
     `
         } else if (message_user_name === message_user && message_user !== '') {
             del = `
-                <a class="fa fa-times mt-1 text-danger" href="/message/delete/${id}"></a>
-                <br>
-                </span>
+                <a id= "del-a-${id}" class="fa fa-times mt-1 text-danger" href="/message/delete/${id}"></a>
+                </div>
     `
         } else {
             del = `
-                <br>
-                </span>
+                </div>
     `
         }
         return del
@@ -208,21 +205,18 @@ var accept_message = function () {
 };
 
 
-
 // 请求删除 message
 var request_remove_message = function (msg) {
-    var dels = $('a.text-danger');
-    for (var i = 0; i < dels.length; i++) {
-        dels[i].addEventListener('click', function (event) {
-            var self = event.target;
-            var logg = self.getAttribute('href');
-            var id = logg.slice(16);
-            console.log("尝试删除：", id);
-            socket.emit('delete_msg', {'id': id});
-            event.preventDefault();
-            return false;
-        })
-    }
+
+    $(document).off('click').on('click',`a.text-danger` , function (event) {
+        var self = event.target;
+        var logg = self.getAttribute('href');
+        var id = logg.slice(16);
+        console.log("尝试删除：", id);
+        socket.emit('delete_msg', {'id': id});
+        event.preventDefault();
+        return false;
+    });
 };
 
 // 删除事件监听
