@@ -62,7 +62,7 @@ var send_message_form_enter = function () {
 var messageLastUser = function () {
     var users = $('span[title="user"]');
     if (users.length === 0) {
-        return 'what the fuck'
+        return false
     } else {
         var name = (users[users.length - 1]).valueOf();
         return name.textContent
@@ -119,13 +119,14 @@ var messageTemplate = function (msg) {
             username = $('#user').text(),
             message_user_name = $('#message_user').text()
         ;
-        if (username === user) {
+        // log(username,user,'||',message_user_name,message_user);
+        if (username === user && message_user !== '') {
             del = `
                 <a class="fa fa-times mt-1 text-danger" href="/message/delete/${id}"></a>
                 <br>
                 </span>
     `
-        } else if (message_user_name === message_user) {
+        } else if (message_user_name === message_user && message_user !== '') {
             del = `
                 <a class="fa fa-times mt-1 text-danger" href="/message/delete/${id}"></a>
                 <br>
@@ -181,19 +182,12 @@ var insertMesage = function (msg) {
 // 去掉输入档下方的用户名栏
 var after_input_user_commit = function (msg) {
     var input_user = $('input[name="user"]');
-    log('in fix');
-    log(msg.message_user ,'?', input_user.val())
     if (msg.message_user === input_user.val()) {
-        log('inside');
         //去除
-        $('.input-group').remove();
+        $('p.mt-2').remove();
+        input_user.val('');
+        input_user.css({'visibility': 'hidden'});
         //加入
-        var textarea = $('textarea');
-        textarea[0].insertAdjacentHTML(
-            'afterend', `
-            <input id="submit" class="btn btn-success float-right" 
-            type="button" value="发送">
-                `);
         ($('form')[1]).insertAdjacentHTML(
             'afterbegin', `
             <span class="fa fa-user-secret font-weight-bold ml-2" id="message_user">
@@ -208,8 +202,9 @@ var after_input_user_commit = function (msg) {
 var accept_message = function () {
     socket.on('new_message', function (msg) {
         console.log("accept:", msg);
-        insertMesage(msg);
         after_input_user_commit(msg);
+        insertMesage(msg);
+
     });
 };
 
