@@ -11,7 +11,11 @@ from models.message_board import (
     guest,
 )
 from models.user import current_user_name
+from tools import log
+from flask_socketio import SocketIO, emit
 
+
+socketio = SocketIO()
 main = Blueprint('message', __name__)
 
 
@@ -34,7 +38,7 @@ def index():
 @main.route('/add', methods=['post'])
 def add():
     form = request.form
-    print(form, "testttt")
+    # print(form, "testttt")
     m, check_cookie = guest(form)
     all_user = MessageBoard.all_user()
     # 判断内容是否空白
@@ -54,6 +58,7 @@ def add():
         return redirect(url_for('index'))
     else:
         m.save()
+        log('save', form)
     return redirect(url_for('.index'))
 
 
@@ -63,14 +68,10 @@ def delete(id):
     return redirect(url_for(".index"))
 
 
-from flask_socketio import SocketIO, emit
-socketio = SocketIO()
-
-
-# 纪录连接状态
+# 连接之后返回所有聊天信息
 @socketio.on('connect_event', namespace='/chat')
 def connected_msg(msg):
-    print("来自客户端的：", msg)
+    log("来自客户端的：", msg)
     all_message = MessageBoard.all_message()
     dict_ = {}
     [dict_.update({n: m.__dict__}) for n, m in enumerate(all_message)]
@@ -84,7 +85,7 @@ def connected_msg(msg):
 # 聊天信息的接收与响应
 @socketio.on('client_event', namespace='/chat')
 def connected_msg(form):
-    print("来自客户端的：", form)
+    log("来自客户端的：", form)
     m, check_cookie = guest(form)
     all_user = MessageBoard.all_user()
     # 判断内容是否空白
@@ -116,9 +117,10 @@ def connected_msg(form):
              )
 
 
+# 删除
 @socketio.on('delete_msg', namespace='/chat')
 def delete_msg(msg):
-    print("尝试删除", msg)
+    log("尝试删除", msg)
     m_id = msg['id']
     m = MessageBoard.delete(m_id)
     if type(m) == dict:

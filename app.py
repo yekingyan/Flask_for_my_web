@@ -3,6 +3,7 @@ from flask import (
     request,
     render_template,
     make_response,
+    redirect,
 )
 from flask_bootstrap import Bootstrap
 from models.user import (
@@ -34,6 +35,16 @@ def index():
     username = current_user_name()
     template = render_template('index.html', username=username)
     r = make_response(template)
+    if request.cookies.get('cookie') is None:
+        r.set_cookie('cookie', salt(), max_age=2419200)
+    return r
+
+
+@app.before_first_request
+def set_cookie():
+    print('first')
+    url = redirect(request.url)
+    r = make_response(url)
     if request.cookies.get('cookie') is None:
         r.set_cookie('cookie', salt(), max_age=2419200)
     return r

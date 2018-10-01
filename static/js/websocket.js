@@ -6,9 +6,10 @@ var log = function () {
 var socket = io.connect('http://' + document.domain + ':' + location.port + '/chat');
 
 // 触发连接
-var first_connect = function(){
+var first_connect = function () {
     socket.on('connect', function () {
         console.log('try to connect server');
+        ($('#message').children()).remove();
         socket.emit('connect_event', {'data': 'I\'m connected!'});
     });
 };
@@ -19,7 +20,7 @@ var load_all_msg = function () {
     socket.on('server_response', function (msg) {
         var json = msg.data;
         for (var i = 0; i < Object.keys(json).length; i++) {
-            log("初次加载");
+            log("<--加载条数");
             json[i]['ct'] = json[i]['ut'];
             // log(json[i]['ut']);
             insertMesage(json[i]);
@@ -59,7 +60,7 @@ var send_message_form_enter = function () {
 
 // message最新一条信息的所属用户
 var messageLastUser = function () {
-    var users = document.querySelectorAll('span[title="user"]');
+    var users = $('span[title="user"]');
     if (users.length === 0) {
         return 'what the fuck'
     } else {
@@ -208,7 +209,7 @@ var delete_message = function () {
         var id = msg.id;
         var child = $(`#del-${id}`);
         var childs = child.parent().children();
-        log('cl', childs.length);
+        // log('cl', childs.length);
         if (childs.length <= 2) {
             child.parent().remove();
         } else {
@@ -264,15 +265,19 @@ var reload = function () {
     }
 
     // 重发请求
-    sleep(1000).next().value.then(() => {
+    // var count = 0;
+
+    sleep(2000).next().value.then(() => {
         var cell = $(".cell");
+        log("检测cell");
+        // count = count+1;
         if (cell.length === 0) {
+            ($('#message').children()).remove();
             socket.emit('connect_event', {'data': 'I\'m connected!'});
             log('reload msg')
         }
     })
 };
-
 
 var main = function () {
     $(document).ready(function () {
