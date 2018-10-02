@@ -11,83 +11,94 @@
 
 
 {% block content %}
-    <div class="container col-md-6 offset-md-3">
-        <div id='message' class="flow">
-            {#            {% for m in message %}#}
-            {#                {% if m.user %}#}
-            {#                    <p class="d-inline">#}
-            {#                        <span class="text-black-50">{{ m.ct[6:-3] }}</span>#}
-            {#                        <span class="ml-2 font-weight-bold"><span title="user">{{ m.user }}</span><span class="text-white bg-info ml-1">&nbsp说&nbsp</span></span>#}
-            {#                    </p>#}
-            {#                {% else %}#}
-            {#                    <p class="d-inline">#}
-            {#                        <span class="text-black-50">{{ m.ct[6:-3] }}</span>#}
-            {#                        <span class="ml-2 font-weight-bold"><span title="user">{{ m.message_user }}</span><span class="text-white bg-info ml-1">&nbsp说&nbsp</span></span>#}
-            {#                    </p>#}
-            {#                {% endif %}#}
-            {#                <span class="d-none">{{ m.id }}</span>#}
-            {#                <span  id= "del-{{ m.id }}" class="list-group-item-action list-group-item-success d-inline-flex mb-2">#}
-            {#                    {{ m.content }}#}
-            {#                    {% if m.cookie == request.cookies.get('cookie') or m.user == username and m.user is not none %}#}
-            {#                    <a class="fa fa-times mt-1 text-danger" href={{ url_for("message.delete", id=m.id) }}></a>#}
-            {#                {% endif %}<br>#}
-            {#                </span>#}
-            {##}
-            {##}
-            {#            {% endfor %}#}
+    <div class="container">
+    <div class="row">
+        <div class=" col-md-6 offset-md-3">
+            <div id='message' class="flow">
+                {#            {% for m in message %}#}
+                {#                {% if m.user %}#}
+                {#                    <p class="d-inline">#}
+                {#                        <span class="text-black-50">{{ m.ct[6:-3] }}</span>#}
+                {#                        <span class="ml-2 font-weight-bold"><span title="user">{{ m.user }}</span><span class="text-white bg-info ml-1">&nbsp说&nbsp</span></span>#}
+                {#                    </p>#}
+                {#                {% else %}#}
+                {#                    <p class="d-inline">#}
+                {#                        <span class="text-black-50">{{ m.ct[6:-3] }}</span>#}
+                {#                        <span class="ml-2 font-weight-bold"><span title="user">{{ m.message_user }}</span><span class="text-white bg-info ml-1">&nbsp说&nbsp</span></span>#}
+                {#                    </p>#}
+                {#                {% endif %}#}
+                {#                <span class="d-none">{{ m.id }}</span>#}
+                {#                <span  id= "del-{{ m.id }}" class="list-group-item-action list-group-item-success d-inline-flex mb-2">#}
+                {#                    {{ m.content }}#}
+                {#                    {% if m.cookie == request.cookies.get('cookie') or m.user == username and m.user is not none %}#}
+                {#                    <a class="fa fa-times mt-1 text-danger" href={{ url_for("message.delete", id=m.id) }}></a>#}
+                {#                {% endif %}<br>#}
+                {#                </span>#}
+                {##}
+                {##}
+                {#            {% endfor %}#}
+            </div>
+
+            <div>
+                <form action="#"><!--method="post" url_for("message.add")-->
+                    {% if not username and guest %}
+                        <span class="fa fa-user-secret font-weight-bold ml-2" id="message_user">  {{ guest }}</span>
+                    {% endif %}
+
+                    {% if username %}
+                        <span class="fa fa-user-secret font-weight-bold ml-2" id="message_user"></span>
+                    {% endif %}
+
+                    <span class="float-right" style='color:#666666'>限 140 个字符  已输入 <span style="color:#CC0000"><span
+                            id="info_limit">0</span></span> 个字</span>
+                    <textarea id="msg_input" class="form-control" style="border: solid #9cd8f7;height:65px;" type="text"
+                              placeholder="说点什么吧" name="content" onkeypress="EnterPress(event)"
+                              onkeydown="EnterPress()"></textarea>
+
+                    {% if not username and not guest %}
+                        <div class="input-group">
+                            <p class="mt-2">昵称：</p><input class="form-control" type="text" placeholder="给自己一个好听的花名"
+                                                          name="user">
+                            <input id="submit" class="btn btn-success" type="button" value="发送"><br>
+                        </div>
+                    {% endif %}
+
+                    {% if username or guest %}
+                        <input id="submit" class="btn btn-success float-right" type="button" value="发送">
+                    {% endif %}
+                </form>
+            </div>
         </div>
-
-        <div>
-            <form action="#"><!--method="post" url_for("message.add")-->
-                {% if not username and guest %}
-                    <span class="fa fa-user-secret font-weight-bold ml-2" id="message_user">  {{ guest }}</span>
-                {% endif %}
-
-                {% if username %}
-                    <span class="fa fa-user-secret font-weight-bold ml-2" id="message_user"></span>
-                {% endif %}
-
-                <span class="float-right" style='color:#666666'>限 140 个字符  已输入 <span style="color:#CC0000"><span id="info_limit">0</span></span> 个字</span>
-                <textarea id="msg_input" class="form-control" style="border: solid #9cd8f7;height:65px;" type="text" placeholder="说点什么吧" name="content" onkeypress="EnterPress(event)"
-                       onkeydown="EnterPress()"></textarea>
-
-		        {% if not username and not guest %}
-                    <div class="input-group">
-                        <p class="mt-2">昵称：</p><input class="form-control" type="text" placeholder="给自己一个好听的花名" name="user">
-                        <input id="submit" class="btn btn-success" type="button" value="发送"><br>
-                    </div>
-                {% endif %}
-
-                {% if username or guest %}
-                    <input id="submit" class="btn btn-success float-right" type="button" value="发送">
-                {% endif %}
-            </form>
+        <div class="col-md-3 bg-warning">
+            <div id="ip" class="d-none">{{ ip }}</div>
+            a
         </div>
     </div>
-<script>
-    //控制字数
-    var lim = new limit();
-    lim.txtNote = document.getElementById("msg_input");
-    lim.txtLimit = document.getElementById("info_limit");
-    lim.limitCount = 140;
-    lim.init();
+    </div>
+    <script>
+        //控制字数
+        var lim = new limit();
+        lim.txtNote = document.getElementById("msg_input");
+        lim.txtLimit = document.getElementById("info_limit");
+        lim.limitCount = 140;
+        lim.init();
 
-    function limit() {
-        var txtNote;//文本框
-        var txtLimit;//提示字数的input
-        var limitCount;//限制的字数
-        this.init = function () {
-            txtNote = this.txtNote;
-            txtLimit = this.txtLimit;
-            limitCount = this.limitCount;
-            txtNote.maxLength = limitCount;
-            txtNote.onkeydown = function () {
-                txtLimit.innerText = txtNote.value.length;
-            };
-            txtNote.onkeyup = function () {
-                txtLimit.innerText = txtNote.value.length;
-            };
+        function limit() {
+            var txtNote;//文本框
+            var txtLimit;//提示字数的input
+            var limitCount;//限制的字数
+            this.init = function () {
+                txtNote = this.txtNote;
+                txtLimit = this.txtLimit;
+                limitCount = this.limitCount;
+                txtNote.maxLength = limitCount;
+                txtNote.onkeydown = function () {
+                    txtLimit.innerText = txtNote.value.length;
+                };
+                txtNote.onkeyup = function () {
+                    txtLimit.innerText = txtNote.value.length;
+                };
+            }
         }
-    }
-</script>
+    </script>
 {% endblock %}

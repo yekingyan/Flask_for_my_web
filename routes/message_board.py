@@ -10,6 +10,7 @@ from flask import (
 from models.message_board import (
     MessageBoard,
     guest,
+    get_weather_data,
 )
 from models.user import (
     current_user_name,
@@ -17,7 +18,7 @@ from models.user import (
 )
 from tools import log
 from flask_socketio import SocketIO, emit
-
+import urllib.request
 
 socketio = SocketIO()
 main = Blueprint('message', __name__)
@@ -36,6 +37,7 @@ def index():
         message=all_message,
         guest=guest,
         none=None,
+        ip=request.remote_addr,
     )
     r = set_salt_cookie(template)
     return r
@@ -130,6 +132,16 @@ def delete_msg(msg):
         emit('remove', {'id': m.id}, broadcast=True)
 
 
+# 天气
+@socketio.on('city_code', namespace='/chat')
+def get_weather(code):
+    print('weather')
+    url = f"http://aider.meizu.com/app/weather/listWeather?cityIds={code['city_dode']}"
+    print(url)
+    data = get_weather_data(url)
+    emit('weather', {'data': data})
+
+
 # 超级用户接口
 @main.route('/all/<int:p>')
 def all_msg(p):
@@ -141,11 +153,12 @@ def all_msg(p):
     len_del = MessageBoard.find(delete=True).count()
     page_n = (len_all//20)+2
     page = ms[20*(p-1): 20*p]
-    return render_template('all_by_yan.html',
-                           length=page_n,
-                           page=page,
-                           title="Yan",
-                           username=username,
-                           len_del=len_del,
-                           len_all=len_all,
-                           )
+    return render_template(
+        'all_by_yan.html',
+        length=page_n,
+        page=page,
+        title="Yan",
+        username=username,
+        len_del=len_del,
+        len_all=len_all,
+        )

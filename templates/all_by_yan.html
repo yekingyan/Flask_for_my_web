@@ -56,17 +56,11 @@
     </div>
 
     <script>
-        var log = function () {
-            console.log.apply(console, arguments)
-        };
         var cts = document.querySelectorAll('td.calendar');
         for (var ct of cts) {
             var int_ct = ct.innerText;
-            log(int_ct)
-            {#var time = new Date(Number(int_ct + '000'));#}
-            {#ct = time.getDate() + '-' + time.getHours() + ':' + time.getMinutes();#}
+            log(int_ct);
             var time = moment(parseInt(int_ct.toString() + '000')).format('YYMM.DD HH:mm:ss');
-
             ct.textContent = time;
         }
     </script>

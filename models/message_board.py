@@ -101,3 +101,31 @@ def guest(form):
     # 用于第一次输入临时用户名找到是否存在cookie，有值就表名用户名重复了
     check_cookie = MessageBoard.find_by(message_user=m.message_user).cookie
     return m, check_cookie
+
+
+def get_weather_data(url):
+    import urllib.request
+    import json
+    response = urllib.request.urlopen(url)
+    r = response.read().decode('utf-8')
+    d = json.loads(r)['value'][0]
+    g = d['indexes'][2]
+    w = d["weathers"][0]
+    pm25 = {
+        "aqi": d['pm25']['aqi'],
+        'cityrank': d['pm25']['cityrank'],
+        'pm10': d['pm25']['pm10'],
+        'pm25': d['pm25']['pm25'],
+    }
+    gm = {'content': g['content']}
+    weather = {
+        'temp_day_c': w['temp_day_c'],
+        "temp_night_c": w["temp_night_c"],
+        'weather': w['weather'],
+    }
+    data = {
+        'pm25': pm25,
+        'gm': gm,
+        'weather': weather,
+    }
+    return data
