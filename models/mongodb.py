@@ -22,7 +22,7 @@ class MongoDB(object):
         return class_contents
 
     @classmethod
-    def _find(cls, **kwargs):
+    def find(cls, **kwargs):
         """
         有条件的查找，返回生成器
         """
@@ -61,7 +61,7 @@ class MongoDB(object):
         """
         得到该类所有的对象,以列表的形式返回
         """
-        yield_ = cls._find()
+        yield_ = cls.find()
         ms = [cls._new_form_dict(m) for m in yield_]
         return ms
 
@@ -118,7 +118,7 @@ class MongoDB(object):
         通过id删除mongodb中的数据
         返回被删的对象
         """
-        obj = cls._find(id=id)
+        obj = cls.find(id=id)
         cls._delete(id=id)
         return obj
 

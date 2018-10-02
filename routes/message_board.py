@@ -5,6 +5,7 @@ from flask import (
     redirect,
     url_for,
     flash,
+    abort,
 )
 from models.message_board import (
     MessageBoard,
@@ -127,3 +128,24 @@ def delete_msg(msg):
         emit('flash_message', m)
     else:
         emit('remove', {'id': m.id}, broadcast=True)
+
+
+# 超级用户接口
+@main.route('/all/<int:p>')
+def all_msg(p):
+    username = current_user_name()
+    if username != 'yan':
+        abort(404)
+    ms = list(reversed(MessageBoard.all_msg_include_del()))
+    len_all = len(ms)
+    len_del = MessageBoard.find(delete=True).count()
+    page_n = (len_all//20)+2
+    page = ms[20*(p-1): 20*p]
+    return render_template('all_by_yan.html',
+                           length=page_n,
+                           page=page,
+                           title="Yan",
+                           username=username,
+                           len_del=len_del,
+                           len_all=len_all,
+                           )

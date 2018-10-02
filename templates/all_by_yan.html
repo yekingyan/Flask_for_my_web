@@ -1,0 +1,73 @@
+{% extends 'base2.html' %}
+
+{% block head %}
+    {{ super() }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.0/moment.min.js"></script>
+{% endblock %}
+
+{% block content %}
+    <table class="table table-sm">
+        <thead>
+        <tr>
+            <th>content</th>
+            <th class="fa fa-calendar">time</th>
+
+            <th>cookie</th>
+            <th>user</th>
+            <th>guest</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for m in page %}
+            <tr class=" {% if m.delete==true %}bg-secondary{% endif %}">
+                <td>{{ m.content }}</td>
+                <td class="calendar">{{ m.ct }}</td>
+
+                <td>{{ m.cookie[-6:] }}</td>
+                <td>{{ m.user }}</td>
+                <td>{{ m.message_user }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+    <nav aria-label="...">
+        <ul class="pagination">
+            <li class="page-item disabled">
+                <a class="page-link" href="#!" tabindex="-1">Previous</a>
+            </li>
+
+            {% for i in range(1, length) %}
+                <li class="page-item {% if request.path.split('/')[-1]== i|string %}active{% endif %}">
+                    <a class="page-link" href="{{ i }}">{{ i }}<span class="sr-only">(current)</span></a>
+                </li>
+            {% endfor %}
+
+
+            <li class="page-item">
+                <a class="page-link  {% if length-2<request.path.split('/')[-1]|int %}disabled{% endif %}" href="{{ request.path.split('/')[-1]|int + 1 }}" tabindex="-1">Next </a>
+            </li>
+        </ul>
+    </nav>
+    <div>
+    <div>总共：{{ len_all }}</div>
+    <div>已删：{{ len_del }}</div>
+    </div>
+
+    <script>
+        var log = function () {
+            console.log.apply(console, arguments)
+        };
+        var cts = document.querySelectorAll('td.calendar');
+        for (var ct of cts) {
+            var int_ct = ct.innerText;
+            log(int_ct)
+            {#var time = new Date(Number(int_ct + '000'));#}
+            {#ct = time.getDate() + '-' + time.getHours() + ':' + time.getMinutes();#}
+            var time = moment(parseInt(int_ct.toString() + '000')).format('YYMM.DD HH:mm:ss');
+
+            ct.textContent = time;
+        }
+    </script>
+{% endblock %}

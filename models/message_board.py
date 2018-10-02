@@ -52,6 +52,11 @@ class MessageBoard(MongoDB, Model):
         return all_user_list
 
     @classmethod
+    def all_msg_include_del(cls):
+        ms = cls.all()
+        return ms
+
+    @classmethod
     def all_message(cls):
         """返回所留言数据"""
         all_list = cls.all()
