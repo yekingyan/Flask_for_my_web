@@ -119,7 +119,8 @@ var messageTemplate = function (msg) {
             username = $('#user').text(),
             message_user_name = $('#message_user').text().replace(/[\s*]/gm, '')
         ;
-        if (username === user && message_user !== '') {
+        // log(username === user);
+            if (username === user && user !== '') {
             del = `
                 <a id= "del-a-${id}" class="fa fa-times mt-1 text-danger" href="/message/delete/${id}"></a>
                 </div>
