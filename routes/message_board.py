@@ -137,6 +137,7 @@ def get_weather(addr):
     single_instanse = CityCode()
     code = CityCode.city_to_code(addr)
     url = f"http://aider.meizu.com/app/weather/listWeather?cityIds={code}"
+    print(url)
     data = CityCode.get_weather_data(url)
     emit('weather', {'data': data})
 

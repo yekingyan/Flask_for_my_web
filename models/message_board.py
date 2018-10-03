@@ -130,6 +130,7 @@ class CityCode(object):
         d = json.loads(r)['value'][0]
         g = d['indexes'][2]
         w = d["weathers"][0]
+        city = {'city': d['city']}
         pm25 = {
             "aqi": d['pm25']['aqi'],
             'cityrank': d['pm25']['cityrank'],
@@ -147,5 +148,6 @@ class CityCode(object):
             'pm25': pm25,
             'gm': gm,
             'weather': weather,
+            'city': city,
         }
         return data

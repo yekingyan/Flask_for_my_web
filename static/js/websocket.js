@@ -327,8 +327,9 @@ var get_city = function (responseCallback) {
     });
 };
 
-
-var city_code = function (province, city) {
+// 发送city code 到 服务器
+var send_city_code = function (province, city) {
+    // log('debug', city);
     if (city.substr(-1) === '市') {
         city = city.substring(0, city.length - 1)
     }
@@ -336,19 +337,42 @@ var city_code = function (province, city) {
     socket.emit('city_addr', {'city_addr': city});
 };
 
+//插入天气信息
+var insert_weather = function (data) {
+    var
+        json = data.data,
+        city = json.city.city,
+        status = json.weather.weather,
+        quality = json.pm25.quality,
+        pm25 = json.pm25.pm25,
+        temp_day_c = json.weather.temp_day_c,
+        temp_night_c = json.weather.temp_night_c,
+        weather_content = json.gm['content'],
+        cityrank = json.pm25.cityrank
+    ;
 
-// 根据地址显示天气 todo
+    $("#weather_city").text(city);
+    $("#weather_status").text(status);
+    $("#quality").text(quality);
+    $("#pm25").text(pm25);
+    $("#temp_day_c").text(temp_day_c);
+    $("#temp_night_c").text(temp_night_c);
+    $("#weather_content").text(weather_content);
+    $("#cityrank").text(cityrank);
+
+};
+
+// 监听 接收服务器发来的天气信息
 var get_weather = function () {
     socket.on('weather', function (data) {
-        log(data);
-        log(typeof(data))
+        insert_weather(data)
     })
 }
 
 
 var weather = function () {
     $(document).ready(function () {
-        get_city(city_code);
+        get_city(send_city_code);
         get_weather()
     })
 };
