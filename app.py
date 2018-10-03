@@ -14,6 +14,7 @@ from models.user import (
 from routes.user import main as user
 # 同级目录routes文件夹下todo.py
 from routes.todo import main as todo
+from routes.video import main as video
 from routes.message_board import main as message, socketio
 
 
@@ -24,6 +25,7 @@ app = Flask(__name__)
 app.register_blueprint(todo, url_prefix='/todo')
 app.register_blueprint(user)
 app.register_blueprint(message, url_prefix='/message')
+app.register_blueprint(video, url_prefix='/video')
 
 bootstrap = Bootstrap(app)
 socketio.init_app(app)
