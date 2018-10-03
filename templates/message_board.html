@@ -12,68 +12,124 @@
 
 {% block content %}
     <div class="container">
-    <div class="row">
-        <div class=" col-md-6 offset-md-3">
-            <div id='message' class="flow">
-                {#            {% for m in message %}#}
-                {#                {% if m.user %}#}
-                {#                    <p class="d-inline">#}
-                {#                        <span class="text-black-50">{{ m.ct[6:-3] }}</span>#}
-                {#                        <span class="ml-2 font-weight-bold"><span title="user">{{ m.user }}</span><span class="text-white bg-info ml-1">&nbsp说&nbsp</span></span>#}
-                {#                    </p>#}
-                {#                {% else %}#}
-                {#                    <p class="d-inline">#}
-                {#                        <span class="text-black-50">{{ m.ct[6:-3] }}</span>#}
-                {#                        <span class="ml-2 font-weight-bold"><span title="user">{{ m.message_user }}</span><span class="text-white bg-info ml-1">&nbsp说&nbsp</span></span>#}
-                {#                    </p>#}
-                {#                {% endif %}#}
-                {#                <span class="d-none">{{ m.id }}</span>#}
-                {#                <span  id= "del-{{ m.id }}" class="list-group-item-action list-group-item-success d-inline-flex mb-2">#}
-                {#                    {{ m.content }}#}
-                {#                    {% if m.cookie == request.cookies.get('cookie') or m.user == username and m.user is not none %}#}
-                {#                    <a class="fa fa-times mt-1 text-danger" href={{ url_for("message.delete", id=m.id) }}></a>#}
-                {#                {% endif %}<br>#}
-                {#                </span>#}
-                {##}
-                {##}
-                {#            {% endfor %}#}
+        <div class="row">
+            <div class=" col-md-6 offset-md-2">
+                <div id='message' class="flow">
+                    {#            {% for m in message %}#}
+                    {#                {% if m.user %}#}
+                    {#                    <p class="d-inline">#}
+                    {#                        <span class="text-black-50">{{ m.ct[6:-3] }}</span>#}
+                    {#                        <span class="ml-2 font-weight-bold"><span title="user">{{ m.user }}</span><span class="text-white bg-info ml-1">&nbsp说&nbsp</span></span>#}
+                    {#                    </p>#}
+                    {#                {% else %}#}
+                    {#                    <p class="d-inline">#}
+                    {#                        <span class="text-black-50">{{ m.ct[6:-3] }}</span>#}
+                    {#                        <span class="ml-2 font-weight-bold"><span title="user">{{ m.message_user }}</span><span class="text-white bg-info ml-1">&nbsp说&nbsp</span></span>#}
+                    {#                    </p>#}
+                    {#                {% endif %}#}
+                    {#                <span class="d-none">{{ m.id }}</span>#}
+                    {#                <span  id= "del-{{ m.id }}" class="list-group-item-action list-group-item-success d-inline-flex mb-2">#}
+                    {#                    {{ m.content }}#}
+                    {#                    {% if m.cookie == request.cookies.get('cookie') or m.user == username and m.user is not none %}#}
+                    {#                    <a class="fa fa-times mt-1 text-danger" href={{ url_for("message.delete", id=m.id) }}></a>#}
+                    {#                {% endif %}<br>#}
+                    {#                </span>#}
+                    {##}
+                    {##}
+                    {#            {% endfor %}#}
+                </div>
+
+                <div>
+                    <form action="#"><!--method="post" url_for("message.add")-->
+                        {% if not username and guest %}
+                            <span class="fa fa-user-secret font-weight-bold ml-2" id="message_user">  {{ guest }}</span>
+                        {% endif %}
+
+                        {% if username %}
+                            <span class="fa fa-user-secret font-weight-bold ml-2" id="message_user"></span>
+                        {% endif %}
+
+                        <span class="float-right" style='color:#666666'>限 140 个字符  已输入 <span style="color:#CC0000"><span
+                                id="info_limit">0</span></span> 个字</span>
+                        <textarea id="msg_input" class="form-control" style="border: solid #9cd8f7;height:65px;"
+                                  type="text"
+                                  placeholder="说点什么吧" name="content" onkeypress="EnterPress(event)"
+                                  onkeydown="EnterPress()"></textarea>
+
+                        {% if not username and not guest %}
+                            <div class="input-group">
+                                <p class="mt-2">昵称：</p><input class="form-control" type="text" placeholder="给自己一个好听的花名"
+                                                              name="user">
+                                <input id="submit" class="btn btn-success" type="button" value="发送"><br>
+                            </div>
+                        {% endif %}
+
+                        {% if username or guest %}
+                            <input id="submit" class="btn btn-success float-right" type="button" value="发送">
+                        {% endif %}
+                    </form>
+                </div>
             </div>
+            <div class="col-md-4 bg-warning">
+                <div id="ip" class="d-none">{{ ip }}</div>
+                <div class="card">
+                    <div class="row card-header">
+                        <div class="col-6"><h3 id="weather_city">Featured</h3></div>
+                        <div class="col-6"><h3 id="weather_status">雨</h3></div>
 
-            <div>
-                <form action="#"><!--method="post" url_for("message.add")-->
-                    {% if not username and guest %}
-                        <span class="fa fa-user-secret font-weight-bold ml-2" id="message_user">  {{ guest }}</span>
-                    {% endif %}
+                    </div>
 
-                    {% if username %}
-                        <span class="fa fa-user-secret font-weight-bold ml-2" id="message_user"></span>
-                    {% endif %}
+                    <div class="card-body">
+                        <div class="row">
+                            <h5 class="card-title col-4 mt-auto">PM2.5</h5>
+                            <div class="col-8">
+                                <div class="row">
+                                    <div class="row col-7">
+                                        <div class="text-right">
+                                            <span>情况</span>
+                                            <span id="quality">良</span>
+                                        </div>
+                                    </div>
+                                    <div id="pm25" class="col-5 ml-1 mt-auto">59</div>
+                                </div>
+                                <div class="row">
+                                    <div class="row col-7">
+                                        <span class="text-right">全国排名</span>
+                                    </div>
+                                    <div id="cityrank" class="col-5  ml-1 mt-auto">56</div>
+                                </div>
+                            </div>
 
-                    <span class="float-right" style='color:#666666'>限 140 个字符  已输入 <span style="color:#CC0000"><span
-                            id="info_limit">0</span></span> 个字</span>
-                    <textarea id="msg_input" class="form-control" style="border: solid #9cd8f7;height:65px;" type="text"
-                              placeholder="说点什么吧" name="content" onkeypress="EnterPress(event)"
-                              onkeydown="EnterPress()"></textarea>
-
-                    {% if not username and not guest %}
-                        <div class="input-group">
-                            <p class="mt-2">昵称：</p><input class="form-control" type="text" placeholder="给自己一个好听的花名"
-                                                          name="user">
-                            <input id="submit" class="btn btn-success" type="button" value="发送"><br>
+                            <h5 class="card-title col-4 mt-auto">温度</h5>
+                            <div class="col-8">
+                                <div class="row">
+                                    <div class="row col-7">
+                                        <div class="text-right">
+                                            <span>日间温度</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-5 row ml-1">
+                                        <div id="temp_day_c">20</div>
+                                        <span>℃</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="row col-7">
+                                        <span class="text-right">夜间温度</span>
+                                    </div>
+                                    <div class="col-5 row ml-1">
+                                        <span id="temp_night_c">15</span>
+                                        <span>℃</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    {% endif %}
+                        <p id="weather_content" class="card-text">With supporting text below as a natural lead-in to additional content.</p>
 
-                    {% if username or guest %}
-                        <input id="submit" class="btn btn-success float-right" type="button" value="发送">
-                    {% endif %}
-                </form>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="col-md-3 bg-warning">
-            <div id="ip" class="d-none">{{ ip }}</div>
-            a
-        </div>
-    </div>
     </div>
     <script>
         //控制字数

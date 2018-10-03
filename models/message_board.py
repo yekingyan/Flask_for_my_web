@@ -135,6 +135,7 @@ class CityCode(object):
             'cityrank': d['pm25']['cityrank'],
             'pm10': d['pm25']['pm10'],
             'pm25': d['pm25']['pm25'],
+            'quality': d['pm25']['quality'],
         }
         gm = {'content': g['content']}
         weather = {
