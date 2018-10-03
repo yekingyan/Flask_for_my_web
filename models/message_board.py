@@ -13,6 +13,9 @@ from tools import (
     strftime,
     log,
 )
+import json
+import urllib.request
+import os
 
 
 class MessageBoard(MongoDB, Model):
@@ -103,29 +106,45 @@ def guest(form):
     return m, check_cookie
 
 
-def get_weather_data(url):
-    import urllib.request
-    import json
-    response = urllib.request.urlopen(url)
-    r = response.read().decode('utf-8')
-    d = json.loads(r)['value'][0]
-    g = d['indexes'][2]
-    w = d["weathers"][0]
-    pm25 = {
-        "aqi": d['pm25']['aqi'],
-        'cityrank': d['pm25']['cityrank'],
-        'pm10': d['pm25']['pm10'],
-        'pm25': d['pm25']['pm25'],
-    }
-    gm = {'content': g['content']}
-    weather = {
-        'temp_day_c': w['temp_day_c'],
-        "temp_night_c": w["temp_night_c"],
-        'weather': w['weather'],
-    }
-    data = {
-        'pm25': pm25,
-        'gm': gm,
-        'weather': weather,
-    }
-    return data
+class CityCode(object):
+    _city_code = None
+
+    def __new__(cls):
+        if cls._city_code is None:
+            path = os.path.join(os.getcwd(), 'data', 'city')
+            with open(path, 'r', encoding='utf-8') as f:
+                d = json.load(f)
+                cls._city_code = d
+        return cls._city_code
+
+    @classmethod
+    def city_to_code(cls, addr):
+        city = addr['city_addr']
+        code = cls._city_code[city]
+        return code
+
+    @staticmethod
+    def get_weather_data(url):
+        response = urllib.request.urlopen(url)
+        r = response.read().decode('utf-8')
+        d = json.loads(r)['value'][0]
+        g = d['indexes'][2]
+        w = d["weathers"][0]
+        pm25 = {
+            "aqi": d['pm25']['aqi'],
+            'cityrank': d['pm25']['cityrank'],
+            'pm10': d['pm25']['pm10'],
+            'pm25': d['pm25']['pm25'],
+        }
+        gm = {'content': g['content']}
+        weather = {
+            'temp_day_c': w['temp_day_c'],
+            "temp_night_c": w["temp_night_c"],
+            'weather': w['weather'],
+        }
+        data = {
+            'pm25': pm25,
+            'gm': gm,
+            'weather': weather,
+        }
+        return data

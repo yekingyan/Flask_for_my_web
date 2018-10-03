@@ -10,7 +10,7 @@ from flask import (
 from models.message_board import (
     MessageBoard,
     guest,
-    get_weather_data,
+    CityCode,
 )
 from models.user import (
     current_user_name,
@@ -18,7 +18,6 @@ from models.user import (
 )
 from tools import log
 from flask_socketio import SocketIO, emit
-import urllib.request
 
 socketio = SocketIO()
 main = Blueprint('message', __name__)
@@ -133,12 +132,12 @@ def delete_msg(msg):
 
 
 # 天气
-@socketio.on('city_code', namespace='/chat')
-def get_weather(code):
-    print('weather')
-    url = f"http://aider.meizu.com/app/weather/listWeather?cityIds={code['city_dode']}"
-    print(url)
-    data = get_weather_data(url)
+@socketio.on('city_addr', namespace='/chat')
+def get_weather(addr):
+    single_instanse = CityCode()
+    code = CityCode.city_to_code(addr)
+    url = f"http://aider.meizu.com/app/weather/listWeather?cityIds={code}"
+    data = CityCode.get_weather_data(url)
     emit('weather', {'data': data})
 
 
@@ -162,3 +161,10 @@ def all_msg(p):
         len_del=len_del,
         len_all=len_all,
         )
+
+
+if __name__ == '__main__':
+    import json
+    with open('../data/city', 'r', encoding='utf-8') as f:
+        d = json.load(f)
+    print(d)
