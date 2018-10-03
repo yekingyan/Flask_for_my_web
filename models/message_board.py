@@ -128,7 +128,7 @@ class CityCode(object):
         response = urllib.request.urlopen(url)
         r = response.read().decode('utf-8')
         d = json.loads(r)['value'][0]
-        g = d['indexes'][2]
+        g = [i for i in d['indexes'] if i['abbreviation'] == 'gm'][0]
         w = d["weathers"][0]
         city = {'city': d['city']}
         pm25 = {

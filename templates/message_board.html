@@ -13,7 +13,7 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class=" col-md-6 offset-md-2">
+            <div class=" col-md-7 offset-md-1">
                 <div id='message' class="flow">
                     {#            {% for m in message %}#}
                     {#                {% if m.user %}#}
@@ -70,7 +70,7 @@
                     </form>
                 </div>
             </div>
-            <div class="col-md-4 bg-warning">
+            <div class="col-md-4">
                 <div id="ip" class="d-none">{{ ip }}</div>
                 <div class="card">
                     <div class="row card-header">
@@ -81,7 +81,7 @@
 
                     <div class="card-body">
                         <div class="row">
-                            <h5 class="card-title col-4 mt-auto">PM2.5</h5>
+                            <h5 class="card-title col-4 mt-auto text-center">PM2.5</h5>
                             <div class="col-8">
                                 <div class="row">
                                     <div class="row col-7">
@@ -99,10 +99,10 @@
                                     <div id="cityrank" class="col-5  ml-1 mt-auto">最后</div>
                                 </div>
                             </div>
-
-                            <h5 class="card-title col-4 mt-auto">温度</h5>
+            
+                            <h5 class="card-title col-4 mt-auto text-center">温度</h5>
                             <div class="col-8">
-                                <div class="row">
+                                <div class="row mt-2">
                                     <div class="row col-7">
                                         <div class="text-right">
                                             <span>日间温度</span>
@@ -124,10 +124,15 @@
                                 </div>
                             </div>
                         </div>
-                        <p id="weather_content" class="card-text">Drink plenty of hot water and earlier sleep</p>
+                        <p id="weather_content" class="card-text mt-3">Drink plenty of hot water and earlier sleep</p>
 
                     </div>
                 </div>
+
+                <div class="mt-md-5 mt-lg-5 d-none d-md-block d-lg-block">
+                    <img class="img-fluid" src={{ url_for('static',filename="talk.jpg") }}>
+                </div>
+
             </div>
         </div>
     </div>
