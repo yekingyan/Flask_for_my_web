@@ -2,12 +2,10 @@ from flask import (
     Flask,
     request,
     render_template,
-    make_response,
     redirect,
 )
 from flask_bootstrap import Bootstrap
 from models.user import (
-    salt,
     current_user_name,
     set_salt_cookie,
 )
@@ -26,7 +24,7 @@ app = Flask(__name__)
 app.register_blueprint(todo, url_prefix='/todo')
 app.register_blueprint(user)
 app.register_blueprint(message, url_prefix='/message')
-app.register_blueprint(video, url_prefix='/video')
+app.register_blueprint(video, url_prefix='/videos')
 
 bootstrap = Bootstrap(app)
 socketio.init_app(app)
@@ -53,20 +51,6 @@ def set_cookie():
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html')
-
-
-# # 纪录连接状态
-# @socketio.on('connect_event')
-# def connected_msg(msg):
-#     print("来自客户端的：", msg)
-#     emit('server_response', {'data': msg['data']})
-#
-#
-# # 聊天信息的接收与响应
-# @socketio.on('client_event')
-# def connected_msg(msg):
-#     print("发给客户端的：", msg)
-#     emit('new_message', {'data': msg['data']})
 
 
 if __name__ == '__main__':
