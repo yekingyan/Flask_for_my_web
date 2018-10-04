@@ -16,6 +16,7 @@ from routes.user import main as user
 from routes.todo import main as todo
 from routes.video import main as video
 from routes.message_board import main as message, socketio
+from tools import log
 
 
 # 实例化Flask
@@ -37,6 +38,7 @@ def index():
     username = current_user_name()
     template = render_template('index.html', username=username)
     r = set_salt_cookie(template)
+    log('建立了访问', request.remote_addr, ':', request.cookies.get('cookie'))
     return r
 
 

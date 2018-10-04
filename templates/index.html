@@ -1,10 +1,14 @@
 {% extends "base2.html" %}
 
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href={{ url_for("static",filename="/css/myvideo.css") }}>
+{% endblock %}
 
 {% block content %}
     <div class="container mt-5">
         <div class="row">
-            <div class="col-md-5 bg-success">
+            <div class="col-md-5">
                 <div class="card text-center">
                     <div class="card-header">
                         <h3>Alpha 前进</h3>
@@ -55,9 +59,22 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-7 bg-primary">
+            <div class="col-md-7 d-none d-md-block">
 
-                a
+                {#                <div class="col-auto">#}
+                <video class=".video mt-auto" style="width: 100%; height:auto; object-fit: fill"
+                       poster="/static/Cyanide_and_Happiness/poster/The_Sign.png" controls
+                       controlsList="nodownload" oncontextmenu="return false">
+                    <source src="{{ url_for('static', filename='Cyanide_and_Happiness/The_Sign.MP4') }}"
+                            type="video/mp4">
+                    <source src="{{ url_for('static', filename='Cyanide_and_Happiness/The_Sign.WEBM') }}"
+                            type="video/webm">
+                    <object data="{{ url_for('static', filename='Cyanide_and_Happiness/The_Sign.swf') }}">
+                        <embed src="{{ url_for('static', filename='Cyanide_and_Happiness/The_Sign.swf') }}">
+                    </object>
+                    Your browser does not support HTML5 video.
+                </video>
+                {#                </div>#}
 
             </div>
         </div>

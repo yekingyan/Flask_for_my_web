@@ -1,13 +1,23 @@
 {% extends "base2.html" %}
 
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" href={{ url_for('static', filename='css/myvideo.css') }}>
+{% endblock %}
+
 {% block content %}
-        <div class="center">
-        <video class="video center" poster="/static/Cyanide_and_Happiness/read.png" controls controlsList="nodownload" oncontextmenu="return false">
-            <source src="{{ url_for('static', filename='Cyanide_and_Happiness/The_Sign.MP4') }}" type="video/mp4">
-            <source src="{{ url_for('static', filename='Cyanide_and_Happiness/The_Sign.WEBM') }}" type="video/webm">
-{#            <object data="{{ url_for('static', filename='Cyanide_and_Happiness/The_Sign.MP4') }}">#}
-{#                <embed src="{{ url_for('static', filename='Cyanide_and_Happiness/The_Sign.WEBM') }}" type="video/webm"/>#}
-{#            </object>#}
-        </video>
+    <div class="container-fluid">
+        <div class="col-auto">
+            <video class=".video" poster="/static/Cyanide_and_Happiness/poster/The_Sign.png" controls
+                   controlsList="nodownload" oncontextmenu="return false">
+                <source src="{{ url_for('static', filename='Cyanide_and_Happiness/The_Sign.MP4') }}" type="video/mp4">
+                <source src="{{ url_for('static', filename='Cyanide_and_Happiness/The_Sign.WEBM') }}" type="video/webm">
+                <object data="{{ url_for('static', filename='Cyanide_and_Happiness/The_Sign.swf') }}">
+                    <embed src="{{ url_for('static', filename='Cyanide_and_Happiness/The_Sign.swf') }}">
+                </object>
+                Your browser does not support HTML5 video.
+            </video>
+            <div class="text-center"><h2>The_Sign</h2></div>
+        </div>
     </div>
 {% endblock %}
