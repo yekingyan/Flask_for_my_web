@@ -14,9 +14,8 @@
                 <source src="{{ '/' + path + title + '.WEBM' }}" type="video/webm">
                 Your browser does not support HTML5 video.
             </video>
-            <div class="text-center"><h2>{{ title }}</h2></div>
-            {{ path + title + '.MP4' }}<br>
-            {{ path + 'poster/' + title + '.jpg' }}
+            <div class="text-center"><h2>{{ title.replace('_', " ") }}</h2></div>
+
         </div>
     </div>
 {% endblock %}

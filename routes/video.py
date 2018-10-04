@@ -16,7 +16,7 @@ def index():
     return render_template('video_index.html',
                            title='视频',
                            username=current_user_name(),
-                           path=cyanide_path,
+                           cyanide=cyanide_videos,
                            )
 
 

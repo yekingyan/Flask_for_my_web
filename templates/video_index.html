@@ -6,29 +6,10 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container-fluid">
-        <div class="col-auto">
-{#            <videos class="videos" poster={{ url_for('static', filename='videos/Cyanide_and_Happiness/poster/The_Sign.jpg') }} controls#}
-{#                   controlsList="nodownload" oncontextmenu="return false">#}
-{#                <source src="{{ url_for('static', filename='videos/Cyanide_and_Happiness/.MP4') }}" type="videos/mp4">#}
-{#                <source src="{{ url_for('static', filename='videos/Cyanide_and_Happiness/The_Sign.WEBM') }}" type="videos/webm">#}
-{#                <object data="{{ url_for('static', filename='Cyanide_and_Happiness/The_Sign.swf') }}">#}
-{#                    <embed src="{{ url_for('static', filename='Cyanide_and_Happiness/The_Sign.swf') }}">#}
-{#                </object>#}
-{#                Your browser does not support HTML5 videos.#}
-{#            </videos>#}
-
-            <video class="video" poster={{ url_for('static', filename='videos/Cyanide_and_Happiness/poster/Seriously.jpg') }} controls
-                   controlsList="nodownload" oncontextmenu="return false">
-                <source src="{{ url_for('static', filename='videos/Cyanide_and_Happiness/Seriously.MP4') }}" type="video/mp4">
-                <source src="{{ url_for('static', filename='videos/Cyanide_and_Happiness/Seriously.WEBM') }}" type="video/webm">
-                <object data="{{ url_for('static', filename='Cyanide_and_Happiness/The_Sign.swf') }}">
-                    <embed src="{{ url_for('static', filename='Cyanide_and_Happiness/The_Sign.swf') }}">
-                </object>
-                Your browser does not support HTML5 video.
-            </video>
-
-            <div class="text-center"><h2>The_Sign</h2></div>
+    {% for video in cyanide %}
+        <div>
+        {{ loop.index }}
+            <a href="{{ "cyanide/" + video }}">{{ video.replace('_', ' ') }}</a>
         </div>
-    </div>
+    {% endfor %}
 {% endblock %}
