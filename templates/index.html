@@ -20,7 +20,7 @@
                     <div class="card-body">
                         <h4 class="card-title"><span class="text-muted">烟灰烬</span>不是一个关于戒烟的网站</h4>
                         <p class="card-text bg-dary">也不是一个关于香烟的网站，但这的确是一个无聊的网站</p>
-                        <a href="#!" class="btn btn-primary">随便看看</a>
+                        <a href="#!" id="random" class="btn btn-primary">随便看看</a>
                     </div>
                     <div class="card-footer">
 
@@ -79,4 +79,11 @@
             </div>
         </div>
     </div>
+    <script>
+        //随机取得数组中的一个作为url
+        var Arr = ["videos", "todo", "message"];
+        var n = Math.floor(Math.random() * Arr.length + 1) - 1;
+        // 随便看看button
+        document.querySelector('#random').href = Arr[n];
+    </script>
 {% endblock %}
