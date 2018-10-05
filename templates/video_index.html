@@ -64,4 +64,34 @@
 
     </div>
 
+    <!--标题 others-->
+    <div class="row mt-3 border-top pt-2">
+        <div class="mt-1 ml-5 mb-3">
+            <img class="img_title" src="/static/videos/Others/Pickle_rick.png" alt="">
+        </div>
+        <div class="align-middle">
+            <h3 class="mt-4 ml-3">Others</h3>
+        </div>
+    </div>
+
+    <!--内容-->
+    <div class="container-fluid">
+        <div class="row block-center">
+            {% for video_d in others %}
+                {% set index = loop.index %}
+                {% for video in video_d %}
+                <div class="card ml-3 title_of_poster">
+                    <a class="text-center" href="{{ "others/" + video }}" target="view_frame">
+                        <img class="text-center little_poster"
+                             src="{{ '/' + others_path + 'poster/' + video + '.jpg' }}">
+                        <span class="title_of_poster visited">{{ index }}-{{ video.replace('_', ' ') }}</span>
+                        <br><span class="float-right text-secondary">{{ video_d[video] }}</span>
+                    </a>
+                </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+
+    </div>
+
 {% endblock %}

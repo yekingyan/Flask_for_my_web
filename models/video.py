@@ -48,6 +48,7 @@ def rename_file(path, match, format_):
         if match in old_name:
             index = del_postfix.search(old_name)
             # name + .Mp4
+            print(index)
             name = re.sub(' ', '_', old_name[:index.start()])
             new_name = path + name + format_
             new_names.append(new_name)
@@ -72,4 +73,6 @@ def check_lost(path):
 
 
 cyanide_path, cyanide_videos = video_names('static', 'videos', 'Cyanide_and_Happiness', 'poster')
+others_path, others_videos = video_names('static', 'videos', 'Others', 'poster')
+
 # rename_file(cyanide_path, ' - Cyanide', '.MP4')
