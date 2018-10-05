@@ -30,3 +30,9 @@ def cyanide(name):
                            username=current_user_name(),
                            path=cyanide_path
                            )
+
+
+@main.route('other/<name>')
+def other(name):
+    if name not in ...:
+        ...

@@ -42,3 +42,7 @@
     width: 210px;
     height: 178px;
 }
+
+a:visited {
+    color: #6b2452;
+}
