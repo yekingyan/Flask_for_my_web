@@ -20,3 +20,25 @@
     height: 600px;
     overflow: auto;
 }
+
+.img_title {
+    width: 80px;
+    height: 80px;
+}
+
+
+/*缩略图尺寸*/
+.little_poster {
+    width: 210px;
+    height: 118px;
+}
+
+.title_of_poster {
+    width:210px;
+    height: auto;
+}
+
+.each_poster_title {
+    width: 210px;
+    height: 178px;
+}

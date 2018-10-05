@@ -17,6 +17,7 @@ def index():
                            title='视频',
                            username=current_user_name(),
                            cyanide=cyanide_videos,
+                           cyanide_path=cyanide_path,
                            )
 
 
