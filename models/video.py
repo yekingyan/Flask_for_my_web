@@ -1,5 +1,6 @@
 import os
 from tools import strftime
+import re
 
 
 def video_names(*agrs):
@@ -27,7 +28,48 @@ def video_names(*agrs):
     return path, name_time
 
 
+def rename_file(path, match, format_):
+    """
+    重命名文件，如 "Stuck - Cyanide - YouTube.MP4" --> "Stuck.Mp4"
+    rename_file(cyanide_path, ' - Cyanide', '.MP4')
+    :param path: 文件夹路径名
+    :param match: 要匹配的正则表达式（将删除所匹配及索引之后的所有字符）
+    :param format_: 文件格式
+    :return: None
+    """
+
+    all_names = os.listdir(path)
+    new_names = []
+    old_names = []
+    # 编译的正则表达式
+    del_postfix = re.compile(match)
+    # 找到需要修改的名字
+    for old_name in all_names:
+        if match in old_name:
+            index = del_postfix.search(old_name)
+            # name + .Mp4
+            name = re.sub(' ', '_', old_name[:index.start()])
+            new_name = path + name + format_
+            new_names.append(new_name)
+            old_names.append(path + old_name)
+    # print(old_names)
+    # print(new_names)
+    # # 重命名
+    for i in range(len(new_names)):
+        os.rename(old_names[i], new_names[i])
+
+
+def check_lost(path):
+    """
+    查看视频名与略缩图名不一致的情况
+    :param path:视频所有路径
+    :return:
+    """
+    video_name = set(i[:-4] for i in os.listdir(path))
+    poster_name = set(i[:-4] for i in os.listdir(os.path.join(path, 'poster')))
+    print(poster_name ^ video_name)
+    return poster_name ^ video_name
+
+
 cyanide_path, cyanide_videos = video_names('static', 'videos', 'Cyanide_and_Happiness', 'poster')
-
-
-
+# rename_file(cyanide_path, ' - Cyanide', '.MP4')

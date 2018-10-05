@@ -23,7 +23,8 @@ def index():
 
 @main.route('cyanide/<name>')
 def cyanide(name):
-    if name not in cyanide_videos:
+    path = [k for d in cyanide_videos for k in d]
+    if name not in path:
         abort(404)
     return render_template("video.html",
                            title=name,
