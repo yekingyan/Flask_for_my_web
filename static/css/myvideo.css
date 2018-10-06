@@ -16,8 +16,13 @@
     height: 50%;
 }
 
+.img-max-width{
+    max-width: 50%;
+}
+
 .flow {
-    height: 600px;
+    height: auto;
+    max-height: 500px;
     overflow: auto;
 }
 

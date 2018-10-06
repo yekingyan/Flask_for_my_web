@@ -14,7 +14,7 @@
     <div class="container">
         <div class="row">
             <div class=" col-md-7">
-                <div id='message' class="flow">
+                <div id='message' class="flow align-content-md-start">
                     {#            {% for m in message %}#}
                     {#                {% if m.user %}#}
                     {#                    <p class="d-inline">#}
@@ -137,7 +137,7 @@
                 </div>
 
                 <div class="mt-md-5 mt-lg-5 d-none d-md-block d-lg-block">
-                    <img class="img-fluid" src={{ url_for('static',filename="talk.jpg") }}>
+                    <img class="img-fluid img-max-width" src={{ url_for('static',filename="talk.jpg") }}>
                 </div>
 
             </div>
