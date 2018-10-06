@@ -297,21 +297,7 @@ var reload = function () {
     })
 };
 
-var main = function () {
-    $(document).ready(function () {
-        first_connect();
-        load_all_msg();
-        send_message_from_input();
-        send_message_form_enter();
-        accept_message();
-        request_remove_message();
-        delete_message();
-        scroll_bottom();
-        flash_message();
-        reload();
-    });
-};
-main();
+
 
 //天气
 // ip to address
@@ -367,7 +353,7 @@ var get_weather = function () {
     socket.on('weather', function (data) {
         insert_weather(data)
     })
-}
+};
 
 
 var weather = function () {
@@ -377,5 +363,24 @@ var weather = function () {
     })
 };
 
-weather();
+
+var main = function () {
+    $(document).ready(function () {
+        first_connect();
+        load_all_msg();
+        send_message_from_input();
+        send_message_form_enter();
+        accept_message();
+        request_remove_message();
+        delete_message();
+        scroll_bottom();
+        flash_message();
+        reload();
+        weather();
+    });
+};
+main();
+
+
+
 
