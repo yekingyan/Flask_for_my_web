@@ -273,6 +273,28 @@ var scroll_bottom = function () {
     messages.scrollTop = messages.scrollHeight;
 };
 
+// 重载聊天数据
+var reload_msg = function () {
+    var cell = $(".cell");
+        log("检测cell");
+        // count = count+1;
+        if (cell.length === 0) {
+            // ($('#message').children()).remove();
+            socket.emit('connect_event', {'data': 'I\'m connected!'});
+            log('reload msg')
+        }
+};
+
+// 重载天气数据
+var reload_weather = function () {
+    var pm25 = $("#pm25").text();
+    if(Number(pm25) === 1000){
+        weather();
+        log('reload weather')
+    }
+};
+
+
 // 重载数据
 var reload = function () {
     // 时间控制
@@ -283,17 +305,9 @@ var reload = function () {
     }
 
     // 重发请求
-    // var count = 0;
-
     sleep(2000).next().value.then(() => {
-        var cell = $(".cell");
-        log("检测cell");
-        // count = count+1;
-        if (cell.length === 0) {
-            // ($('#message').children()).remove();
-            socket.emit('connect_event', {'data': 'I\'m connected!'});
-            log('reload msg')
-        }
+        reload_msg();
+        reload_weather();
     })
 };
 
@@ -356,10 +370,12 @@ var get_weather = function () {
 };
 
 
+
+
 var weather = function () {
     $(document).ready(function () {
         get_city(send_city_code);
-        get_weather()
+        get_weather();
     })
 };
 
