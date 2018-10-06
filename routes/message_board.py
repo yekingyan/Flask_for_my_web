@@ -134,6 +134,7 @@ def delete_msg(msg):
 # 天气
 @socketio.on('city_addr', namespace='/chat')
 def get_weather(addr):
+    log(addr, ':', request.cookies.get('cookie'))
     single_instanse = CityCode()
     code = CityCode.city_to_code(addr)
     url = f"http://aider.meizu.com/app/weather/listWeather?cityIds={code}"

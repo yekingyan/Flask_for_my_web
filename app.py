@@ -36,7 +36,7 @@ def index():
     username = current_user_name()
     template = render_template('index.html', username=username)
     r = set_salt_cookie(template)
-    log('建立了访问', request.remote_addr, ':', request.cookies.get('cookie'))
+    # log('建立了访问', request.remote_addr, ':', request.cookies.get('cookie'))  # 用重定向就无意义了
     return r
 
 

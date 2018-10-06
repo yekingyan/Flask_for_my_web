@@ -333,7 +333,7 @@ var send_city_code = function (province, city) {
     if (city.substr(-1) === '市') {
         city = city.substring(0, city.length - 1)
     }
-    // log(code);
+    log("请求天气",city);
     socket.emit('city_addr', {'city_addr': city});
 };
 
