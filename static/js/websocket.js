@@ -263,6 +263,11 @@ var insertFlash = function (msg) {
 var flash_message = function () {
     socket.on('flash_message', function (msg) {
         log("flash:", msg);
+        // 检查是否有旧flash
+        var old_flash = $('.alert-dismissible');
+        if(old_flash.length>0){
+            old_flash.remove();
+        }
         insertFlash(msg);
     })
 };

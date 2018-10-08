@@ -75,7 +75,7 @@ var flashTemplate = function (todo) {
         </div>
     `;
     return t
-}
+};
 
 var insertFlash = function (todo) {
     var nav = e('nav');
