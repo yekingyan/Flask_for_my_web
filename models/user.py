@@ -104,7 +104,7 @@ class User(MongoDB, Model):
                 return '重名'
 
         # 验证密码与用户名格式
-        if len(username) <= 2 or len(password) <= 2 or len(username) > 8:
+        if len(username) <= 3 or len(password) <= 6 or len(username) > 8:
             return "用户名或密码太短了"
         else:
             # 创建对象u，设置属性

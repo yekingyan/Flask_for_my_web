@@ -123,7 +123,6 @@ class MongoDB(object):
         return obj
 
 
-
 if __name__ == '__main__':
     db = client['flask_web']
     query = {

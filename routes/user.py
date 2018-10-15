@@ -63,8 +63,8 @@ def add_user():
     if "重名" in str(u):
         flash("该用户名已经被注册")
     if "用户名或密码太短了" in str(u):
-        # todo 上线后把密码长度改为6位以上
-        flash("请确保昵称长度在2到8位之间，以及密码长度2位以上")
+        # todo上线后把密码长度改为6位以上
+        flash("请确保昵称长度在3到8位之间，以及密码长度6位以上")
     else:
         flash("注册成功")
         log("add_user", u.id, ':', u.username)
